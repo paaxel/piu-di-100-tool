@@ -71,7 +71,6 @@ export class ToolCatalog {
       route: '/tools/jwt',
       tags: ['jwt', 'token', 'auth', 'security', 'decoder'],
       icon: 'key',
-      featured: true,
     },
     {
       id: 'one-line',
@@ -245,7 +244,6 @@ export class ToolCatalog {
       route: '/tools/uuid-generator',
       tags: ['uuid', 'ulid', 'guid', 'id', 'random', 'generator', 'unique'],
       icon: 'fingerprint',
-      featured: true,
     },
     {
       id: 'regex-tester',
@@ -579,6 +577,7 @@ export class ToolCatalog {
       route: '/tools/image-resizer',
       tags: ['resize', 'ridimensiona', 'image', 'immagine', 'width', 'height', 'scale', 'canvas'],
       icon: 'photo_size_select_large',
+      featured: true,
     },
     {
       id: 'image-to-base64',
@@ -831,6 +830,7 @@ export class ToolCatalog {
       route: '/tools/pdf-merge',
       tags: ['pdf', 'merge', 'combine', 'unisci', 'join', 'documents'],
       icon: 'merge',
+      featured: true,
     },
     {
       id: 'pdf-split',
