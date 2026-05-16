@@ -11,10 +11,9 @@
 			[(ngModel)]="search"
 			[placeholder]="'HOME.SEARCH_PLACEHOLDER' | translate"
 		/>
-		<div class="kbd-group">
-			<span class="kbd">CMD</span>
-			<span class="kbd">K</span>
-		</div>
+		<button type="submit" class="hero-search-btn" [attr.aria-label]="'HOME.SEARCH_PLACEHOLDER' | translate">
+			<span class="material-symbols-outlined">search</span>
+		</button>
 	</form>
 </section>
 
