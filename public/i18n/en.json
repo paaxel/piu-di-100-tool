@@ -1,0 +1,1590 @@
+{
+  "APP": {
+    "SUBTITLE": "Professional utility suite"
+  },
+  "SHARED": {
+    "FILE_DROPZONE": {
+      "CLICK_OR_DROP": "Click to select or drag & drop",
+      "DROP_HERE": "Drop the file here",
+      "CLICK_TO_CHANGE": "Click to change file"
+    }
+  },
+  "NAV": {
+    "HOME": "Home",
+    "TOOLS": "Tools",
+    "SEARCH_TOOL": "Search",
+    "SEARCH": "Search",
+    "SEARCH_PLACEHOLDER": "Search tools with fuzzy matching...",
+    "CODICE_FISCALE": "Tax Code",
+    "BASE64": "Base64"
+  },
+  "TOOL_PAGE": {
+    "DESCRIPTION_TITLE": "What This Tool Does"
+  },
+  "HOME": {
+    "TITLE": "All your tools in one place",
+    "SUBTITLE": "Fast, modular utilities ready for your workflow.",
+    "HERO_TITLE": "All the tools you need in one place",
+    "HERO_SUBTITLE": "Over 100 professional tools for developers, financial analysts and content creators. Fast, secure and free.",
+    "SEARCH_PLACEHOLDER": "Search a tool... e.g. JWT, Base64, IBAN",
+    "SEARCH_ACTION": "Go to search",
+    "FEATURED": "Featured tools",
+    "PRO_TOOLS": "Pro Tools",
+    "VIEW_ALL": "View all tools",
+    "BROWSE_CATEGORY": "Browse by category",
+    "CAT_DEVELOPER": "Developer Tools",
+    "CAT_FINANCE": "Finance",
+    "CAT_IMAGE": "Image Editors",
+    "CAT_IMAGE_DESC": "Compress, crop, resize and convert images.",
+    "CAT_TEXT": "Text Processing",
+    "CAT_SECURITY": "Security",
+    "TRUST_NOTE": "All tools run 100% client-side — your data never leaves your browser. No uploads, no server logs, no tracking.",
+    "CTA_TITLE": "Ready to optimize your workflow?",
+    "CTA_SUBTITLE": "All tools run client-side for maximum privacy.",
+    "CTA_ACTION": "Explore all 100+ tools",
+    "OPEN_TOOL": "Open tool"
+  },
+  "SEARCH": {
+    "TITLE": "Tools",
+    "SUBTITLE": "Search across name, description, category and tags.",
+    "INTRO_TITLE": "Find the right tool for you",
+    "INTRO_SUBTITLE": "Over 100 tools at your fingertips. Type a keyword to get started.",
+    "PLACEHOLDER": "Type to search...",
+    "ACTION": "Search",
+    "RESULTS": "Results: {{count}} of {{total}} tools",
+    "PAGE_SUMMARY": "Page {{page}} of {{pages}} · results {{from}}–{{to}} of {{total}}",
+    "PAGINATION": "Results pagination"
+  },
+  "FOOTER": {
+    "PRIVACY": "Privacy Policy",
+    "TERMS": "Terms of Service",
+    "CONTACT": "Contact Support",
+    "POPULAR": "Popular Tools"
+  },
+  "COMMON": {
+    "MALE": "Male",
+    "FEMALE": "Female",
+    "RESET": "Reset"
+  },
+  "TOOL_CATEGORIES": {
+    "DEVELOPER_TOOLS": "Developer Tools",
+    "SECURITY": "Security",
+    "FINANCE": "Finance",
+    "TEXT_PROCESSING": "Text Processing",
+    "CONVERSION": "Conversion",
+    "DATE_TIME": "Date/Time"
+  },
+  "TOOL_CATALOG": {
+    "url-codec": {
+      "NAME": "URL Encode / Decode",
+      "DESCRIPTION": "Percent-encode and decode URLs and query parameters.",
+      "LONG_DESCRIPTION": "Percent-encode and decode strings using URL encoding. Paste a URL or query parameter and get the encoded or decoded version instantly. Useful for building valid URLs, debugging APIs and handling special characters in HTTP parameters."
+    },
+    "base64": {
+      "NAME": "Base64 / UnBase64",
+      "DESCRIPTION": "Encode and decode plain text safely using Base64.",
+      "LONG_DESCRIPTION": "Encode plain text to Base64 and decode Base64 strings back to readable text. Used for data URIs, HTTP Basic Auth headers, email attachments and binary-safe data transmission in text-only systems."
+    },
+    "jwt": {
+      "NAME": "JWT Decoder",
+      "DESCRIPTION": "Decode and inspect JSON Web Tokens — header, payload and signature.",
+      "LONG_DESCRIPTION": "Decode and inspect JSON Web Tokens without a key: view the header, algorithm, payload claims and expiry. Optionally verify the signature with your HMAC secret or RSA public key. All computation runs in your browser."
+    },
+    "codice-fiscale": {
+      "NAME": "Codice Fiscale",
+      "DESCRIPTION": "Generate Italian tax code from personal details.",
+      "LONG_DESCRIPTION": "Calculate the Italian fiscal code (codice fiscale) from name, surname, date of birth, gender and municipality of birth, using the official Agenzia delle Entrate algorithm. All computation runs in your browser without sending any data to a server."
+    },
+    "cf-checker": {
+      "NAME": "Codice Fiscale Checker",
+      "DESCRIPTION": "Validate the control character of an Italian fiscal code via generic regex + checksum.",
+      "LONG_DESCRIPTION": "Verify an Italian fiscal code by checking the format with a generic regex pattern and the control character with the checksum algorithm. Does not verify registry existence of the person."
+    },
+    "codice-fiscale-inverso": {
+      "NAME": "Reverse Fiscal Code",
+      "DESCRIPTION": "Decode an Italian fiscal code — extract birth date, gender and municipality.",
+      "LONG_DESCRIPTION": "Given an Italian fiscal code, this tool parses its structure to extract the encoded data: birth year, month and day, gender, and birth municipality or cadastral code. Validation runs directly in your browser."
+    },
+    "iban-checker": {
+      "NAME": "IBAN Checker",
+      "DESCRIPTION": "Validate IBAN check digits (mod-97). Format check only — no bank lookup.",
+      "LONG_DESCRIPTION": "Validate the check digits of an IBAN using the ISO 7064 Mod 97-10 algorithm. Covers 40+ countries. Performs format check only — does not verify actual bank account existence."
+    },
+    "one-line": {
+      "NAME": "To One Line",
+      "DESCRIPTION": "Collapse multi-line text to a single line and remove extra spaces.",
+      "LONG_DESCRIPTION": "Collapse multi-line text into a single line by removing line breaks and multiple spaces. Ideal for cleaning SQL queries, JSON strings or any multiline content before pasting into terminals or variables."
+    },
+    "space-remover": {
+      "NAME": "Space Remover",
+      "DESCRIPTION": "Strip all whitespace characters from any text.",
+      "LONG_DESCRIPTION": "Remove all whitespace characters from text: spaces, tabs, newlines and non-breaking spaces. Useful for normalizing identifiers, hashes, API keys or any string where spaces cause errors."
+    },
+    "string-length": {
+      "NAME": "String Length",
+      "DESCRIPTION": "Count characters, words, lines and byte size of any text.",
+      "LONG_DESCRIPTION": "Count the number of characters, words, lines and byte size of any text. Useful for checking database field limits, tweet length, SMS length or any text with size constraints."
+    },
+    "unit-converter": {
+      "NAME": "Unit Converter",
+      "DESCRIPTION": "Convert SI metric units to US customary units — length, mass, volume, temperature, speed.",
+      "LONG_DESCRIPTION": "Convert between metric SI units and US customary units and vice versa. Supports length, mass, volume, temperature and speed. Instant client-side calculation."
+    },
+    "json-formatter": {
+      "NAME": "JSON Formatter",
+      "DESCRIPTION": "Pretty-print, minify and validate JSON documents.",
+      "LONG_DESCRIPTION": "Format and prettify JSON documents with configurable indentation. Minify JSON by removing unnecessary whitespace. Validate syntax and surface errors. Useful for reading API responses and config files."
+    },
+    "json-yaml": {
+      "NAME": "JSON ↔ YAML",
+      "DESCRIPTION": "Bidirectional JSON / YAML converter.",
+      "LONG_DESCRIPTION": "Bidirectionally convert between JSON and YAML. Paste JSON and get YAML, or paste YAML and get JSON. Useful for configuring Kubernetes manifests, Docker Compose files and other infrastructure."
+    },
+    "json-csv": {
+      "NAME": "JSON ↔ CSV",
+      "DESCRIPTION": "Convert between JSON arrays of objects and CSV.",
+      "LONG_DESCRIPTION": "Convert JSON arrays of objects to downloadable CSV and CSV back to JSON arrays. Automatically detects columns from object keys. Useful for importing and exporting data from spreadsheets or databases."
+    },
+    "epoch": {
+      "NAME": "Epoch / Unix Timestamp",
+      "DESCRIPTION": "Convert between Unix epoch timestamps and human-readable dates.",
+      "LONG_DESCRIPTION": "Convert between Unix epoch timestamps (seconds or milliseconds) and human-readable dates. Displays the current time in real time. Useful for debugging logs, inspecting API timestamps and working with dates in databases."
+    },
+    "cron": {
+      "NAME": "Cron Expression Builder",
+      "DESCRIPTION": "Explain and design cron expressions (5 or 6 fields), à la crontab.guru.",
+      "LONG_DESCRIPTION": "Explain cron expressions in plain language and show the next scheduled execution dates. Build expressions with a visual interface. Equivalent to crontab.guru. Supports 5 and 6-field expressions."
+    },
+    "password-hash": {
+      "NAME": "Password Hash",
+      "DESCRIPTION": "Compute MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes. bcrypt requires a server.",
+      "LONG_DESCRIPTION": "Compute cryptographic hashes MD5, SHA-1, SHA-256, SHA-384 and SHA-512 of any text, entirely in your browser. Useful for verifying file integrity, comparing hashed passwords and studying cryptographic algorithms."
+    },
+    "password-generator": {
+      "NAME": "Password Generator",
+      "DESCRIPTION": "Generate strong passwords using a cryptographically-secure random generator.",
+      "LONG_DESCRIPTION": "Generate strong passwords using a cryptographically secure pseudorandom number generator (CSPRNG). Configure length, uppercase, numbers and symbols. No passwords are sent to any external server."
+    },
+    "my-ip": {
+      "NAME": "My IP",
+      "DESCRIPTION": "Discover your public IP address (the only tool that performs a network request).",
+      "LONG_DESCRIPTION": "Display your public IP address by fetching it from an external service. This is the only tool in this suite that makes a network request. Useful for checking your connection, VPN or proxy status."
+    },
+    "cidr-subnet-calculator": {
+      "NAME": "CIDR / Subnet Calculator",
+      "DESCRIPTION": "Analyze CIDR blocks and calculate subnet mask, network, broadcast and usable IPs.",
+      "LONG_DESCRIPTION": "Enter an IPv4 CIDR block such as 192.168.1.42/24 to calculate subnet mask, wildcard mask, network address, broadcast address and how many IP addresses are available. Everything runs locally in the browser."
+    },
+    "ip-subnet-calculator": {
+      "NAME": "IP + Subnet Mask Calculator",
+      "DESCRIPTION": "Enter an IP and subnet mask or prefix to calculate the network and available IP addresses.",
+      "LONG_DESCRIPTION": "Provide an IPv4 address together with a subnet mask like 255.255.255.0 or a prefix like /24 to calculate the network range, broadcast address, first and last host, and the total number of available IP addresses."
+    },
+    "percentage": {
+      "NAME": "Percentage Calculator",
+      "DESCRIPTION": "Calculate percentages, ratios and percentage changes.",
+      "LONG_DESCRIPTION": "Calculate percentages, ratios and percentage changes between two values. Supports percentage of a value, value from a percentage and percentage change between two numbers."
+    },
+    "iva-calculator": {
+      "NAME": "IVA Calculator",
+      "DESCRIPTION": "Calculate prices with and without Italian VAT using rates: 4%, 5%, 10%, 22%.",
+      "LONG_DESCRIPTION": "Calculate prices with and without Italian VAT (IVA) using standard Italian rates: 4%, 5%, 10% and 22%. Useful for invoices, quotes and accounting."
+    },
+    "discount-calculator": {
+      "NAME": "Discount Calculator",
+      "DESCRIPTION": "Calculate the discounted price from the original price and a discount percentage.",
+      "LONG_DESCRIPTION": "Enter the original price and a discount percentage to instantly get the final discounted price and the amount saved."
+    },
+    "uuid-generator": {
+      "NAME": "UUID / ULID Generator",
+      "DESCRIPTION": "Generate cryptographically secure UUID v4 and ULID identifiers.",
+      "LONG_DESCRIPTION": "Generate cryptographically secure UUID v4 and ULID (Universally Unique Lexicographically Sortable Identifier) identifiers. Generate single or multiple with one click. Everything runs in your browser."
+    },
+    "regex-tester": {
+      "NAME": "Regex Tester",
+      "DESCRIPTION": "Test regular expressions in real time with match highlighting.",
+      "LONG_DESCRIPTION": "Test JavaScript regular expressions in real time with match highlighting on the input text. Supports global, case-insensitive, multiline and other flags. Shows all capture groups."
+    },
+    "diff-checker": {
+      "NAME": "Diff Checker",
+      "DESCRIPTION": "Compare two texts line by line and highlight the differences.",
+      "LONG_DESCRIPTION": "Compare two texts line by line, highlighting added, removed and changed lines. Useful for reviewing changes to code, documents or configurations without using Git."
+    },
+    "base-converter": {
+      "NAME": "Number Base Converter",
+      "DESCRIPTION": "Convert numbers between binary, octal, decimal and hexadecimal.",
+      "LONG_DESCRIPTION": "Convert numbers between binary (base 2), octal (base 8), decimal (base 10) and hexadecimal (base 16). Instant conversion into all bases simultaneously."
+    },
+    "case-converter": {
+      "NAME": "Case Converter",
+      "DESCRIPTION": "Convert text to camelCase, PascalCase, snake_case, kebab-case and other formats.",
+      "LONG_DESCRIPTION": "Convert text between camelCase, PascalCase, snake_case, kebab-case, UPPER_CASE, lowercase and Title Case. Useful for developers working with variable names, functions, classes and URLs."
+    },
+    "word-counter": {
+      "NAME": "Word Counter",
+      "DESCRIPTION": "Count words, characters, sentences, paragraphs and estimate reading time.",
+      "LONG_DESCRIPTION": "Count words, characters (with and without spaces), sentences, paragraphs, lines and estimate reading time. Also shows byte size. Useful for articles, tweets, SMS and field length limits."
+    },
+    "slug-generator": {
+      "NAME": "Slug Generator",
+      "DESCRIPTION": "Generate SEO-friendly URL slugs from any text, removing accents and special characters.",
+      "LONG_DESCRIPTION": "Generate SEO-friendly URL slugs from any title or text. Removes accents, converts to lowercase, replaces spaces with hyphens and strips special characters. Also supports underscore separator."
+    },
+    "age-calculator": {
+      "NAME": "Age Calculator",
+      "DESCRIPTION": "Calculate exact age in years, months and days from a birth date.",
+      "LONG_DESCRIPTION": "Calculate exact age in years, months and days from a birth date. Also shows the days until the next birthday and the total number of days lived."
+    },
+    "html-encoder": {
+      "NAME": "HTML Encode / Decode",
+      "DESCRIPTION": "Encode and decode HTML entities. Convert special characters to HTML entities and back.",
+      "LONG_DESCRIPTION": "Encode special HTML characters to entities (e.g. < → &lt;) and decode HTML entities back to readable characters. Useful for embedding code in articles, documentation or HTML attributes."
+    },
+    "color-converter": {
+      "NAME": "Color Converter",
+      "DESCRIPTION": "Convert colors between HEX, RGB and HSL with a live visual preview.",
+      "LONG_DESCRIPTION": "Convert colors between HEX, RGB and HSL formats with a live visual preview. Copy the value in your preferred format with one click. Useful for designers and front-end developers."
+    },
+    "hex-to-rgb": {
+      "NAME": "HEX \u2192 RGB",
+      "DESCRIPTION": "Convert a HEX color code to RGB values instantly.",
+      "LONG_DESCRIPTION": "Enter any HEX color code and instantly get the corresponding RGB values. Displays a live color preview and lets you copy the CSS rgb() value with one click."
+    },
+    "hex-to-hsl": {
+      "NAME": "HEX \u2192 HSL",
+      "DESCRIPTION": "Convert a HEX color code to HSL values instantly.",
+      "LONG_DESCRIPTION": "Enter any HEX color code and instantly get the corresponding HSL values. Displays a live color preview and lets you copy the CSS hsl() value with one click."
+    },
+    "rgb-to-hex": {
+      "NAME": "RGB \u2192 HEX",
+      "DESCRIPTION": "Convert RGB color values to a HEX color code instantly.",
+      "LONG_DESCRIPTION": "Enter R, G, B values (0-255) and instantly get the corresponding HEX color code. Displays a live color preview and lets you copy the value with one click."
+    },
+    "hsl-to-hex": {
+      "NAME": "HSL \u2192 HEX",
+      "DESCRIPTION": "Convert HSL color values to a HEX color code instantly.",
+      "LONG_DESCRIPTION": "Enter H (0-360), S (0-100%) and L (0-100%) values and instantly get the corresponding HEX color code. Displays a live color preview and lets you copy the value with one click."
+    },
+    "rgb-to-hsl": {
+      "NAME": "RGB \u2192 HSL",
+      "DESCRIPTION": "Convert RGB color values to HSL instantly.",
+      "LONG_DESCRIPTION": "Enter R, G, B values (0-255) and instantly get the corresponding HSL values. Displays a live color preview and lets you copy the CSS hsl() value with one click."
+    },
+    "hsl-to-rgb": {
+      "NAME": "HSL \u2192 RGB",
+      "DESCRIPTION": "Convert HSL color values to RGB instantly.",
+      "LONG_DESCRIPTION": "Enter H (0-360), S (0-100%) and L (0-100%) values and instantly get the corresponding RGB values. Displays a live color preview and lets you copy the CSS rgb() value with one click."
+    },    "lorem-ipsum": {
+      "NAME": "Lorem Ipsum Generator",
+      "DESCRIPTION": "Generate Lorem Ipsum placeholder text for mockups and prototypes.",
+      "LONG_DESCRIPTION": "Generate Lorem Ipsum placeholder text for mockups, wireframes and prototypes. Choose the number of paragraphs, sentences or words. Classic or modern variant."
+    },
+    "sql-formatter": {
+      "NAME": "SQL Formatter",
+      "DESCRIPTION": "Format and beautify SQL queries with automatic indentation.",
+      "LONG_DESCRIPTION": "Format and beautify SQL queries with automatic indentation and keyword capitalization. Supports major SQL dialects. Useful for making complex or auto-generated queries readable."
+    },
+    "date-diff": {
+      "NAME": "Date Difference",
+      "DESCRIPTION": "Calculate the exact difference between two dates in days, weeks, months and years.",
+      "LONG_DESCRIPTION": "Calculate the exact difference between two dates in days, weeks, months and years. Useful for computing deadlines, contract durations, years of work experience and days until an event."
+    },
+    "timezone-converter": {
+      "NAME": "Time Zone Converter",
+      "DESCRIPTION": "Convert a time between the world's major time zones.",
+      "LONG_DESCRIPTION": "Convert a time between the world's major time zones. Useful for scheduling international meetings, understanding when a remote team is available or converting server log timestamps."
+    },
+    "partita-iva": {
+      "NAME": "Partita IVA Validator",
+      "DESCRIPTION": "Verify the validity of an Italian VAT number (Partita IVA) using the checksum algorithm.",
+      "LONG_DESCRIPTION": "Verify the formal validity of an Italian VAT number (Partita IVA) using the official checksum algorithm. Checks format and control digit only — does not verify whether the VAT number is active or registered."
+    },
+    "hmac-generator": {
+      "NAME": "HMAC Generator",
+      "DESCRIPTION": "Generate HMAC SHA-256 and SHA-512 signatures with a secret key for APIs and auth.",
+      "LONG_DESCRIPTION": "Generate HMAC SHA-256 and SHA-512 signatures with a secret key. Used for authenticating API requests, webhooks and secure communications. All computation runs in your browser."
+    },
+    "random-token": {
+      "NAME": "Random Token / Secret",
+      "DESCRIPTION": "Generate cryptographically secure random tokens for API keys, JWT secrets and passwords.",
+      "LONG_DESCRIPTION": "Generate cryptographically secure random tokens in HEX or Base64 format. Useful for API keys, JWT secrets, nonces, CSRF tokens and any application requiring secure randomness."
+    },
+    "roman-numbers": {
+      "NAME": "Roman Numerals",
+      "DESCRIPTION": "Convert Arabic numbers to Roman numerals and vice versa. From I to MMMCMXCIX.",
+      "LONG_DESCRIPTION": "Convert Arabic numbers to Roman numerals and vice versa. Supports values from 1 to 3999 (MMMCMXCIX). Useful for titles, dates, chapters and historical notation."
+    },
+    "number-words": {
+      "NAME": "Number to Words",
+      "DESCRIPTION": "Convert numbers to Italian words. E.g. 1234 → milleduecentotrentaquattro.",
+      "LONG_DESCRIPTION": "Convert integers to Italian words. For example: 1234 → milleduecentotrentaquattro. Useful for writing cheques, invoices, notarial deeds and formal documents."
+    },
+    "jpg-to-webp": {
+      "NAME": "JPG → WebP",
+      "DESCRIPTION": "Convert JPG/JPEG images to WebP format with quality control.",
+      "LONG_DESCRIPTION": "Convert JPG/JPEG images to WebP format directly in your browser. Reduce image file size while maintaining high visual quality. WebP is supported by all modern browsers."
+    },
+    "png-to-webp": {
+      "NAME": "PNG → WebP",
+      "DESCRIPTION": "Convert PNG images to WebP format with quality control.",
+      "LONG_DESCRIPTION": "Convert PNG images to WebP format directly in your browser, preserving transparency. Reduce image weight to improve website performance."
+    },
+    "webp-converter": {
+      "NAME": "WebP → PNG / JPG",
+      "DESCRIPTION": "Convert WebP images to PNG or JPG. Compatible with all browsers.",
+      "LONG_DESCRIPTION": "Convert WebP images to PNG or JPG directly in your browser. Useful for sharing images on systems that do not yet support the WebP format."
+    },
+    "image-resizer": {
+      "NAME": "Image Resizer",
+      "DESCRIPTION": "Resize images by setting width and height. Maintain aspect ratio.",
+      "LONG_DESCRIPTION": "Resize images by setting custom width and height. Maintain the original aspect ratio or set dimensions freely. Resizing happens client-side without uploading files to a server."
+    },
+    "image-to-base64": {
+      "NAME": "Image to Base64",
+      "DESCRIPTION": "Convert image files to Base64 strings or data URLs and download the result as TXT when needed.",
+      "LONG_DESCRIPTION": "Convert PNG, JPG, WebP and other image files to Base64 strings or full data URLs entirely in the browser. Useful for CSS embeds, HTML snippets, placeholders and debugging. When the output is too long, you can download it as a .txt file."
+    },
+    "image-compressor": {
+      "NAME": "Image Compressor",
+      "DESCRIPTION": "Compress images with real-time quality control. See the size reduction live.",
+      "LONG_DESCRIPTION": "Compress images by reducing JPEG quality with a real-time preview. Immediately see the byte size reduction before downloading the compressed file."
+    },
+    "image-crop": {
+      "NAME": "Image Crop",
+      "DESCRIPTION": "Crop images with an interactive selector. Drag to select the area.",
+      "LONG_DESCRIPTION": "Crop images with an interactive selector. Drag and resize the selection area, then download the cropped image. Everything runs in your browser without uploading files."
+    },
+    "tira-il-dado": {
+      "NAME": "Roll the Dice",
+      "DESCRIPTION": "Roll one or more virtual dice: D4, D6, D8, D10, D12, D20, D100.",
+      "LONG_DESCRIPTION": "Roll one or more virtual dice: D4, D6, D8, D10, D12, D20 and D100. Ideal for tabletop RPGs, random decisions and simulations. Results are generated with a cryptographically secure random generator."
+    },
+    "numero-random": {
+      "NAME": "Random Number",
+      "DESCRIPTION": "Extract one or more random numbers in a custom range.",
+      "LONG_DESCRIPTION": "Extract one or more random numbers in a custom range. Useful for draws, lotteries, statistical sampling and any situation requiring verifiable randomness."
+    },
+    "testa-o-croce": {
+      "NAME": "Heads or Tails",
+      "DESCRIPTION": "Flip a virtual coin: heads or tails. With flip history.",
+      "LONG_DESCRIPTION": "Flip a virtual coin: heads or tails. Keeps a history of all flips with real-time statistics. Results are generated with a cryptographically secure random generator."
+    },
+    "camel-case": {
+      "NAME": "camelCase Converter",
+      "DESCRIPTION": "Convert text to camelCase — ideal for variable and function names.",
+      "LONG_DESCRIPTION": "Convert any text to camelCase format, perfect for naming JavaScript and TypeScript variables, functions and methods. Example: «hello world» → «helloWorld». Handles accents, spaces and special characters."
+    },
+    "pascal-case": {
+      "NAME": "PascalCase Converter",
+      "DESCRIPTION": "Convert text to PascalCase — ideal for class and component names.",
+      "LONG_DESCRIPTION": "Convert any text to PascalCase format, perfect for naming classes, components, interfaces and types. Example: «hello world» → «HelloWorld». Handles accents, spaces and special characters."
+    },
+    "snake-case": {
+      "NAME": "snake_case Converter",
+      "DESCRIPTION": "Convert text to snake_case — ideal for Python variables and database columns.",
+      "LONG_DESCRIPTION": "Convert any text to snake_case format, widely used in Python, Ruby and SQL. Example: «hello world» → «hello_world». Handles accents, spaces and special characters."
+    },
+    "kebab-case": {
+      "NAME": "kebab-case Converter",
+      "DESCRIPTION": "Convert text to kebab-case — ideal for CSS classes and URL slugs.",
+      "LONG_DESCRIPTION": "Convert any text to kebab-case format, commonly used in HTML attributes, CSS class names and URL slugs. Example: «hello world» → «hello-world». Handles accents, spaces and special characters."
+    },
+    "constant-case": {
+      "NAME": "CONSTANT_CASE Converter",
+      "DESCRIPTION": "Convert text to CONSTANT_CASE — ideal for constants and environment variables.",
+      "LONG_DESCRIPTION": "Convert any text to CONSTANT_CASE (also known as SCREAMING_SNAKE_CASE), widely used for constants, enum values and environment variables. Example: «hello world» → «HELLO_WORLD»."
+    },
+    "upper-case": {
+      "NAME": "UPPER CASE Converter",
+      "DESCRIPTION": "Convert text to UPPER CASE — all characters uppercase.",
+      "LONG_DESCRIPTION": "Convert any text to full uppercase. Example: «hello world» → «HELLO WORLD». Preserves spacing, numbers and punctuation."
+    },
+    "lower-case": {
+      "NAME": "lower case Converter",
+      "DESCRIPTION": "Convert text to lower case — all characters lowercase.",
+      "LONG_DESCRIPTION": "Convert any text to full lowercase. Example: «Hello World» → «hello world». Preserves spacing, numbers and punctuation."
+    },
+    "title-case": {
+      "NAME": "Title Case Converter",
+      "DESCRIPTION": "Convert text to Title Case — first letter of each word capitalized.",
+      "LONG_DESCRIPTION": "Convert any text to Title Case where the first letter of each word is capitalized. Example: «hello world» → «Hello World». Useful for headings, titles and proper names."
+    },
+    "color-picker": {
+      "NAME": "Color Picker",
+      "DESCRIPTION": "Pick a color visually and get HEX, RGB and HSL values instantly.",
+      "LONG_DESCRIPTION": "Pick any color visually and instantly get the corresponding HEX, RGB and HSL values. Copy values with one click. Useful for designers and front-end developers working with CSS and design systems."
+    },
+    "favicon-generator": {
+      "NAME": "Favicon Generator",
+      "DESCRIPTION": "Generate a favicon.ico from any image in the browser.",
+      "LONG_DESCRIPTION": "Generate a favicon.ico file from any image directly in your browser. Creates a multi-size ICO file (16×16, 32×32, 48×48) without any server upload. Download and use on any website."
+    },
+    "credit-card-validator": {
+      "NAME": "Credit Card Validator",
+      "DESCRIPTION": "Validate card numbers with the Luhn algorithm and detect the card network.",
+      "LONG_DESCRIPTION": "Validate credit card numbers using the Luhn algorithm and automatically detect the card network (Visa, Mastercard, American Express, Discover and more). Useful for front-end form validation and testing payment flows."
+    },
+    "semver-checker": {
+      "NAME": "Semver Comparator",
+      "DESCRIPTION": "Compare semantic versions and check if a version satisfies a range.",
+      "LONG_DESCRIPTION": "Compare semantic version numbers and verify whether a version satisfies a semver range (npm-style). Useful for managing package dependencies, CI/CD pipelines and version compatibility checks."
+    },
+    "qr-generator": {
+      "NAME": "QR Code Generator",
+      "DESCRIPTION": "Generate custom QR codes from text or URLs with PNG download.",
+      "LONG_DESCRIPTION": "Generate custom QR codes from any text, URL, phone number or email address. Customize size and download as a PNG image. All generation runs directly in your browser."
+    },
+    "barcode-generator": {
+      "NAME": "Barcode Generator",
+      "DESCRIPTION": "Generate 1D barcodes online: CODE128, EAN13, EAN8, UPC, ITF14, MSI, Pharmacode.",
+      "LONG_DESCRIPTION": "Generate 1D barcodes online directly in your browser. Supports CODE128, EAN-13, EAN-8, UPC-A, ITF-14, MSI and Pharmacode. Instant preview and PNG download. No server upload required."
+    },
+    "barcode-reader": {
+      "NAME": "Barcode Reader",
+      "DESCRIPTION": "Read barcodes from images with local browser-based recognition.",
+      "LONG_DESCRIPTION": "Scan and decode barcodes from uploaded images or photos directly in your browser. Supports EAN, UPC, CODE128 and other common 1D barcode formats. No data is sent to any server."
+    },
+    "qrcode-reader": {
+      "NAME": "QR Code Reader",
+      "DESCRIPTION": "Decode QR codes from images and copy the extracted content.",
+      "LONG_DESCRIPTION": "Upload or drag an image containing a QR code to decode it instantly in your browser. Extracts URLs, text, contact info and any other QR-encoded data. No server upload required."
+    },
+    "text-inverter": {
+      "NAME": "Text Inverter",
+      "DESCRIPTION": "Reverse text by characters, words or lines.",
+      "LONG_DESCRIPTION": "Reverse any text by characters, words or lines. Useful for generating mirror text, reversing word order in sentences or flipping line order in multi-line content."
+    },
+    "find-replace": {
+      "NAME": "Find & Replace",
+      "DESCRIPTION": "Find and replace text with regex, case-sensitive and global support.",
+      "LONG_DESCRIPTION": "Find and replace text with support for plain text and regular expressions, case-sensitive matching and global replacement. Useful for bulk text transformations, code snippets and template editing."
+    },
+    "image-rotate": {
+      "NAME": "Image Rotate",
+      "DESCRIPTION": "Rotate images by any angle with a live preview.",
+      "LONG_DESCRIPTION": "Rotate images by any custom angle directly in your browser. Preview the result in real time and download the rotated image. Supports all common image formats including JPG, PNG and WebP."
+    },
+    "image-flip": {
+      "NAME": "Image Flip",
+      "DESCRIPTION": "Flip images horizontally or vertically.",
+      "LONG_DESCRIPTION": "Flip images horizontally (mirror) or vertically directly in your browser. Preview the result instantly and download the flipped image. Supports all common image formats."
+    },
+    "image-watermark": {
+      "NAME": "Image Watermark",
+      "DESCRIPTION": "Add a text watermark to images directly in the browser.",
+      "LONG_DESCRIPTION": "Add a custom text watermark to any image directly in your browser. Configure position, font size, color and opacity. Download the watermarked image without uploading to any server."
+    },
+    "palette-generator": {
+      "NAME": "Palette Generator",
+      "DESCRIPTION": "Generate a color palette from a base color using HEX input and color picker.",
+      "LONG_DESCRIPTION": "Generate a full color palette from a single base color. Enter a HEX code or use the color picker to get complementary, analogous and triadic color schemes. Useful for UI design and brand identity."
+    },
+    "palette-from-image": {
+      "NAME": "Palette from Image",
+      "DESCRIPTION": "Extract dominant colors from any photo or screenshot.",
+      "LONG_DESCRIPTION": "Extract the most dominant colors from any uploaded image or screenshot. Useful for matching brand colors, creating design systems inspired by a photo or quickly identifying a color scheme."
+    },
+    "pdf-merge": {
+      "NAME": "PDF Merge",
+      "DESCRIPTION": "Merge multiple PDF files into a single document. Reorder files before combining.",
+      "LONG_DESCRIPTION": "Combine multiple PDF files into a single document directly in your browser. Add as many files as needed, reorder them with arrows, then merge and download the result instantly. No uploads, no server processing."
+    },
+    "pdf-split": {
+      "NAME": "PDF Split",
+      "DESCRIPTION": "Split a PDF into individual pages. Download pages separately or all at once.",
+      "LONG_DESCRIPTION": "Split any PDF into its individual pages — each page becomes a separate downloadable PDF file. Download pages one by one or all at once. Everything runs client-side with no file uploads."
+    },
+    "pdf-compress": {
+      "NAME": "PDF Compressor",
+      "DESCRIPTION": "Optimize a PDF's internal structure to reduce its file size.",
+      "LONG_DESCRIPTION": "Reduce PDF file size by optimizing its internal structure (object streams) without altering the visual content. For already-optimized PDFs the savings may be minimal. All processing happens entirely in your browser."
+    },
+    "pdf-rotate": {
+      "NAME": "PDF Rotate",
+      "DESCRIPTION": "Rotate PDF pages by 90°, 180° or 270°. Apply to all pages or a selection.",
+      "LONG_DESCRIPTION": "Rotate all pages or a custom range of pages in any PDF by 90°, 180° or 270°. Specify pages with a range like «1-3, 5» and download the rotated PDF instantly. No server upload required."
+    },
+    "pdf-reorder": {
+      "NAME": "PDF Reorder Pages",
+      "DESCRIPTION": "Change the order of PDF pages using up/down arrows.",
+      "LONG_DESCRIPTION": "Rearrange the pages of any PDF using simple up/down arrow buttons. Load a PDF, reorder its pages as needed, then download the reordered document. All processing is done locally in your browser."
+    },
+    "pdf-extract": {
+      "NAME": "PDF Extract Pages",
+      "DESCRIPTION": "Extract a range of pages from a PDF and save them as a new document.",
+      "LONG_DESCRIPTION": "Extract specific pages from any PDF by specifying a page range like «1-3, 5, 8-10». The selected pages are saved into a new PDF file you can download immediately. Everything runs client-side."
+    },
+    "pdf-viewer": {
+      "NAME": "PDF Viewer",
+      "DESCRIPTION": "Open and view PDF files directly in your browser without installing anything.",
+      "LONG_DESCRIPTION": "View any PDF file directly in your browser using the native PDF renderer. No plugins, no uploads, no external services. Load a file and start reading immediately."
+    },
+    "pdf-to-image": {
+      "NAME": "PDF to Images",
+      "DESCRIPTION": "Convert each page of a PDF to a high-resolution PNG image.",
+      "LONG_DESCRIPTION": "Convert every page of a PDF into a PNG image at adjustable resolution. Download images individually or all at once. Rendering runs entirely in your browser using a WebAssembly PDF engine."
+    },
+    "image-to-pdf": {
+      "NAME": "Images to PDF",
+      "DESCRIPTION": "Convert one or more images (JPG, PNG) to a PDF. Each image becomes a page.",
+      "LONG_DESCRIPTION": "Combine one or more JPG or PNG images into a single PDF document. Each image is placed on its own page. Add multiple files, reorder them with arrows, then create and download the PDF — all in the browser."
+    },
+    "stopwatch": {
+      "NAME": "Stopwatch",
+      "DESCRIPTION": "Online stopwatch with lap times and split times. Accurate to the hundredth of a second.",
+      "LONG_DESCRIPTION": "A precise online stopwatch with lap time tracking. Measure elapsed time with hundredth-of-a-second precision, record split times and review your full lap history. Runs entirely in your browser."
+    },
+    "countdown-timer": {
+      "NAME": "Countdown Timer",
+      "DESCRIPTION": "Countdown timer with hours, minutes and seconds. Progress bar and expiry alert.",
+      "LONG_DESCRIPTION": "Set a custom countdown in hours, minutes and seconds. Watch the progress bar fill and receive a visual and audio alert when time runs out. The timer runs entirely in your browser."
+    },
+    "tic-tac-toe": {
+      "NAME": "Tic Tac Toe",
+      "DESCRIPTION": "Play Tic Tac Toe against a friend or challenge the unbeatable AI.",
+      "LONG_DESCRIPTION": "Play the classic Tic Tac Toe game in your browser. Challenge a friend in local multiplayer mode or face an unbeatable CPU opponent powered by the minimax algorithm with alpha-beta pruning."
+    },
+    "typing-speed": {
+      "NAME": "Typing Speed Test",
+      "DESCRIPTION": "Measure your words per minute (WPM) and accuracy while typing Italian texts.",
+      "LONG_DESCRIPTION": "Test your typing speed and accuracy with curated Italian text passages. Get your WPM (words per minute), characters per minute and error rate instantly. No account or registration required."
+    },
+    "reaction-time": {
+      "NAME": "Reaction Time Test",
+      "DESCRIPTION": "Measure your reaction time in milliseconds using the traffic light or random event test.",
+      "LONG_DESCRIPTION": "Test your reaction time in milliseconds with two modes: traffic light (following road rules: off → red → yellow → green) and a random event test. Compare your results against averages and track improvements."
+    }
+  },
+  "CF_INVERSO": {
+    "TITLE": "Decode Fiscal Code",
+    "SUBTITLE": "Decode any Italian fiscal code and extract the encoded personal data: surname consonants, name consonants, birth year, month, day, gender and birth municipality code.",
+    "DESCRIPTION": "This tool decodes an Italian fiscal code and shows birth year, month, day, gender, and birth municipality or cadastral code.",
+    "DESCRIPTION_TITLE": "What This Tool Does",
+    "LONG_DESCRIPTION": "Paste an Italian fiscal code and this tool parses its structure to extract the encoded data: birth year, month and day, gender, and birth municipality or cadastral code. Validation runs directly in your browser.",
+    "DECODE": "Decode",
+    "FORM": {
+      "CF_LABEL": "Fiscal Code",
+      "CF_PLACEHOLDER": "RSSMRA80A01H501Z"
+    },
+    "RESULT": {
+      "TITLE": "Extracted data",
+      "VALID": "Valid fiscal code",
+      "INVALID": "Invalid fiscal code",
+      "SURNAME_CODE": "Surname code",
+      "NAME_CODE": "Name code",
+      "BIRTH_YEAR": "Birth year",
+      "BIRTH_MONTH": "Birth month",
+      "BIRTH_DAY": "Birth day",
+      "GENDER": "Gender",
+      "PLACE_CODE": "Municipality code",
+      "PLACE_NAME": "Birth municipality",
+      "UNKNOWN_PLACE": "Unknown",
+      "MONTHS": {
+        "1": "January",
+        "2": "February",
+        "3": "March",
+        "4": "April",
+        "5": "May",
+        "6": "June",
+        "7": "July",
+        "8": "August",
+        "9": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
+      }
+    }
+  },
+  "CODICE_FISCALE": {
+    "TITLE": "Italian Tax Code Calculator",
+    "SUBTITLE": "Calculate and generate an Italian fiscal code (codice fiscale) from name, surname, date of birth, gender and municipality — using the official Agenzia delle Entrate algorithm.",
+    "FORM": {
+      "NAME": "Name",
+      "SURNAME": "Surname",
+      "BIRTH_DATE": "Birth date",
+      "GENDER": "Gender",
+      "BIRTH_PLACE": "Birth place",
+      "BIRTH_PLACE_PLACEHOLDER": "Select municipality...",
+      "BIRTH_PLACE_HINT": "Start typing to filter municipalities"
+    },
+    "GENERATE": "Generate",
+    "RESULT_LABEL": "Result",
+    "RESULT_PLACEHOLDER": "Fill the form to generate the tax code"
+  },
+  "BASE64": {
+    "TITLE": "Base64 / UnBase64",
+    "SUBTITLE": "Encode plain text to Base64 and decode Base64 strings back to readable text. Useful for data URIs, HTTP Basic Auth headers, email attachments and binary-safe data transmission.",
+    "INPUT_LABEL": "Input",
+    "ENCODE": "Encode",
+    "DECODE": "Decode",
+    "RESULT_LABEL": "Output",
+    "RESULT_PLACEHOLDER": "Insert a plain text or Base64 string",
+    "INVALID_INPUT": "Invalid Base64 input"
+  },
+  "TOOLS": {
+    "COMMON": {
+      "CHECK": "Check",
+      "RESULT": "Result",
+      "CONVERT": "Convert",
+      "OUTPUT_PLACEHOLDER": "Output will appear here",
+      "REFRESH": "Refresh",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "IBAN": {
+      "TITLE": "IBAN Checker",
+      "SUBTITLE": "Validate any IBAN (International Bank Account Number) by computing the mod-97 checksum. Covers 40+ countries. All validation runs client-side — no bank data is ever sent to any server.",
+      "INPUT": "IBAN",
+      "PLACEHOLDER": "IT60X0542811101000000123456",
+      "NOTE": "Validates only the check digit (format + mod-97). Does not verify that the account actually exists.",
+      "VALID": "IBAN valid (checksum OK)",
+      "INVALID": "IBAN not valid",
+      "REASONS": {
+        "LENGTH": "invalid length",
+        "FORMAT": "invalid format",
+        "CHECKSUM": "checksum error"
+      }
+    },
+    "CF_CHECK": {
+      "TITLE": "Codice Fiscale Checker",
+      "SUBTITLE": "Verify an Italian fiscal code (codice fiscale) by checking the regex format pattern and the Luhn-like control character. All computation happens entirely in your browser.",
+      "INPUT": "Fiscal code",
+      "PLACEHOLDER": "Enter a fiscal code and press Check",
+      "NOTE": "Only checks the control character. Does not verify registry existence.",
+      "VALID": "Fiscal code valid",
+      "INVALID": "Fiscal code not valid",
+      "EXPECTED": "Expected",
+      "RECEIVED": "Received",
+      "REASONS": {
+        "FORMAT": "invalid format",
+        "CHECKSUM": "checksum error"
+      }
+    },
+    "JWT": {
+      "TITLE": "JWT Decoder",
+      "SUBTITLE": "Decode, inspect and optionally verify JSON Web Tokens (JWT). View the header algorithm, payload claims and expiry — then verify the signature with your HMAC secret or RSA public key.",
+      "TOKEN": "Token",
+      "DECODE": "Decode",
+      "HEADER": "Header",
+      "PAYLOAD": "Payload",
+      "SIGNATURE": "Signature",
+      "VERIFY_SECTION": "Verify Signature",
+      "DETECTED_ALG": "Algorithm",
+      "SECRET": "Secret",
+      "PUBLIC_KEY": "Public Key (PEM)",
+      "VERIFY": "Verify",
+      "VERIFYING": "Verifying…",
+      "VALID": "Signature is valid",
+      "INVALID": "Signature is invalid",
+      "UNSUPPORTED_ALG": "Signature verification is not supported for algorithm: {{alg}}"
+    },
+    "ONE_LINE": {
+      "TITLE": "To one line",
+      "SUBTITLE": "Collapse multi-line text into a single line and remove extra whitespace. Ideal for cleaning up SQL queries, JSON strings or any multiline content before pasting into terminals or commands.",
+      "INPUT": "Text",
+      "REMOVE_SPACES": "Also remove multiple spaces"
+    },
+    "SPACE_REMOVER": {
+      "TITLE": "Space remover",
+      "SUBTITLE": "Strip all whitespace characters (spaces, tabs, newlines) from any text instantly — useful for compact identifiers, checksums, hashes or code cleanup.",
+      "INPUT": "Text",
+      "ONLY_DOUBLE": "Remove only double spaces (keep single spaces)"
+    },
+    "STRING_LENGTH": {
+      "TITLE": "String length",
+      "SUBTITLE": "Count characters (with and without spaces), words, lines and the UTF-8 byte size of any text. Useful for enforcing API field limits, checking SMS or tweet lengths and string analysis.",
+      "INPUT": "Text",
+      "CHARS": "Characters",
+      "CHARS_NO_SPACE": "No spaces",
+      "WORDS": "Words",
+      "LINES": "Lines",
+      "BYTES": "Bytes (UTF-8)"
+    },
+    "URL_CODEC": {
+      "TITLE": "URL Encode / Decode",
+      "SUBTITLE": "Percent-encode and decode URLs and query parameters. Convert special characters like spaces, &, = and + to their %XX notation and back — essential for building safe API requests.",
+      "INPUT": "Text or URL",
+      "ENCODE": "Encode",
+      "DECODE": "Decode"
+    },
+    "UNITS": {
+      "TITLE": "Unit converter",
+      "SUBTITLE": "Convert between the SI metric system and US customary units in real time. Supports length, mass, volume, temperature and speed with instant bidirectional conversion.",
+      "CATEGORY": "Category",
+      "FROM": "From",
+      "TO": "To",
+      "VALUE": "Value",
+      "RESULT": "Result",
+      "PLACEHOLDER": "Enter a numeric value",
+      "CAT_LENGTH": "Length",
+      "CAT_MASS": "Mass",
+      "CAT_VOLUME": "Volume",
+      "CAT_TEMPERATURE": "Temperature",
+      "CAT_SPEED": "Speed",
+      "LABELS": {
+        "m": "Meters (m)",
+        "km": "Kilometers (km)",
+        "cm": "Centimeters (cm)",
+        "mm": "Millimeters (mm)",
+        "in": "Inches (in)",
+        "ft": "Feet (ft)",
+        "yd": "Yards (yd)",
+        "mi": "Miles (mi)",
+        "g": "Grams (g)",
+        "kg": "Kilograms (kg)",
+        "mg": "Milligrams (mg)",
+        "t": "Metric Tons (t)",
+        "oz": "Ounces (oz)",
+        "lb": "Pounds (lb)",
+        "st": "Stones (st)",
+        "l": "Liters (L)",
+        "ml": "Milliliters (mL)",
+        "m3": "Cubic Meters (m\u00b3)",
+        "gal_us": "US Gallons",
+        "qt_us": "US Quarts",
+        "pt_us": "US Pints",
+        "cup_us": "US Cups",
+        "floz_us": "US Fluid Ounces",
+        "c": "Celsius (\u00b0C)",
+        "f": "Fahrenheit (\u00b0F)",
+        "k": "Kelvin (K)",
+        "mps": "m/s",
+        "kph": "km/h",
+        "mph": "mph",
+        "kn": "Knots (kn)"
+      }
+    },
+    "JSON_FORMATTER": {
+      "TITLE": "JSON Formatter",
+      "SUBTITLE": "Format, minify and validate JSON documents online. Paste raw or minified JSON to get instant pretty-print with configurable indentation and inline syntax error detection.",
+      "INDENT": "Indent",
+      "FORMAT": "Format",
+      "MINIFY": "Minify"
+    },
+    "JSON_YAML": {
+      "TITLE": "JSON ↔ YAML",
+      "SUBTITLE": "Convert documents between JSON and YAML in both directions. Useful for Kubernetes configs, CI/CD pipelines, OpenAPI specs and API payload transformation."
+    },
+    "JSON_CSV": {
+      "TITLE": "JSON ↔ CSV",
+      "SUBTITLE": "Convert between JSON arrays of objects and CSV format. Export API responses as spreadsheets or import CSV data as JSON for further processing."
+    },
+    "EPOCH": {
+      "TITLE": "Epoch / Unix Timestamp",
+      "SUBTITLE": "Convert between Unix epoch timestamps (seconds or milliseconds) and human-readable dates. Shows the current timestamp in real time and supports custom date-to-epoch conversion.",
+      "NOW": "Current time (epoch)",
+      "EPOCH_LABEL": "Timestamp",
+      "DATE_LABEL": "Date and time",
+      "TO_DATE": "Convert to date",
+      "TO_EPOCH": "Convert to epoch"
+    },
+    "HASH": {
+      "TITLE": "Password / string hashes",
+      "SUBTITLE": "Compute MD5, SHA-1, SHA-256, SHA-384, SHA-512 and bcrypt hashes of any text — entirely in your browser using the Web Crypto API. No data is sent to any server.",
+      "INPUT": "Text or password",
+      "COMPUTE": "Compute",
+      "ALGO": "Algorithm",
+      "DIGEST": "Digest",
+      "SALT": "Salt (prefix)",
+      "SALT_PLACEHOLDER": "Optional — leave blank to skip",
+      "SALT_HINT": "The salt is prepended to the input before hashing. bcrypt generates its own salt automatically.",
+      "BCRYPT_ROUNDS": "Cost factor (rounds)",
+      "BCRYPT_ROUNDS_HINT": "Higher cost = slower hash. 10 is a common default.",
+      "BCRYPT_SALT_NOTE": "Each bcrypt hash embeds a unique random salt — the same input produces a different hash each time."
+    },
+    "PWGEN": {
+      "TITLE": "Password Generator",
+      "SUBTITLE": "Generate strong random passwords using a cryptographically secure number generator (CSPRNG). Choose length, character sets and exclusions — with an instant entropy strength score.",
+      "CRYPTO_NOTE": "Produced with a cryptographically secure random number generator.",
+      "REGENERATE": "Regenerate",
+      "LENGTH": "Length",
+      "CHARSET": "Character set",
+      "EXCLUDE_AMBIGUOUS": "Exclude ambiguous (0/O, 1/l)",
+      "STRENGTH_WEAK": "Weak",
+      "STRENGTH_FAIR": "Fair",
+      "STRENGTH_STRONG": "Strong",
+      "STRENGTH_EXCELLENT": "Excellent"
+    },
+    "MY_IP": {
+      "TITLE": "My IP",
+      "SUBTITLE": "Discover your public IP address instantly. Note: this is the only tool on this site that makes an external network request (to api.ipify.org). All other tools run fully offline.",
+      "WARNING_TITLE": "Privacy notice",
+      "WARNING": "Clicking the button sends a request to api.ipify.org to retrieve your public IP. This is the only tool on this site that performs an external network request. No other data is sent to any server.",
+      "LOAD": "Show my IP"
+    },
+    "CRON": {
+      "TITLE": "Cron Expression Builder",
+      "SUBTITLE": "Build and explain cron expressions in human-readable natural language. Supports standard 5-field and extended 6-field (with seconds) cron syntax — similar to crontab.guru.",
+      "EXPRESSION": "Cron expression",
+      "FIELD": "Field",
+      "VALUE": "Value",
+      "MEANING": "Meaning",
+      "EXAMPLES": "Examples"
+    },
+    "PERCENTAGE": {
+      "TITLE": "Percentage Calculator",
+      "SUBTITLE": "Calculate percentages, ratios and percentage changes. Three modes: X% of Y, X as a percentage of Y, and percentage change from X to Y — for finance, statistics and everyday math.",
+      "MODE": "Mode",
+      "MODE_PERCENT_OF": "X% of Y",
+      "MODE_PERCENT_OF_TOTAL": "X is what % of Y",
+      "MODE_PERCENT_CHANGE": "% change from X to Y",
+      "PERCENTAGE": "Percentage (%)",
+      "VALUE": "Value",
+      "TOTAL": "Total",
+      "PERCENT_OF_BASE": "Value to calculate the percentage of",
+      "EXAMPLE_PERCENT_OF": "E.g. what is 20% of 150?",
+      "EXAMPLE_PERCENT_OF_TOTAL": "E.g. I got a €10 discount on a €90 item — what percentage discount is that?",
+      "EXAMPLE_PERCENT_CHANGE": "E.g. a product cost €80 and now costs €100 — what is the percentage change?",
+      "CALC_DESCRIPTION": "Calculation of {{y}}% of {{x}}",
+      "CALC_DESCRIPTION_TOTAL": "Determining what percentage {{a}} represents of {{b}}",
+      "CALC_DESCRIPTION_CHANGE": "Percentage change from {{a}} to {{b}}",
+      "RESPECT_TO": "Relative to",
+      "FROM": "From",
+      "TO": "To",
+      "RESULT": "Result",
+      "PLACEHOLDER": "Enter the values above"
+    },
+    "DISCOUNT": {
+      "TITLE": "Discount Calculator",
+      "SUBTITLE": "Enter the original price and discount percentage to calculate the final price.",
+      "PRICE": "Original price",
+      "DISCOUNT": "Discount",
+      "RESULT_TITLE": "Result",
+      "DISCOUNT_AMOUNT": "Discount amount",
+      "DISCOUNTED_PRICE": "Discounted price",
+      "EXAMPLE": "E.g. an item costs €90 with a 20% discount — how much do I pay?"
+    },
+    "IVA": {
+      "TITLE": "VAT Calculator",
+      "SUBTITLE": "Calculate gross or net prices using Italian VAT rates.",
+      "MODE": "Mode",
+      "MODE_ADD": "Add VAT (net price → gross price)",
+      "MODE_EXTRACT": "Extract VAT (gross price → net price)",
+      "RATE": "VAT rate",
+      "PRICE_NET": "Net price (excl. VAT)",
+      "PRICE_GROSS": "Gross price (incl. VAT)",
+      "PRICE_PLACEHOLDER": "0.00",
+      "RESULT_TITLE": "Result",
+      "IMPONIBILE": "Net amount",
+      "IMPORTO_IVA": "VAT amount",
+      "TOTALE": "Total"
+    },
+    "UUID": {
+      "TITLE": "UUID / ULID Generator",
+      "SUBTITLE": "Generate cryptographically secure unique identifiers.",
+      "TYPE": "Type",
+      "COUNT": "Quantity (1–100)",
+      "GENERATE": "Generate",
+      "COPY": "Copy",
+      "COPY_ALL": "Copy all",
+      "COPIED": "Copied!"
+    },
+    "REGEX": {
+      "TITLE": "Regex Tester",
+      "SUBTITLE": "Test regular expressions in real time with match highlighting.",
+      "PATTERN": "Pattern",
+      "FLAGS": "Flags",
+      "TEST_STRING": "Test string",
+      "TEST_PLACEHOLDER": "Paste the text you want to test the expression against...",
+      "MATCHES_TITLE": "Matches",
+      "NO_TEST": "Enter a pattern and a test string to see matches.",
+      "NO_MATCHES": "No matches found.",
+      "MATCH_COUNT": "{{count}} matches found",
+      "HIGHLIGHT_TITLE": "Highlighted text"
+    },
+    "DIFF": {
+      "TITLE": "Diff Checker",
+      "SUBTITLE": "Compare two texts line by line and highlight the differences.",
+      "ORIGINAL": "Original text",
+      "MODIFIED": "Modified text",
+      "COMPARE": "Compare",
+      "RESULT_TITLE": "Differences",
+      "ADDED": "added",
+      "REMOVED": "removed",
+      "EQUAL": "unchanged"
+    },
+    "BASE_CONV": {
+      "TITLE": "Number Base Converter",
+      "SUBTITLE": "Convert numbers between binary, octal, decimal and hexadecimal.",
+      "FROM_BASE": "From base",
+      "VALUE": "Value",
+      "PLACEHOLDER": "Enter the number to convert",
+      "RESULT_TITLE": "Conversions",
+      "BIN": "Binary",
+      "OCT": "Octal",
+      "DEC": "Decimal",
+      "HEX": "Hexadecimal"
+    },
+    "CASE": {
+      "TITLE": "Case Converter",
+      "SUBTITLE": "Convert text to the most popular naming conventions.",
+      "INPUT": "Text to convert",
+      "PLACEHOLDER": "Paste or type your text here...",
+      "RESULT_TITLE": "Results",
+      "FORMAT": "Format",
+      "ALL_FORMATS": "All formats",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "WORD_COUNT": {
+      "TITLE": "Advanced Word Counter",
+      "SUBTITLE": "Analyze text and get detailed statistics.",
+      "PLACEHOLDER": "Paste or type your text here...",
+      "RESULT_TITLE": "Statistics",
+      "WORDS": "Words",
+      "READ_TIME": "Reading time",
+      "CHARS": "Characters (with spaces)",
+      "CHARS_NO_SPACE": "Characters (no spaces)",
+      "SENTENCES": "Sentences",
+      "PARAGRAPHS": "Paragraphs",
+      "LINES": "Lines",
+      "BYTES": "Bytes (UTF-8)",
+      "FREQ_TITLE": "Most frequent words"
+    },
+    "SLUG": {
+      "TITLE": "Slug Generator",
+      "SUBTITLE": "Create SEO-friendly URL slugs from any text.",
+      "INPUT": "Title or text",
+      "PLACEHOLDER": "e.g. How to build a blog with Angular",
+      "REMOVE_STOP_WORDS": "Remove Italian stop-words",
+      "RESULT_LABEL": "Generated slug",
+      "RESULT_PLACEHOLDER": "The slug will appear here..."
+    },
+    "AGE": {
+      "TITLE": "Age Calculator",
+      "SUBTITLE": "Calculate exact age in years, months and days.",
+      "BIRTH_DATE": "Date of birth",
+      "REFERENCE_DATE": "Reference date",
+      "REFERENCE_HINT": "Leave empty to use today's date",
+      "RESULT_TITLE": "Result",
+      "BIRTHDAY_TODAY": "Happy Birthday!",
+      "YEARS": "years",
+      "MONTHS": "months",
+      "DAYS": "days",
+      "TOTAL_DAYS": "Total days",
+      "TOTAL_WEEKS": "Total weeks",
+      "TOTAL_MONTHS": "Total months",
+      "NEXT_BIRTHDAY": "Next birthday",
+      "DAYS_LABEL": "days"
+    },
+    "HTML_ENCODER": {
+      "TITLE": "HTML Encode / Decode",
+      "SUBTITLE": "Encode and decode HTML entities in real time.",
+      "PLACEHOLDER": "Paste HTML or text with entities...",
+      "ENCODED_TITLE": "Encoded text (HTML Encode)",
+      "DECODED_TITLE": "Decoded text (HTML Decode)",
+      "EMPTY": "The result will appear here...",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "COLOR": {
+      "TITLE": "Color Converter",
+      "SUBTITLE": "Convert colors between HEX, RGB and HSL with a live preview.",
+      "RESULT_TITLE": "Color values"
+    },
+    "HEX_RGB": {
+      "TITLE": "HEX → RGB",
+      "SUBTITLE": "Enter a HEX color code and get the corresponding RGB values.",
+      "RESULT_TITLE": "RGB values",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "HEX_HSL": {
+      "TITLE": "HEX → HSL",
+      "SUBTITLE": "Enter a HEX color code and get the corresponding HSL values.",
+      "RESULT_TITLE": "HSL values",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "RGB_HEX": {
+      "TITLE": "RGB → HEX",
+      "SUBTITLE": "Enter RGB values and get the corresponding HEX color code.",
+      "RESULT_TITLE": "HEX value",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "HSL_HEX": {
+      "TITLE": "HSL → HEX",
+      "SUBTITLE": "Enter HSL values and get the corresponding HEX color code.",
+      "RESULT_TITLE": "HEX value",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "RGB_HSL": {
+      "TITLE": "RGB → HSL",
+      "SUBTITLE": "Enter RGB values and get the corresponding HSL values.",
+      "RESULT_TITLE": "HSL values",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "HSL_RGB": {
+      "TITLE": "HSL → RGB",
+      "SUBTITLE": "Enter HSL values and get the corresponding RGB values.",
+      "RESULT_TITLE": "RGB values",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "COLOR_PICKER": {
+      "TITLE": "Color Picker",
+      "SUBTITLE": "Pick a color visually and get its HEX, RGB and HSL values."
+    },
+    "LOREM": {
+      "TITLE": "Lorem Ipsum Generator",
+      "SUBTITLE": "Generate placeholder text for mockups and design.",
+      "COUNT": "Amount",
+      "UNIT": "Unit",
+      "PARAGRAPHS": "Paragraphs",
+      "SENTENCES": "Sentences",
+      "WORDS": "Words",
+      "START_WITH_LOREM": "Start with \"Lorem ipsum\"",
+      "GENERATE": "Generate",
+      "RESULT_TITLE": "Generated text",
+      "RESULT_PLACEHOLDER": "Text will appear here...",
+      "COPY": "Copy",
+      "COPIED": "Copied!",
+      "CLEAR": "Clear"
+    },
+    "SQL": {
+      "TITLE": "SQL Formatter",
+      "SUBTITLE": "Format and indent SQL queries automatically.",
+      "PLACEHOLDER": "Paste your SQL query here...",
+      "FORMAT": "Format",
+      "CLEAR": "Clear",
+      "RESULT_TITLE": "Formatted SQL",
+      "RESULT_PLACEHOLDER": "The formatted query will appear here...",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "DATE_DIFF": {
+      "TITLE": "Date Difference",
+      "SUBTITLE": "Calculate the exact time between two dates.",
+      "FROM": "Start date",
+      "TO": "End date",
+      "RESULT_TITLE": "Result",
+      "SWAPPED": "Dates were swapped for calculation.",
+      "YEARS": "years",
+      "MONTHS": "months",
+      "DAYS": "days",
+      "TOTAL_DAYS": "Total days",
+      "TOTAL_WEEKS": "Total weeks",
+      "TOTAL_MONTHS": "Total months",
+      "TOTAL_HOURS": "Total hours"
+    },
+    "TZ": {
+      "TITLE": "Time Zone Converter",
+      "SUBTITLE": "Convert a time between the world's major time zones.",
+      "DATETIME": "Date and time",
+      "SOURCE_TZ": "Source time zone",
+      "RESULT_TITLE": "World times",
+      "COL_ZONE": "Zone",
+      "COL_OFFSET": "Offset",
+      "COL_TIME": "Local time"
+    },
+    "PIVA": {
+      "TITLE": "Partita IVA Validator",
+      "SUBTITLE": "Verify the validity of an Italian VAT number.",
+      "LABEL": "Partita IVA",
+      "PLACEHOLDER": "12345678901",
+      "HINT": "Enter 11 digits",
+      "VALID": "Valid Partita IVA",
+      "INVALID": "Invalid Partita IVA",
+      "REASON_FORMAT": "Incorrect format. The Partita IVA must be exactly 11 digits.",
+      "REASON_CHECKSUM": "The check digit is incorrect.",
+      "INFO_TITLE": "How does the validation work?",
+      "INFO_BODY": "Validation uses the official checksum algorithm of the Italian Revenue Agency: alternating sum of digits with doubling and check-digit verification (11th digit)."
+    },
+    "HMAC": {
+      "TITLE": "HMAC Generator",
+      "SUBTITLE": "Sign messages with HMAC SHA-256 or SHA-512 and a secret key.",
+      "ALGO": "Algorithm",
+      "KEY": "Secret key",
+      "KEY_PLACEHOLDER": "Enter your secret key...",
+      "MESSAGE": "Message",
+      "MESSAGE_PLACEHOLDER": "Enter the message to sign...",
+      "COMPUTE": "Compute HMAC",
+      "COMPUTING": "Computing...",
+      "CLEAR": "Clear",
+      "RESULT_LABEL": "HMAC",
+      "RESULT_PLACEHOLDER": "The HMAC signature will appear here..."
+    },
+    "TOKEN": {
+      "TITLE": "Random Token / Secret Generator",
+      "SUBTITLE": "Generate cryptographically secure random tokens.",
+      "BYTES": "Number of bytes",
+      "BYTES_HINT": "Length in bytes of the generated entropy",
+      "ENCODING": "Output format",
+      "COUNT": "How many tokens to generate",
+      "GENERATE": "Generate",
+      "RESULT_TITLE": "Generated tokens",
+      "COPY": "Copy",
+      "COPIED": "Copied!"
+    },
+    "ROMAN": {
+      "TO_ROMAN_TITLE": "Arabic to Roman",
+      "FROM_ROMAN_TITLE": "Roman to Arabic",
+      "ARABIC_LABEL": "Arabic number (1–3999)",
+      "ROMAN_LABEL": "Roman numeral",
+      "ROMAN_PLACEHOLDER": "e.g. MMXXVI",
+      "INVALID": "Invalid Roman numeral",
+      "TOO_LARGE": "Number too large. The maximum is 3,999 (MMMCMXCIX).",
+      "NOTE": "The highest number that can be expressed in pure Roman numeral form is 3,999 which is written as MMMCMXCIX. This is because the number 4,000 would have to be written as MMMM, which goes against the principle of not having four consecutive letters of the same type together."
+    },
+    "NUM_WORDS": {
+      "TITLE": "Number to Words",
+      "SUBTITLE": "Convert a number to Italian words for documents and contracts.",
+      "LABEL": "Number",
+      "PLACEHOLDER": "e.g. 1234",
+      "HINT": "Supports 0 to 999,999,999,999",
+      "COPY": "Copy",
+      "COPIED": "Copied!",
+      "TOO_HIGH": "Number too large. Supports up to 999,999,999,999."
+    },
+    "JPG_WEBP": {
+      "TITLE": "JPG → WebP",
+      "SUBTITLE": "Convert JPG/JPEG images to WebP format with adjustable quality control. Reduce file sizes by 25–50% for faster web page loading — all processing happens locally in your browser.",
+      "SELECT_FILE": "Select JPG file",
+      "ERROR_FORMAT": "Please select a valid JPG or JPEG file.",
+      "QUALITY": "Quality",
+      "QUALITY_MIN": "More compression",
+      "QUALITY_MAX": "Better quality",
+      "ORIGINAL": "Original",
+      "OUTPUT": "Output",
+      "SAVINGS": "Savings",
+      "DOWNLOAD": "Download WebP",
+      "RESET": "Reset",
+      "ORIGINAL_PREVIEW": "Original preview",
+      "OUTPUT_PREVIEW": "WebP preview"
+    },
+    "PNG_WEBP": {
+      "TITLE": "PNG → WebP",
+      "SUBTITLE": "Convert PNG images to WebP format with adjustable quality. Achieve smaller file sizes than PNG for faster web delivery — client-side conversion, your images never leave your device.",
+      "SELECT_FILE": "Select PNG file",
+      "ERROR_FORMAT": "Please select a valid PNG file.",
+      "QUALITY": "Quality",
+      "QUALITY_MIN": "More compression",
+      "QUALITY_MAX": "Better quality",
+      "ORIGINAL": "Original",
+      "OUTPUT": "Output",
+      "SAVINGS": "Savings",
+      "DOWNLOAD": "Download WebP",
+      "RESET": "Reset",
+      "ORIGINAL_PREVIEW": "Original preview",
+      "OUTPUT_PREVIEW": "WebP preview"
+    },
+    "WEBP_CONV": {
+      "TITLE": "WebP → PNG / JPG",
+      "SUBTITLE": "Convert WebP images back to PNG or JPG for compatibility with apps and devices that don't support WebP — fully client-side processing, no file is uploaded to any server.",
+      "SELECT_FILE": "Select WebP file",
+      "ERROR_FORMAT": "Please select a valid WebP file.",
+      "FORMAT": "Output format",
+      "QUALITY": "Quality (JPG only)",
+      "ORIGINAL": "Original",
+      "OUTPUT": "Output",
+      "DIFF": "Difference",
+      "DOWNLOAD": "Download",
+      "RESET": "Reset",
+      "ORIGINAL_PREVIEW": "Original preview",
+      "OUTPUT_PREVIEW": "Output preview"
+    },
+    "IMG_RESIZE": {
+      "TITLE": "Image Resizer",
+      "SUBTITLE": "Resize an image and convert it to another format.",
+      "SELECT_FILE": "Select image",
+      "ERROR_FORMAT": "Please select a valid image file.",
+      "ORIGINAL_SIZE": "Original dimensions",
+      "WIDTH": "Width (px)",
+      "HEIGHT": "Height (px)",
+      "KEEP_RATIO": "Maintain aspect ratio",
+      "FORMAT": "Output format",
+      "QUALITY": "Quality",
+      "CONVERT": "Resize & convert",
+      "DOWNLOAD": "Download",
+      "RESET": "Reset",
+      "ORIGINAL_PREVIEW": "Original",
+      "OUTPUT_PREVIEW": "Output",
+      "OUTPUT_HINT": "Press \"Resize & convert\" to see the result"
+    },
+    "IMG_BASE64": {
+      "TITLE": "Image to Base64",
+      "SUBTITLE": "Convert an image into a Base64 string or full data URL without leaving the browser.",
+      "SELECT_FILE": "Select image",
+      "ERROR_FORMAT": "Please select a valid image file.",
+      "FILE_NAME": "File name",
+      "MIME_TYPE": "MIME type",
+      "FILE_SIZE": "File size",
+      "OUTPUT_LENGTH": "Output characters",
+      "MODE": "Output format",
+      "MODE_DATA_URL": "Full data URL",
+      "MODE_RAW": "Raw Base64 only",
+      "COPY": "Copy output",
+      "COPIED": "Copied",
+      "DOWNLOAD_TXT": "Download TXT",
+      "RESET": "Reset",
+      "PREVIEW_TITLE": "Original image",
+      "OUTPUT_TITLE": "Base64 output",
+      "OUTPUT_HINT": "Switch between a full data URL and the raw Base64 payload.",
+      "OUTPUT_TRUNCATED": "Large outputs are previewed in a truncated form. Use Download TXT for the full string.",
+      "DOWNLOAD_NOTE": "This output is long enough that downloading a TXT file is usually more practical than copying it inline.",
+      "EMPTY": "Load an image to generate its Base64 string."
+    },
+    "IMG_COMPRESS": {
+      "TITLE": "Image Compressor",
+      "SUBTITLE": "Compress images with real-time quality control.",
+      "SELECT_FILE": "Select image",
+      "ERROR_FORMAT": "Please select a valid image file.",
+      "FORMAT": "Output format",
+      "QUALITY": "Quality",
+      "QUALITY_MIN": "More compression",
+      "QUALITY_MAX": "Better quality",
+      "ORIGINAL": "Original",
+      "OUTPUT": "Output",
+      "SAVINGS": "Savings",
+      "DOWNLOAD": "Download",
+      "RESET": "Reset",
+      "ORIGINAL_PREVIEW": "Original image",
+      "OUTPUT_PREVIEW": "Compressed image"
+    },
+    "IMG_CROP": {
+      "TITLE": "Image Crop",
+      "SUBTITLE": "Drag on the image to select the area to crop.",
+      "SELECT_FILE": "Select image",
+      "ERROR_FORMAT": "Please select a valid image file.",
+      "FORMAT": "Output format",
+      "SELECTION": "Selection",
+      "CROP": "Crop",
+      "DOWNLOAD": "Download",
+      "RESET": "Reset",
+      "HINT": "Drag on the image to select the area.",
+      "CANVAS_TITLE": "Select area",
+      "EMPTY": "Load an image to get started.",
+      "OUTPUT_PREVIEW": "Cropped image"
+    },
+    "FAVICON": {
+      "TITLE": "Favicon Generator",
+      "SUBTITLE": "Generate a favicon.ico from any image. The tool creates a multi-resolution ICO file (16×16, 32×32, 48×48) directly in your browser — nothing is uploaded.",
+      "SELECT_FILE": "Select image",
+      "ERROR_FORMAT": "Please select a valid image file.",
+      "SIZES_INFO": "Generates 16×16, 32×32 and 48×48 sizes inside one .ico file.",
+      "DOWNLOAD": "Download favicon.ico",
+      "RESET": "Reset",
+      "ORIGINAL_PREVIEW": "Original image",
+      "OUTPUT_PREVIEW": "Generated sizes"
+    },
+    "SUBNET": {
+      "RESULT_TITLE": "Subnet details",
+      "RESULT_SUBTITLE": "See the mask, network range and available host count in real time.",
+      "EMPTY": "Enter a CIDR block or an IP address with subnet mask to calculate the network details.",
+      "IP_ADDRESS": "IP address",
+      "PREFIX": "CIDR / prefix",
+      "SUBNET_MASK": "Subnet mask",
+      "WILDCARD_MASK": "Wildcard mask",
+      "NETWORK_ADDRESS": "Network address",
+      "BROADCAST_ADDRESS": "Broadcast address",
+      "FIRST_HOST": "First host",
+      "LAST_HOST": "Last host",
+      "TOTAL_ADDRESSES": "Total IPs",
+      "USABLE_HOSTS": "Available IPs"
+    },
+    "SUBNET_CIDR": {
+      "TITLE": "CIDR / Subnet Calculator",
+      "SUBTITLE": "Paste an IPv4 CIDR block and calculate the mask, range and usable IP count.",
+      "INPUT": "CIDR block",
+      "INPUT_HINT": "Examples: 192.168.1.42/24, 10.0.0.1/16",
+      "ERROR": "Enter a valid IPv4 CIDR block such as 192.168.1.42/24."
+    },
+    "SUBNET_IP_MASK": {
+      "TITLE": "IP + Subnet Mask Calculator",
+      "SUBTITLE": "Enter an IPv4 address plus a subnet mask or prefix to see the network and available IPs.",
+      "IP_ADDRESS": "IP address",
+      "SUBNET_MASK": "Subnet mask or prefix",
+      "SUBNET_HINT": "Accepted formats: 255.255.255.0, /24 or 24",
+      "ERROR": "Enter a valid IPv4 address and subnet mask or prefix.",
+      "ERROR_DETAIL_INVALID_PREFIX": "{{value}} is outside the valid prefix range. Use a value from 0 to 32, for example /24.",
+      "ERROR_DETAIL_INVALID_FORMAT": "{{value}} is not in a valid subnet mask format. Use dotted notation like 255.255.255.0 or a prefix like /24.",
+      "ERROR_DETAIL_INVALID_OCTET": "{{value}} is not a valid subnet mask. Octet {{octet}} (binary {{binary}}) cannot appear in a mask. Valid mask octets are 255, 254, 252, 248, 240, 224, 192, 128 and 0.",
+      "ERROR_DETAIL_NON_CONTIGUOUS": "{{value}} is not a valid subnet mask because the 1 bits are not contiguous. A mask must contain only consecutive 1 bits followed by 0 bits, like 255.255.252.0."
+    },
+    "DADO": {
+      "TITLE": "Roll the Dice",
+      "SUBTITLE": "Roll one or more virtual dice and get the result.",
+      "FACES": "Die type",
+      "COUNT": "Number of dice (1–20)",
+      "ROLL": "Roll",
+      "RESULT_TITLE": "Result",
+      "TOTAL": "Total"
+    },
+    "NUMRAND": {
+      "TITLE": "Random Number",
+      "SUBTITLE": "Extract one or more random numbers in a custom range.",
+      "MIN": "Minimum",
+      "MAX": "Maximum",
+      "COUNT": "How many numbers (1–100)",
+      "GENERATE": "Extract",
+      "RESULT_TITLE": "Result",
+      "HISTORY": "Recent extractions",
+      "CLEAR": "Clear",
+      "PLACEHOLDER": "Set the range and press Extract."
+    },
+    "COIN": {
+      "TITLE": "Heads or Tails",
+      "SUBTITLE": "Flip a virtual coin.",
+      "FLIP": "Flip",
+      "FLIPPING": "Flipping…",
+      "RESET": "Reset",
+      "HEADS": "Heads",
+      "TAILS": "Tails",
+      "TOTAL": "Total",
+      "PLACEHOLDER": "Press Flip to see the result."
+    },
+    "PDF_MERGE": {
+      "TITLE": "PDF Merge",
+      "SUBTITLE": "Combine multiple PDF files into a single document",
+      "ADD_PDF": "Add PDF",
+      "EMPTY_HINT": "Add at least 2 PDF files to start",
+      "MERGE_DOWNLOAD": "Merge and Download",
+      "RESET": "Reset",
+      "ERROR": "Error merging PDFs.",
+      "HOW_TITLE": "How it works",
+      "HOW_1": "Click Add PDF and select files (multiple files at once)",
+      "HOW_2": "Use the \u2191 \u2193 arrows to reorder documents",
+      "HOW_3": "Click Merge and Download — the combined PDF is downloaded",
+      "HOW_4": "Everything runs in the browser — no file is sent to a server"
+    },
+    "PDF_SPLIT": {
+      "TITLE": "PDF Split",
+      "SUBTITLE": "Separate each page into a distinct PDF file",
+      "SELECT_FILE": "Select PDF",
+      "PROCESSING": "Processing...",
+      "PAGES_FOUND": "pages found",
+      "DOWNLOAD_ALL": "Download all",
+      "PAGE": "Page",
+      "RESET": "Reset",
+      "ERROR": "Unable to read the PDF file.",
+      "HOW_TITLE": "How it works",
+      "HOW_1": "Upload a PDF file",
+      "HOW_2": "Each page is extracted into a separate PDF file",
+      "HOW_3": "Download pages individually or all at once",
+      "HOW_4": "Everything runs in the browser — no file is sent to a server"
+    },
+    "PDF_COMPRESS": {
+      "TITLE": "Compress PDF",
+      "SUBTITLE": "Optimize the PDF structure to reduce file size",
+      "SELECT_FILE": "Select PDF",
+      "PROCESSING": "Compression in progress...",
+      "ORIGINAL": "Original",
+      "COMPRESSED": "Compressed",
+      "SAVINGS": "Savings",
+      "DOWNLOAD_COMPRESSED": "Download compressed",
+      "RESET": "Reset",
+      "ERROR": "Error during PDF compression.",
+      "NOTE_TITLE": "Notes on compression",
+      "NOTE_1": "Compression optimizes the internal PDF structure (object streams) without altering the visual content.",
+      "NOTE_2": "For already-optimized PDFs the savings may be minimal. Aggressive image compression requires server-side tools."
+    },
+    "PDF_ROTATE": {
+      "TITLE": "Rotate PDF",
+      "SUBTITLE": "Rotate PDF pages in the browser",
+      "SELECT_FILE": "Select PDF",
+      "ROTATION_LABEL": "Rotation",
+      "APPLY_TO_LABEL": "Apply to",
+      "ALL_PAGES": "All",
+      "SELECT_RANGE": "Select",
+      "PAGE_RANGE_LABEL": "Pages (e.g. 1-3, 5, 8)",
+      "PAGE_RANGE_PLACEHOLDER": "1-3, 5, 8",
+      "ROTATE_DOWNLOAD": "Rotate and Download",
+      "RESET": "Reset",
+      "ERROR": "Error during PDF rotation.",
+      "ERROR_INVALID_RANGE": "No valid pages in the specified range.",
+      "ERROR_READ": "Unable to read the PDF file.",
+      "HOW_TITLE": "How it works",
+      "HOW_1": "Upload a PDF",
+      "HOW_2": "Choose the rotation angle: 90\u00b0, 180\u00b0 or 270\u00b0",
+      "HOW_3": "Apply to all pages or a specific range",
+      "HOW_4": "Everything runs in the browser — no file is sent to a server"
+    },
+    "PDF_REORDER": {
+      "TITLE": "Reorder PDF Pages",
+      "SUBTITLE": "Change page order using arrows",
+      "SELECT_FILE": "Select PDF",
+      "PAGES_HINT": "pages — use arrows to reorder",
+      "SAVE_DOWNLOAD": "Save and Download",
+      "RESET": "Reset",
+      "ERROR": "Error reordering the PDF.",
+      "ERROR_READ": "Unable to read the PDF file.",
+      "HOW_TITLE": "How it works",
+      "HOW_1": "Upload a PDF — pages appear in the list",
+      "HOW_2": "Use \u2191 \u2193 to move pages in the desired order",
+      "HOW_3": "Click Save and Download to get the reordered PDF",
+      "HOW_4": "Everything runs in the browser — no file is sent to a server"
+    },
+    "PDF_EXTRACT": {
+      "TITLE": "Extract PDF Pages",
+      "SUBTITLE": "Create a new PDF with only the selected pages",
+      "SELECT_FILE": "Select PDF",
+      "FILE_INFO": "total pages",
+      "RANGE_LABEL": "Pages to extract",
+      "RANGE_HINT": "(e.g. 1-3, 5, 8-10)",
+      "RANGE_PLACEHOLDER": "e.g. 1-3, 5, 8",
+      "EXTRACT_DOWNLOAD": "Extract and Download",
+      "RESET": "Reset",
+      "ERROR": "Error extracting pages.",
+      "ERROR_INVALID_RANGE": "No valid pages in the specified range.",
+      "ERROR_READ": "Unable to read the PDF file.",
+      "SYNTAX_TITLE": "Page range syntax",
+      "SYNTAX_HEADER_SYNTAX": "Syntax",
+      "SYNTAX_HEADER_MEANING": "Meaning",
+      "SYNTAX_RANGE_1_3": "Pages 1 to 3",
+      "SYNTAX_SINGLE_5": "Page 5 only",
+      "SYNTAX_COMBINED": "Pages 1, 2, 3, 5, 8, 9, 10"
+    },
+    "PDF_VIEWER": {
+      "TITLE": "PDF Viewer",
+      "SUBTITLE": "Open a PDF in the browser",
+      "SELECT_FILE": "Select PDF",
+      "PAGES": "pages",
+      "CLOSE": "Close",
+      "ERROR": "Unable to open the PDF file.",
+      "HOW_TITLE": "How it works",
+      "HOW_1": "Upload a PDF file",
+      "HOW_2": "The document is displayed in the right panel",
+      "HOW_3": "The viewer uses the browser's native renderer — no uploads"
+    },
+    "PDF_TO_IMAGE": {
+      "TITLE": "PDF to Images",
+      "SUBTITLE": "Convert each PDF page to a PNG image",
+      "SELECT_FILE": "Select PDF",
+      "QUALITY_LABEL": "Quality (scale):",
+      "QUALITY_LOW": "Low (fast)",
+      "QUALITY_HIGH": "High (slow)",
+      "PROCESSING": "Converting... (may take a few seconds)",
+      "PAGES": "pages",
+      "DOWNLOAD_ALL": "Download all",
+      "RESET": "Reset",
+      "PREVIEW_TITLE": "Page preview",
+      "PAGE": "Page",
+      "ERROR": "Error during conversion. Check the file is not password-protected."
+    },
+    "IMAGE_TO_PDF": {
+      "TITLE": "Images to PDF",
+      "SUBTITLE": "Each image becomes a page in the PDF",
+      "ADD_IMAGES": "Add images",
+      "EMPTY_HINT": "Add one or more images (JPG, PNG)",
+      "CONVERT_DOWNLOAD": "Create PDF and Download",
+      "RESET": "Reset",
+      "ERROR": "Error creating the PDF. Use only JPG or PNG images.",
+      "HOW_TITLE": "How it works",
+      "HOW_1": "Add one or more images (JPG or PNG)",
+      "HOW_2": "Reorder if needed with \u2191 \u2193",
+      "HOW_3": "Each image is placed on its own page in the PDF",
+      "HOW_4": "Everything runs in the browser — no file is sent to a server",
+      "NOTE": "Note: JPG and PNG formats are supported. WebP files are accepted if the browser exposes them as PNG at upload time."
+    }
+  },
+  "TERMS": {
+    "TITLE": "Terms of Service",
+    "SUBTITLE": "Rules and conditions for using piu-di-100-tool.it.",
+    "SECTION_USE": "Permitted use",
+    "SECTION_USE_SUB": "Free and open for everyone",
+    "USE_BODY": "All tools on this site are provided free of charge for personal and professional use. By using this site you agree to:",
+    "USE_ITEM_1": "Not use the tools for illegal or harmful activities.",
+    "USE_ITEM_2": "Not attempt to overload or attack the infrastructure.",
+    "USE_ITEM_3": "Use the outputs at your own risk and verify critical results independently.",
+    "SECTION_DISCLAIMER": "No warranty",
+    "SECTION_DISCLAIMER_SUB": "Tools are provided as-is",
+    "DISCLAIMER_BODY": "The tools are provided \"as is\" without any warranty of accuracy or fitness for a particular purpose. We are not liable for any damage arising from reliance on the results produced.",
+    "SECTION_IP": "Intellectual property",
+    "SECTION_IP_SUB": "Content and code",
+    "IP_BODY": "The source code of this project is open source. The brand, logo and graphic design remain the exclusive property of the authors. Reproducing the interface without permission is not permitted.",
+    "SECTION_CHANGES": "Changes to terms",
+    "SECTION_CHANGES_SUB": "We may update these terms",
+    "CHANGES_BODY": "We reserve the right to modify these terms at any time. Continued use of the site after any changes constitutes acceptance of the new terms.",
+    "SECTION_CONTACT": "Questions?",
+    "SECTION_CONTACT_SUB": "Get in touch",
+    "CONTACT_BODY": "For any questions about these terms, visit our support page.",
+    "CONTACT_LINK": "Go to support"
+  },
+  "SUPPORT": {
+    "TITLE": "Support",
+    "SUBTITLE": "Find answers and get help with piu-di-100-tool.it.",
+    "SECTION_FAQ": "Frequently asked questions",
+    "SECTION_FAQ_SUB": "Quick answers",
+    "FAQ_BODY": "Here are the most common questions from our users:",
+    "FAQ_ITEM_1": "Are the tools free? Yes, all tools are completely free.",
+    "FAQ_ITEM_2": "Is my data sent to a server? No, all processing happens in your browser.",
+    "FAQ_ITEM_3": "Can I use the tools offline? Most tools work without an internet connection.",
+    "SECTION_BUG": "Report a bug",
+    "SECTION_BUG_SUB": "Help us improve",
+    "BUG_BODY": "Found a bug or have a feature request? Open an issue on GitHub.",
+    "BUG_LINK": "Open an issue on GitHub",
+    "SECTION_CONTACT": "Useful links",
+    "SECTION_CONTACT_SUB": "Other pages",
+    "CONTACT_BODY": "For any questions or support requests, write to us at:",
+    "PRIVACY_LINK": "Privacy Policy",
+    "TERMS_LINK": "Terms of Service"
+  },
+  "PRIVACY": {
+    "TITLE": "Privacy Policy",
+    "SUBTITLE": "Privacy notice pursuant to EU Regulation 2016/679 (GDPR).",
+    "LAST_UPDATED": "Last updated: May 2026",
+    "SECTION_OWNER": "Data Controller",
+    "SECTION_OWNER_SUB": "Who is responsible for your data",
+    "OWNER_BODY": "The data controller for piu-di-100-tool.it is the project maintainer, reachable via the project's GitHub repository. No Data Protection Officer (DPO) has been appointed as the controller does not fall within the categories required by Art. 37 GDPR.",
+    "SECTION_DATA_COLLECTED": "Data processed",
+    "SECTION_DATA_COLLECTED_SUB": "What this site handles",
+    "DATA_COLLECTED_BODY": "Due to the client-side nature of this site, the amount of data processed is kept to a strict minimum:",
+    "DATA_COLLECTED_ITEM_1": "Navigation data: your IP address and HTTP request metadata are processed temporarily by the hosting infrastructure to ensure service availability and security. They are not retained long-term or linked to an identity.",
+    "DATA_COLLECTED_ITEM_2": "Local preferences: the selected language is stored in the browser's localStorage, solely on your device.",
+    "DATA_COLLECTED_ITEM_3": "My IP tool: if you use the \"My IP\" tool, your browser sends a GET request to api.ipify.org (a third-party service) which receives your public IP address.",
+    "SECTION_CLIENT_SIDE": "Client-side processing",
+    "SECTION_CLIENT_SIDE_SUB": "Your data never leaves the browser",
+    "CLIENT_BODY": "Every tool on this site — calculators, formatters, converters, generators — runs entirely in your browser via JavaScript. Data entered in forms (text, JSON, IBANs, fiscal codes, passwords, JWTs, images, etc.) is never transmitted to a server.",
+    "CLIENT_ITEM_1": "No processed data is sent to the controller's servers.",
+    "CLIENT_ITEM_2": "No server-side logs of data entered in tools.",
+    "CLIENT_ITEM_3": "Closing the page or browser removes all data in use.",
+    "SECTION_LEGAL_BASIS": "Legal basis for processing",
+    "SECTION_LEGAL_BASIS_SUB": "Art. 6 GDPR",
+    "LEGAL_BASIS_BODY": "Processing is grounded on the following legal bases:",
+    "LEGAL_BASIS_ITEM_1": "Art. 6(1)(f) GDPR – Legitimate interest: navigation data processed by hosting is strictly necessary for security and proper operation of the service.",
+    "LEGAL_BASIS_ITEM_2": "Art. 6(1)(b) GDPR – Performance of a service: the \"My IP\" tool requires contacting api.ipify.org in order to function. The request is made exclusively upon explicit user action.",
+    "LEGAL_BASIS_ITEM_3": "Art. 6(1)(b) GDPR – Performance of a service: local preferences (e.g. language) are stored solely in your interest to deliver the requested service.",
+    "SECTION_THIRD_PARTY": "Third parties",
+    "SECTION_THIRD_PARTY_SUB": "Only api.ipify.org in the My IP tool",
+    "THIRD_PARTY_TITLE": "Notice",
+    "THIRD_PARTY_BODY": "The \"My IP\" tool transmits your IP address to api.ipify.org, an external service not controlled by the data controller. Its use is entirely optional.",
+    "THIRD_PARTY_DETAIL": "No other personal data is transferred to third parties. Please consult ipify.org's privacy policy for details on how that service processes data. This site is also served via a third-party hosting infrastructure whose provider acts as a data processor (Art. 28 GDPR) under standard contractual terms.",
+    "THIRD_PARTY_LINK": "Open My IP tool",
+    "SECTION_NO_TRACKING": "No tracking",
+    "SECTION_NO_TRACKING_SUB": "No cookies, no analytics",
+    "NO_TRACKING_BODY": "This site uses no tracking or profiling tools:",
+    "NO_TRACKING_ITEM_1": "No profiling or marketing cookies.",
+    "NO_TRACKING_ITEM_2": "No analytics services (Google Analytics, Matomo, or similar).",
+    "NO_TRACKING_ITEM_3": "No third-party tracking pixels.",
+    "NO_TRACKING_ITEM_4": "No browser fingerprinting techniques.",
+    "SECTION_COOKIES": "Cookies and local storage",
+    "SECTION_COOKIES_SUB": "No data stored",
+    "COOKIES_BODY": "This site does not set any cookies and does not use localStorage or sessionStorage. No data is stored in the browser between sessions.",
+    "COOKIES_ITEM_1": "localStorage: stores the language preference. Can be deleted at any time from your browser settings.",
+    "COOKIES_ITEM_2": "sessionStorage: used by some tools to maintain temporary state within the current session. Contains no personal data and is cleared when the tab is closed.",
+    "SECTION_RETENTION": "Data retention",
+    "SECTION_RETENTION_SUB": "How long data is kept",
+    "RETENTION_BODY": "Navigation data processed by hosting is retained only as long as strictly necessary for service security, generally no longer than 30 days. No personal data is stored on the controller's servers.",
+    "SECTION_RIGHTS": "Your rights",
+    "SECTION_RIGHTS_SUB": "Arts. 15–22 GDPR",
+    "RIGHTS_BODY": "To the extent personal data concerning you is processed, you have the right to:",
+    "RIGHTS_ITEM_1": "Access (Art. 15): obtain confirmation that data is being processed and receive a copy.",
+    "RIGHTS_ITEM_2": "Rectification (Art. 16): request correction of inaccurate or incomplete data.",
+    "RIGHTS_ITEM_3": "Erasure (Art. 17): request deletion of your data (\"right to be forgotten\").",
+    "RIGHTS_ITEM_4": "Restriction (Art. 18): request restriction of processing in certain circumstances.",
+    "RIGHTS_ITEM_5": "Portability (Art. 20): receive your data in a structured, machine-readable format.",
+    "RIGHTS_ITEM_6": "Objection (Art. 21): object to processing based on legitimate interest.",
+    "RIGHTS_ITEM_7": "Withdrawal of consent (Art. 7): withdraw consent at any time without affecting the lawfulness of prior processing.",
+    "RIGHTS_FOOTER": "To exercise your rights, contact the controller at privacy@piu-di-100-tool.it or open an issue on GitHub. You also have the right to lodge a complaint with your supervisory authority (in Italy: www.garanteprivacy.it).",
+    "SECTION_CHANGES": "Policy updates",
+    "SECTION_CHANGES_SUB": "Future changes",
+    "CHANGES_BODY": "The controller reserves the right to update this notice to reflect regulatory or operational changes. The last updated date is shown at the top of the page. We recommend checking this page periodically.",
+    "SECTION_CONTACT": "Contact",
+    "SECTION_CONTACT_SUB": "Data Controller",
+    "CONTACT_BODY": "For any privacy-related request or to exercise your rights, contact us at:",
+    "CONTACT_GITHUB_LINK": "Open an issue on GitHub"
+  }
+}

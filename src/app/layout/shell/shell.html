@@ -1,0 +1,66 @@
+<div class="app-shell">
+	<header class="app-topbar">
+		<div class="d-flex align-items-center gap-3">
+			<a routerLink="/" class="text-decoration-none d-flex align-items-center gap-2">
+				<img src="/favicon.svg" alt="piu-di-100-tool.it logo" class="brand-logo" width="32" height="32">
+				<h1 class="brand">piu-di-100-tool.it</h1>
+			</a>
+		</div>
+
+		<nav class="nav-links">
+			<a class="nav-link-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+				{{ 'NAV.HOME' | translate }}
+			</a>
+			<a class="nav-link-item" routerLink="/search" routerLinkActive="active">
+				{{ 'NAV.TOOLS' | translate }}
+			</a>
+		</nav>
+
+		<div class="d-flex align-items-center gap-2">
+			<button
+				type="button"
+				class="lang-pill"
+				[class.active]="currentLanguage === 'it'"
+				(click)="setLanguage('it')"
+			>IT</button>
+			<button
+				type="button"
+				class="lang-pill"
+				[class.active]="currentLanguage === 'en'"
+				(click)="setLanguage('en')"
+			>EN</button>
+		</div>
+	</header>
+
+	<main class="flex-grow-1">
+		<router-outlet></router-outlet>
+	</main>
+
+	<section class="tool-bottom-description" *ngIf="showToolBottomDescription" aria-labelledby="tool-bottom-description-title">
+		<div class="section-block tool-bottom-description__inner">
+			<div class="tool-bottom-description__box">
+				<h2 id="tool-bottom-description-title" class="tool-bottom-description__title">{{ 'TOOL_PAGE.DESCRIPTION_TITLE' | translate }}</h2>
+				<p class="tool-bottom-description__text mb-0">{{ toolBottomDescription }}</p>
+			</div>
+		</div>
+	</section>
+
+	<footer class="app-footer">
+		<div class="footer-brand">
+			<div class="d-flex align-items-center gap-2">
+				<img src="/favicon.svg" alt="piu-di-100-tool.it logo" class="brand-logo" width="28" height="28">
+				<h2 class="brand">piu-di-100-tool.it</h2>
+			</div>
+			<p>© 2026 piu-di-100-tool.it — {{ 'APP.SUBTITLE' | translate }}</p>
+		</div>
+		<div class="footer-links">
+			<a routerLink="/privacy" routerLinkActive="active">{{ 'FOOTER.PRIVACY' | translate }}</a>
+			<a routerLink="/termini" routerLinkActive="active">{{ 'FOOTER.TERMS' | translate }}</a>
+			<a routerLink="/supporto" routerLinkActive="active">{{ 'FOOTER.CONTACT' | translate }}</a>
+		</div>
+		<div class="d-flex gap-2">
+
+		</div>
+	</footer>
+</div>
+

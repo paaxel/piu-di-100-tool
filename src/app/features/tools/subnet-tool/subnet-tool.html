@@ -1,0 +1,76 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-xl-5">
+      <app-section-card [title]="(i18nPrefix + '.TITLE') | translate" [subtitle]="(i18nPrefix + '.SUBTITLE') | translate">
+        <form [formGroup]="form" class="row g-3">
+          @if (mode === 'cidr') {
+            <div class="col-12">
+              <label class="form-label fw-semibold">{{ 'TOOLS.SUBNET_CIDR.INPUT' | translate }}</label>
+              <input type="text" class="form-control font-mono" formControlName="cidr" placeholder="192.168.1.42/24">
+              <div class="form-text">{{ 'TOOLS.SUBNET_CIDR.INPUT_HINT' | translate }}</div>
+            </div>
+          } @else {
+            <div class="col-12">
+              <label class="form-label fw-semibold">{{ 'TOOLS.SUBNET_IP_MASK.IP_ADDRESS' | translate }}</label>
+              <input type="text" class="form-control font-mono" formControlName="ip" placeholder="192.168.1.42">
+            </div>
+            <div class="col-12">
+              <label class="form-label fw-semibold">{{ 'TOOLS.SUBNET_IP_MASK.SUBNET_MASK' | translate }}</label>
+              <input type="text" class="form-control font-mono" formControlName="mask" placeholder="255.255.255.0 or /24">
+              <div class="form-text">{{ 'TOOLS.SUBNET_IP_MASK.SUBNET_HINT' | translate }}</div>
+            </div>
+          }
+        </form>
+
+        @if (errorKey) {
+          <div class="text-danger small mt-3">{{ errorKey | translate:errorParams }}</div>
+          @if (errorDetailKey) {
+            <div class="text-muted small mt-1">{{ errorDetailKey | translate:errorDetailParams }}</div>
+          }
+        }
+
+        <button class="btn btn-outline-secondary mt-3" (click)="reset()">
+          {{ 'COMMON.RESET' | translate }}
+        </button>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-xl-7">
+      <app-section-card
+        [title]="'TOOLS.SUBNET.RESULT_TITLE' | translate"
+        [subtitle]="'TOOLS.SUBNET.RESULT_SUBTITLE' | translate">
+
+        @if (result) {
+          <div class="row g-3 mb-3">
+            @for (item of primaryItems; track item.labelKey) {
+              <div class="col-12 col-sm-6">
+                <div class="border rounded-3 p-3 h-100">
+                  <div class="text-muted small mb-1">{{ item.labelKey | translate }}</div>
+                  <div class="font-mono fw-semibold text-break">{{ item.value }}</div>
+                </div>
+              </div>
+            }
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0">
+              <tbody>
+                @for (item of detailItems; track item.labelKey) {
+                  <tr>
+                    <th class="text-muted fw-semibold">{{ item.labelKey | translate }}</th>
+                    <td class="font-mono text-break">{{ item.value }}</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        } @else {
+          <div class="text-muted text-center py-5">
+            <span class="material-symbols-outlined icon-xl d-block mb-2">lan</span>
+            <small>{{ 'TOOLS.SUBNET.EMPTY' | translate }}</small>
+          </div>
+        }
+      </app-section-card>
+    </div>
+  </div>
+</div>

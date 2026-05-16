@@ -1,0 +1,47 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-md-5 col-xl-4">
+			<app-section-card
+				[title]="'TOOLS.DADO.TITLE' | translate"
+				[subtitle]="'TOOLS.DADO.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.DADO.FACES' | translate }}</label>
+						<div class="d-flex flex-wrap gap-2">
+							<button *ngFor="let d of diceTypes" type="button"
+								class="btn btn-sm"
+								[class.btn-primary]="form.get('faces')?.value === d"
+								[class.btn-outline-secondary]="form.get('faces')?.value !== d"
+								(click)="form.get('faces')?.setValue(d)">
+								D{{ d }}
+							</button>
+						</div>
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.DADO.COUNT' | translate }}</label>
+						<input type="number" class="form-control" formControlName="count" min="1" max="20" />
+					</div>
+					<div class="col-12">
+						<button class="btn btn-primary w-100" type="button" (click)="roll()" [disabled]="form.invalid">
+							{{ 'TOOLS.DADO.ROLL' | translate }}
+						</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-md-7 col-xl-8" *ngIf="results.length">
+			<app-section-card [title]="'TOOLS.DADO.RESULT_TITLE' | translate">
+				<div class="dice-grid">
+					<div *ngFor="let r of results" class="dice-face">
+						<span class="dice-value">{{ r.value }}</span>
+						<span class="dice-label">D{{ r.faces }}</span>
+					</div>
+				</div>
+				<div class="dice-total mt-3" *ngIf="results.length > 1">
+					{{ 'TOOLS.DADO.TOTAL' | translate }}: <strong>{{ total }}</strong>
+				</div>
+			</app-section-card>
+		</div>
+	</div>
+</div>

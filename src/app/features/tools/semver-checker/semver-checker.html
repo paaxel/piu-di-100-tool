@@ -1,0 +1,39 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-6">
+      <app-section-card title="Semver Comparator" subtitle="Confronta due versioni">
+        <div [formGroup]="form">
+        <div class="mb-2">
+          <label class="form-label">Versione A</label>
+          <input class="form-control" formControlName="v1" placeholder="1.0.0">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Versione B</label>
+          <input class="form-control" formControlName="v2" placeholder="2.0.0-beta.1">
+        </div>
+        </div>
+        <button class="btn btn-primary" (click)="compare()">Confronta</button>
+        <div *ngIf="compareOutput" class="mt-3 alert alert-info mb-0">{{ compareOutput }}</div>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-lg-6">
+      <app-section-card title="Version Range Checker" subtitle="Verifica se una versione soddisfa un range">
+        <div [formGroup]="form">
+        <div class="mb-2">
+          <label class="form-label">Range</label>
+          <input class="form-control" formControlName="range" placeholder="^1.0.0 || >=2.0.0 <3.0.0">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Versione candidato</label>
+          <input class="form-control" formControlName="candidate" placeholder="1.4.2">
+        </div>
+        </div>
+        <button class="btn btn-primary" (click)="checkRange()">Verifica</button>
+        <div *ngIf="rangeOutput" class="mt-3 alert alert-info mb-0">{{ rangeOutput }}</div>
+      </app-section-card>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
+</div>

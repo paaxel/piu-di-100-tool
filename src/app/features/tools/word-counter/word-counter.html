@@ -1,0 +1,98 @@
+<div class="section-block">
+	<div class="row g-4">
+
+		<!-- Top: input -->
+		<div class="col-12">
+			<app-section-card
+				[title]="'TOOLS.WORD_COUNT.TITLE' | translate"
+				[subtitle]="'TOOLS.WORD_COUNT.SUBTITLE' | translate">
+				<form [formGroup]="form">
+					<textarea
+						class="form-control font-mono"
+						rows="10"
+						formControlName="value"
+						[placeholder]="'TOOLS.WORD_COUNT.PLACEHOLDER' | translate"
+						[maxlength]="maxChars"></textarea>
+					<div class="d-flex justify-content-between align-items-center mt-2">
+						<small class="text-muted">Max {{ maxChars | number }} caratteri</small>
+						<small class="font-mono" [class.text-danger]="charCount >= maxChars" [class.text-muted]="charCount < maxChars">
+							{{ charCount | number }}&thinsp;/&thinsp;{{ maxChars | number }}
+						</small>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<!-- Stats grid -->
+		<div class="col-12" *ngIf="stats">
+			<app-section-card [title]="'TOOLS.WORD_COUNT.RESULT_TITLE' | translate">
+				<div class="row row-cols-2 row-cols-sm-4 g-3">
+					<div class="col">
+						<div class="wc-tile wc-tile--primary">
+							<span class="wc-tile__value">{{ stats.words }}</span>
+							<span class="wc-tile__label">{{ 'TOOLS.WORD_COUNT.WORDS' | translate }}</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="wc-tile wc-tile--primary">
+							<span class="wc-tile__value">{{ formatReadTime(stats.readTimeSec) }}</span>
+							<span class="wc-tile__label">{{ 'TOOLS.WORD_COUNT.READ_TIME' | translate }}</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="wc-tile">
+							<span class="wc-tile__value">{{ stats.chars }}</span>
+							<span class="wc-tile__label">{{ 'TOOLS.WORD_COUNT.CHARS' | translate }}</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="wc-tile">
+							<span class="wc-tile__value">{{ stats.charsNoSpace }}</span>
+							<span class="wc-tile__label">{{ 'TOOLS.WORD_COUNT.CHARS_NO_SPACE' | translate }}</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="wc-tile">
+							<span class="wc-tile__value">{{ stats.sentences }}</span>
+							<span class="wc-tile__label">{{ 'TOOLS.WORD_COUNT.SENTENCES' | translate }}</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="wc-tile">
+							<span class="wc-tile__value">{{ stats.paragraphs }}</span>
+							<span class="wc-tile__label">{{ 'TOOLS.WORD_COUNT.PARAGRAPHS' | translate }}</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="wc-tile">
+							<span class="wc-tile__value">{{ stats.lines }}</span>
+							<span class="wc-tile__label">{{ 'TOOLS.WORD_COUNT.LINES' | translate }}</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="wc-tile">
+							<span class="wc-tile__value">{{ stats.bytesUtf8 }}</span>
+							<span class="wc-tile__label">{{ 'TOOLS.WORD_COUNT.BYTES' | translate }}</span>
+						</div>
+					</div>
+				</div>
+			</app-section-card>
+		</div>
+
+		<!-- Word frequency -->
+		<div class="col-12" *ngIf="stats && stats.topWords.length > 0">
+			<app-section-card [title]="'TOOLS.WORD_COUNT.FREQ_TITLE' | translate">
+				<ul class="wc-freq list-unstyled mb-0">
+					<li *ngFor="let w of stats.topWords" class="wc-freq__item">
+						<span class="wc-freq__word font-mono">{{ w.word }}</span>
+						<div class="wc-freq__bar-wrap">
+							<div class="wc-freq__bar" [style.width.%]="w.barPct"></div>
+						</div>
+						<span class="wc-freq__meta text-muted small">{{ w.count }}&nbsp;({{ w.pct }}%)</span>
+					</li>
+				</ul>
+			</app-section-card>
+		</div>
+
+	</div>
+</div>

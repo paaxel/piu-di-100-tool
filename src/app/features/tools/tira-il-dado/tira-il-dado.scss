@@ -1,0 +1,35 @@
+.dice-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-sm);
+}
+
+.dice-face {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 72px;
+	height: 72px;
+	border-radius: var(--radius-md);
+	background: var(--surface-container-low);
+	border: 2px solid var(--outline-variant);
+}
+
+.dice-value {
+	font-size: 1.75rem;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--primary);
+}
+
+.dice-label {
+	font-size: 0.7rem;
+	color: var(--on-surface-variant);
+	margin-top: 2px;
+}
+
+.dice-total {
+	font-size: 1.1rem;
+	color: var(--on-surface);
+}

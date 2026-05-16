@@ -1,0 +1,64 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'TOOLS.IVA.TITLE' | translate"
+				[subtitle]="'TOOLS.IVA.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'TOOLS.IVA.MODE' | translate }}</label>
+						<select class="form-select" formControlName="mode">
+							<option value="add">{{ 'TOOLS.IVA.MODE_ADD' | translate }}</option>
+							<option value="extract">{{ 'TOOLS.IVA.MODE_EXTRACT' | translate }}</option>
+						</select>
+					</div>
+
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'TOOLS.IVA.RATE' | translate }}</label>
+						<select class="form-select font-mono" formControlName="rate">
+							<option *ngFor="let r of ivaRates" [value]="r">{{ r }}%</option>
+						</select>
+					</div>
+
+					<div class="col-12">
+						<label class="form-label">
+							{{ (form.value.mode === 'add' ? 'TOOLS.IVA.PRICE_NET' : 'TOOLS.IVA.PRICE_GROSS') | translate }}
+						</label>
+						<div class="input-group">
+							<span class="input-group-text">€</span>
+							<input
+								type="number"
+								min="0"
+								step="0.01"
+								class="form-control font-mono"
+								formControlName="price"
+								[placeholder]="'TOOLS.IVA.PRICE_PLACEHOLDER' | translate" />
+						</div>
+					</div>
+
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-4" *ngIf="result">
+			<app-section-card [title]="'TOOLS.IVA.RESULT_TITLE' | translate">
+				<dl class="iva-result">
+					<div class="iva-result__row">
+						<dt>{{ 'TOOLS.IVA.IMPONIBILE' | translate }}</dt>
+						<dd class="font-mono">€ {{ result.imponibile }}</dd>
+					</div>
+					<div class="iva-result__row iva-result__row--iva">
+						<dt>{{ 'TOOLS.IVA.IMPORTO_IVA' | translate }} ({{ form.value.rate }}%)</dt>
+						<dd class="font-mono">€ {{ result.importoIva }}</dd>
+					</div>
+					<div class="iva-result__row iva-result__row--total">
+						<dt>{{ 'TOOLS.IVA.TOTALE' | translate }}</dt>
+						<dd class="font-mono">€ {{ result.totale }}</dd>
+					</div>
+				</dl>
+			</app-section-card>
+		</div>
+
+	</div>
+</div>

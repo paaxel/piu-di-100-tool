@@ -1,0 +1,30 @@
+<div class="section-block">
+	<div class="row g-4 justify-content-center">
+		<div class="col-12 col-xl-7">
+			<app-section-card
+				[title]="'TOOLS.NUM_WORDS.TITLE' | translate"
+				[subtitle]="'TOOLS.NUM_WORDS.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.NUM_WORDS.LABEL' | translate }}</label>
+						<input type="number" class="form-control font-mono form-control-lg"
+							formControlName="value" min="0" max="999999999999"
+							[placeholder]="'TOOLS.NUM_WORDS.PLACEHOLDER' | translate" />
+						<div class="form-text">{{ 'TOOLS.NUM_WORDS.HINT' | translate }}</div>
+					</div>
+				</form>
+
+				<div class="alert alert-warning mt-4" *ngIf="tooHigh">
+					{{ 'TOOLS.NUM_WORDS.TOO_HIGH' | translate }}
+				</div>
+
+				<div class="nw-result mt-4" *ngIf="result">
+					<div class="nw-result__word">{{ result }}</div>
+					<button class="btn btn-sm btn-outline-secondary mt-3" (click)="copy()">
+						{{ (copied ? 'TOOLS.NUM_WORDS.COPIED' : 'TOOLS.NUM_WORDS.COPY') | translate }}
+					</button>
+				</div>
+			</app-section-card>
+		</div>
+	</div>
+</div>

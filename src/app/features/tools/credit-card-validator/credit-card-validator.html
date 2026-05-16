@@ -1,0 +1,17 @@
+<div class="section-block">
+  <app-section-card title="Credit Card Validator" subtitle="Luhn check e rilevamento issuer (Visa, Mastercard, Amex, ecc.)">
+    <div class="mb-3" [formGroup]="form">
+      <label class="form-label fw-semibold">Numero carta</label>
+      <input class="form-control" formControlName="number" placeholder="4111 1111 1111 1111">
+      <small class="text-muted">I dati restano nel browser e non vengono inviati.</small>
+    </div>
+
+    <div *ngIf="result" class="border rounded p-3 bg-body-tertiary">
+      <div><strong>Issuer:</strong> {{ result.issuer }}</div>
+      <div><strong>Numero normalizzato:</strong> <code>{{ result.normalized }}</code></div>
+      <div class="mt-2" [class.text-success]="result.valid" [class.text-danger]="!result.valid">
+        <strong>{{ result.valid ? 'Valida' : 'Non valida' }}</strong> - {{ result.reason }}
+      </div>
+    </div>
+  </app-section-card>
+</div>

@@ -1,0 +1,97 @@
+<div class="section-block">
+  <div class="row g-4">
+
+    <!-- Controls -->
+    <div class="col-12 col-xl-4">
+      <app-section-card
+        [title]="'TOOLS.IMG_COMPRESS.TITLE' | translate"
+        [subtitle]="'TOOLS.IMG_COMPRESS.SUBTITLE' | translate">
+
+        <div class="mb-3">
+          <app-file-dropzone
+            [label]="'TOOLS.IMG_COMPRESS.SELECT_FILE' | translate"
+            accept="image/*"
+            (fileChange)="onFile($event)">
+          </app-file-dropzone>
+          <div *ngIf="error === 'FORMAT'" class="text-danger small mt-1">
+            {{ 'TOOLS.IMG_COMPRESS.ERROR_FORMAT' | translate }}
+          </div>
+        </div>
+
+        <div class="mb-3" *ngIf="inputPreview">
+          <label class="form-label fw-semibold">{{ 'TOOLS.IMG_COMPRESS.FORMAT' | translate }}</label>
+          <select class="form-select" [(ngModel)]="format" (change)="compress()">
+            <option value="image/webp">WebP</option>
+            <option value="image/jpeg">JPG</option>
+          </select>
+        </div>
+
+        <div class="mb-3" *ngIf="inputPreview">
+          <label class="form-label fw-semibold">
+            {{ 'TOOLS.IMG_COMPRESS.QUALITY' | translate }}: <strong>{{ quality }}%</strong>
+          </label>
+          <input type="range" class="form-range" min="1" max="100" step="1"
+            [(ngModel)]="quality" (input)="onQualityChange()">
+          <div class="d-flex justify-content-between text-muted small">
+            <span>{{ 'TOOLS.IMG_COMPRESS.QUALITY_MIN' | translate }}</span>
+            <span>{{ 'TOOLS.IMG_COMPRESS.QUALITY_MAX' | translate }}</span>
+          </div>
+        </div>
+
+        <!-- Live stats -->
+        <div class="p-3 rounded mb-3" *ngIf="hasOutput"
+          [class.bg-success-subtle]="savingsPct > 0" [class.bg-light]="savingsPct <= 0">
+          <div class="row g-2 text-center">
+            <div class="col-6">
+              <div class="small text-muted">{{ 'TOOLS.IMG_COMPRESS.ORIGINAL' | translate }}</div>
+              <div class="fw-bold">{{ inputSize | fileSize }}</div>
+            </div>
+            <div class="col-6">
+              <div class="small text-muted">{{ 'TOOLS.IMG_COMPRESS.OUTPUT' | translate }}</div>
+              <div class="fw-bold">{{ outputSize | fileSize }}</div>
+            </div>
+            <div class="col-12">
+              <div class="small text-muted">{{ 'TOOLS.IMG_COMPRESS.SAVINGS' | translate }}</div>
+              <div class="fw-bold fs-5"
+                [class.text-success]="savingsPct > 0" [class.text-danger]="savingsPct < 0">
+                {{ savingsPct > 0 ? '-' + savingsPct : savingsPct < 0 ? '+' + (-savingsPct) : '0' }}%
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2" *ngIf="hasOutput">
+          <button class="btn btn-success flex-grow-1" (click)="download()">
+            <span class="material-symbols-outlined icon-inline me-1">download</span>
+            {{ 'TOOLS.IMG_COMPRESS.DOWNLOAD' | translate }}
+          </button>
+          <button class="btn btn-outline-secondary" (click)="reset()">
+            {{ 'TOOLS.IMG_COMPRESS.RESET' | translate }}
+          </button>
+        </div>
+      </app-section-card>
+    </div>
+
+    <!-- Preview comparison -->
+    <div class="col-12 col-xl-8" *ngIf="inputPreview">
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <app-section-card [title]="'TOOLS.IMG_COMPRESS.ORIGINAL_PREVIEW' | translate">
+            <img [src]="inputPreview" class="img-fluid rounded" alt="Original">
+            <div class="text-muted small mt-1 text-center">{{ inputSize | fileSize }}</div>
+          </app-section-card>
+        </div>
+        <div class="col-12 col-md-6">
+          <app-section-card [title]="'TOOLS.IMG_COMPRESS.OUTPUT_PREVIEW' | translate">
+            <img *ngIf="outputPreview" [src]="outputPreview" class="img-fluid rounded" alt="Compressed">
+            <div *ngIf="outputPreview" class="text-muted small mt-1 text-center">{{ outputSize | fileSize }}</div>
+            <div *ngIf="!outputPreview" class="text-muted text-center py-4">
+              <span class="material-symbols-outlined icon-xl d-block mb-2">compress</span>
+            </div>
+          </app-section-card>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

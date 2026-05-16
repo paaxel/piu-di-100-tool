@@ -1,0 +1,24 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12">
+			<app-section-card [title]="'TOOLS.ONE_LINE.TITLE' | translate" [subtitle]="'TOOLS.ONE_LINE.SUBTITLE' | translate">
+					<form [formGroup]="form" class="row g-3">
+						<div class="col-12">
+							<textarea class="form-control font-mono" rows="8" formControlName="value"></textarea>
+						</div>
+						<div class="col-12 d-flex align-items-center justify-content-between">
+							<label class="form-check mb-0">
+								<input type="checkbox" class="form-check-input" formControlName="removeSpaces" />
+								<span class="form-check-label ms-1">{{ 'TOOLS.ONE_LINE.REMOVE_SPACES' | translate }}</span>
+							</label>
+							<button class="btn btn-primary" type="button" (click)="apply()">{{ 'TOOLS.COMMON.CONVERT' | translate }}</button>
+						</div>
+					</form>
+			</app-section-card>
+		</div>
+		<div class="col-12">
+			<app-result-panel [label]="'TOOLS.COMMON.RESULT' | translate" [value]="result"
+				[placeholder]="'TOOLS.COMMON.OUTPUT_PLACEHOLDER' | translate" (cleared)="clearResult()"></app-result-panel>
+		</div>
+	</div>
+</div>

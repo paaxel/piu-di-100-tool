@@ -1,0 +1,51 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-5">
+			<app-section-card
+				[title]="'TOOLS.HSL_RGB.TITLE' | translate"
+				[subtitle]="'TOOLS.HSL_RGB.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-4">
+						<label class="form-label fw-semibold">H°</label>
+						<input type="number" class="form-control font-mono" formControlName="h" min="0" max="360" />
+					</div>
+					<div class="col-4">
+						<label class="form-label fw-semibold">S%</label>
+						<input type="number" class="form-control font-mono" formControlName="s" min="0" max="100" />
+					</div>
+					<div class="col-4">
+						<label class="form-label fw-semibold">L%</label>
+						<input type="number" class="form-control font-mono" formControlName="l" min="0" max="100" />
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-7">
+			<app-section-card [title]="'TOOLS.HSL_RGB.RESULT_TITLE' | translate">
+				<div *ngIf="preview" class="color-preview mb-3" [style.background]="preview"></div>
+				<dl *ngIf="rgb" class="color-results">
+					<div class="color-results__row">
+						<dt>R</dt>
+						<dd class="font-mono">{{ rgb.r }}</dd>
+					</div>
+					<div class="color-results__row">
+						<dt>G</dt>
+						<dd class="font-mono">{{ rgb.g }}</dd>
+					</div>
+					<div class="color-results__row">
+						<dt>B</dt>
+						<dd class="font-mono">{{ rgb.b }}</dd>
+					</div>
+					<div class="color-results__row">
+						<dt>CSS</dt>
+						<dd class="font-mono">{{ rgbString }}</dd>
+					</div>
+				</dl>
+				<button *ngIf="rgb" class="btn btn-sm btn-outline-secondary mt-3" (click)="copy()">
+					{{ (copied ? 'TOOLS.HSL_RGB.COPIED' : 'TOOLS.HSL_RGB.COPY') | translate }}
+				</button>
+			</app-section-card>
+		</div>
+	</div>
+</div>

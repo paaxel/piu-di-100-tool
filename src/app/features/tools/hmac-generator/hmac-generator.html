@@ -1,0 +1,46 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-5">
+			<app-section-card
+				[title]="'TOOLS.HMAC.TITLE' | translate"
+				[subtitle]="'TOOLS.HMAC.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.HMAC.ALGO' | translate }}</label>
+						<select class="form-select" formControlName="algo">
+							<option *ngFor="let a of algorithms" [value]="a">{{ a }}</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.HMAC.KEY' | translate }}</label>
+						<input type="text" class="form-control font-mono" formControlName="key"
+							[placeholder]="'TOOLS.HMAC.KEY_PLACEHOLDER' | translate" />
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.HMAC.MESSAGE' | translate }}</label>
+						<textarea class="form-control font-mono" rows="5" formControlName="message"
+							[placeholder]="'TOOLS.HMAC.MESSAGE_PLACEHOLDER' | translate"></textarea>
+					</div>
+					<div class="col-12 d-flex gap-2">
+						<button class="btn btn-primary flex-grow-1" (click)="generate()" [disabled]="form.invalid || loading">
+							{{ (loading ? 'TOOLS.HMAC.COMPUTING' : 'TOOLS.HMAC.COMPUTE') | translate }}
+						</button>
+						<button class="btn btn-outline-secondary" (click)="clear()">
+							{{ 'TOOLS.HMAC.CLEAR' | translate }}
+						</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-7">
+			<app-result-panel
+				[label]="'TOOLS.HMAC.RESULT_LABEL' | translate"
+				[value]="output"
+				[placeholder]="'TOOLS.HMAC.RESULT_PLACEHOLDER' | translate"
+				(cleared)="clear()">
+			</app-result-panel>
+			<div class="alert alert-danger mt-3" *ngIf="error">{{ error }}</div>
+		</div>
+	</div>
+</div>

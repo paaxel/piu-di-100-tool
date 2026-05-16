@@ -1,0 +1,25 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12">
+			<app-section-card [title]="'TOOLS.JSON_YAML.TITLE' | translate" [subtitle]="'TOOLS.JSON_YAML.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<textarea class="form-control font-mono" rows="10" formControlName="value"></textarea>
+					</div>
+					<div class="col-12 d-flex gap-2 justify-content-end">
+						<button class="btn btn-primary" type="button" (click)="toYaml()">JSON → YAML</button>
+						<button class="btn btn-outline-primary" type="button" (click)="toJson()">YAML → JSON</button>
+					</div>
+					<div class="col-12" *ngIf="error">
+						<div class="alert alert-danger mb-0">{{ error }}</div>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+		<div class="col-12">
+			<app-result-panel [label]="'TOOLS.COMMON.RESULT' | translate" [value]="result"
+				[safeHtml]="result | syntaxHighlight:resultMode"
+				[placeholder]="'TOOLS.COMMON.OUTPUT_PLACEHOLDER' | translate" (cleared)="clearResult()"></app-result-panel>
+		</div>
+	</div>
+</div>

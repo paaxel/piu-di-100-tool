@@ -1,0 +1,75 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-4">
+      <app-section-card [title]="'TOOLS.PDF_SPLIT.TITLE' | translate" [subtitle]="'TOOLS.PDF_SPLIT.SUBTITLE' | translate">
+        <app-file-dropzone
+          [label]="'TOOLS.PDF_SPLIT.SELECT_FILE' | translate"
+          accept="application/pdf"
+          (fileChange)="onFile($event)">
+        </app-file-dropzone>
+
+        <div *ngIf="processing" class="text-center py-3">
+          <span class="spinner-border spinner-border-sm me-2"></span>
+          {{ 'TOOLS.PDF_SPLIT.PROCESSING' | translate }}
+        </div>
+
+        <div *ngIf="pages.length > 0" class="mt-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="fw-semibold">{{ pages.length }} {{ 'TOOLS.PDF_SPLIT.PAGES_FOUND' | translate }}</span>
+            <button class="btn btn-sm btn-success" (click)="downloadAll()">
+              <span class="material-symbols-outlined icon-inline me-1">download_for_offline</span>
+              {{ 'TOOLS.PDF_SPLIT.DOWNLOAD_ALL' | translate }}
+            </button>
+          </div>
+          <ul class="list-group">
+            <li *ngFor="let p of pages"
+                class="list-group-item d-flex align-items-center gap-2 py-2">
+              <div class="flex-shrink-0" style="width:48px;height:67px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer"
+                   (click)="openPreview(p.index)">
+                <img *ngIf="p.thumb" [src]="p.thumb" alt="" class="rounded border w-100 h-100" style="object-fit:cover">
+                <span *ngIf="!p.thumb" class="material-symbols-outlined text-danger" style="font-size:1.2rem">picture_as_pdf</span>
+              </div>
+              <span class="flex-grow-1 small">{{ 'TOOLS.PDF_SPLIT.PAGE' | translate }} {{ p.index + 1 }}</span>
+              <button class="btn btn-sm btn-outline-primary" (click)="downloadPage(p)">
+                <span class="material-symbols-outlined icon-inline">download</span>
+              </button>
+            </li>
+          </ul>
+          <button class="btn btn-outline-secondary w-100 mt-2" (click)="reset()">{{ 'TOOLS.PDF_SPLIT.RESET' | translate }}</button>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0 small">{{ error | translate }}</div>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-lg-8">
+      <app-section-card [title]="'TOOLS.PDF_SPLIT.HOW_TITLE' | translate">
+        <ol class="mb-0 ps-3">
+          <li class="mb-1">{{ 'TOOLS.PDF_SPLIT.HOW_1' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.PDF_SPLIT.HOW_2' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.PDF_SPLIT.HOW_3' | translate }}</li>
+          <li class="text-muted">{{ 'TOOLS.PDF_SPLIT.HOW_4' | translate }}</li>
+        </ol>
+      </app-section-card>
+    </div>
+  </div>
+
+  <div *ngIf="previewSrc || previewLoading"
+       class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+       style="z-index:1055;background:rgba(0,0,0,0.75)"
+       (click)="closePreview()">
+    <div class="bg-white rounded-3 shadow-lg d-flex flex-column"
+         (click)="$event.stopPropagation()">
+      <div class="d-flex justify-content-end p-2 pb-0">
+        <button type="button" class="btn-close" (click)="closePreview()"></button>
+      </div>
+      <div class="p-3 pt-1 text-center">
+        <div *ngIf="previewLoading" class="py-5 px-4">
+          <span class="spinner-border text-secondary"></span>
+        </div>
+        <img *ngIf="previewSrc" [src]="previewSrc" class="d-block"
+             style="max-width:85vw;max-height:82vh;object-fit:contain">
+      </div>
+    </div>
+  </div>
+</div>

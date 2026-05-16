@@ -1,0 +1,39 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-5">
+			<app-section-card
+				[title]="'TOOLS.RGB_HEX.TITLE' | translate"
+				[subtitle]="'TOOLS.RGB_HEX.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-4">
+						<label class="form-label fw-semibold">R</label>
+						<input type="number" class="form-control font-mono" formControlName="r" min="0" max="255" />
+					</div>
+					<div class="col-4">
+						<label class="form-label fw-semibold">G</label>
+						<input type="number" class="form-control font-mono" formControlName="g" min="0" max="255" />
+					</div>
+					<div class="col-4">
+						<label class="form-label fw-semibold">B</label>
+						<input type="number" class="form-control font-mono" formControlName="b" min="0" max="255" />
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-7">
+			<app-section-card [title]="'TOOLS.RGB_HEX.RESULT_TITLE' | translate">
+				<div *ngIf="preview" class="color-preview mb-3" [style.background]="preview"></div>
+				<dl *ngIf="hex" class="color-results">
+					<div class="color-results__row">
+						<dt>HEX</dt>
+						<dd class="font-mono">{{ hex }}</dd>
+					</div>
+				</dl>
+				<button *ngIf="hex" class="btn btn-sm btn-outline-secondary mt-3" (click)="copy()">
+					{{ (copied ? 'TOOLS.RGB_HEX.COPIED' : 'TOOLS.RGB_HEX.COPY') | translate }}
+				</button>
+			</app-section-card>
+		</div>
+	</div>
+</div>

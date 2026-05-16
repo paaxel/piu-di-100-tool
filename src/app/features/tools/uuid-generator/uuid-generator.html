@@ -1,0 +1,59 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'TOOLS.UUID.TITLE' | translate"
+				[subtitle]="'TOOLS.UUID.SUBTITLE' | translate"
+			>
+				<div class="row g-3">
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'TOOLS.UUID.TYPE' | translate }}</label>
+						<div class="d-flex gap-3">
+							<label class="form-check">
+								<input class="form-check-input" type="radio" name="idType" value="uuid" [(ngModel)]="type" (change)="onTypeChange()" />
+								<span class="form-check-label ms-1">UUID v4</span>
+							</label>
+							<label class="form-check">
+								<input class="form-check-input" type="radio" name="idType" value="ulid" [(ngModel)]="type" (change)="onTypeChange()" />
+								<span class="form-check-label ms-1">ULID</span>
+							</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'TOOLS.UUID.COUNT' | translate }}</label>
+						<input
+							type="number"
+							class="form-control"
+							[(ngModel)]="count"
+							min="1"
+							max="100"
+							(change)="onCountChange()"
+						/>
+					</div>
+					<div class="col-12 d-flex gap-2">
+						<button class="btn btn-primary" type="button" (click)="generate()">
+							{{ 'TOOLS.UUID.GENERATE' | translate }}
+						</button>
+						<button class="btn btn-outline-secondary ms-auto" type="button" (click)="copyAll()" [disabled]="!results.length">
+							{{ copiedAll ? ('TOOLS.UUID.COPIED' | translate) : ('TOOLS.UUID.COPY_ALL' | translate) }}
+						</button>
+					</div>
+				</div>
+			</app-section-card>
+		</div>
+		<div class="col-12 col-xl-4">
+			<div class="card h-100">
+				<div class="card-body p-0">
+					<ul class="uuid-list list-unstyled mb-0">
+						<li *ngFor="let id of results" class="uuid-item d-flex align-items-center justify-content-between gap-2 px-3 py-2">
+							<code class="font-mono text-break flex-grow-1">{{ id }}</code>
+							<button class="btn btn-sm btn-link p-0 text-nowrap" type="button" (click)="copyOne(id)">
+								{{ copied === id ? ('TOOLS.UUID.COPIED' | translate) : ('TOOLS.UUID.COPY' | translate) }}
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

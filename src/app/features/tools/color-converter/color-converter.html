@@ -1,0 +1,78 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'TOOLS.COLOR.TITLE' | translate"
+				[subtitle]="'TOOLS.COLOR.SUBTITLE' | translate">
+
+				<div class="color-preview mb-4" [style.background]="preview"></div>
+
+				<!-- HEX -->
+				<div class="color-group mb-3">
+					<label class="color-group__label">HEX</label>
+					<form [formGroup]="hexForm">
+						<input type="text" class="form-control font-mono" formControlName="hex" placeholder="#3b82f6" />
+					</form>
+					<div *ngIf="error" class="text-danger small mt-1">{{ error }}</div>
+				</div>
+
+				<!-- RGB -->
+				<div class="color-group mb-3">
+					<label class="color-group__label">RGB</label>
+					<form [formGroup]="rgbForm" class="row g-2">
+						<div class="col-4">
+							<label class="form-label small mb-1">R</label>
+							<input type="number" class="form-control form-control-sm font-mono" formControlName="r" min="0" max="255" />
+						</div>
+						<div class="col-4">
+							<label class="form-label small mb-1">G</label>
+							<input type="number" class="form-control form-control-sm font-mono" formControlName="g" min="0" max="255" />
+						</div>
+						<div class="col-4">
+							<label class="form-label small mb-1">B</label>
+							<input type="number" class="form-control form-control-sm font-mono" formControlName="b" min="0" max="255" />
+						</div>
+					</form>
+				</div>
+
+				<!-- HSL -->
+				<div class="color-group">
+					<label class="color-group__label">HSL</label>
+					<form [formGroup]="hslForm" class="row g-2">
+						<div class="col-4">
+							<label class="form-label small mb-1">H°</label>
+							<input type="number" class="form-control form-control-sm font-mono" formControlName="h" min="0" max="360" />
+						</div>
+						<div class="col-4">
+							<label class="form-label small mb-1">S%</label>
+							<input type="number" class="form-control form-control-sm font-mono" formControlName="s" min="0" max="100" />
+						</div>
+						<div class="col-4">
+							<label class="form-label small mb-1">L%</label>
+							<input type="number" class="form-control form-control-sm font-mono" formControlName="l" min="0" max="100" />
+						</div>
+					</form>
+				</div>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-4">
+			<app-section-card [title]="'TOOLS.COLOR.RESULT_TITLE' | translate">
+				<dl class="color-results">
+					<div class="color-results__row">
+						<dt>HEX</dt>
+						<dd class="font-mono">{{ hex }}</dd>
+					</div>
+					<div class="color-results__row">
+						<dt>RGB</dt>
+						<dd class="font-mono">{{ rgbString }}</dd>
+					</div>
+					<div class="color-results__row">
+						<dt>HSL</dt>
+						<dd class="font-mono">{{ hslString }}</dd>
+					</div>
+				</dl>
+			</app-section-card>
+		</div>
+	</div>
+</div>

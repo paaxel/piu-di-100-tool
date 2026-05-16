@@ -1,0 +1,66 @@
+<div class="section-block">
+  <div class="row g-4 justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <app-section-card title="Conto alla Rovescia" subtitle="Imposta la durata e avvia il timer">
+
+        <!-- Input row (shown only when not running) -->
+        <div class="row g-2 mb-3" *ngIf="!isRunning && secondsLeft === 0">
+          <div class="col-4">
+            <label class="form-label small text-center d-block">Ore</label>
+            <input type="number" class="form-control text-center" [(ngModel)]="inputHours" min="0" max="99">
+          </div>
+          <div class="col-4">
+            <label class="form-label small text-center d-block">Minuti</label>
+            <input type="number" class="form-control text-center" [(ngModel)]="inputMinutes" min="0" max="59">
+          </div>
+          <div class="col-4">
+            <label class="form-label small text-center d-block">Secondi</label>
+            <input type="number" class="form-control text-center" [(ngModel)]="inputSeconds" min="0" max="59">
+          </div>
+        </div>
+
+        <!-- Display -->
+        <div class="text-center my-3" *ngIf="secondsLeft > 0 || isRunning || finished">
+          <div class="display-4 fw-bold font-monospace lh-1"
+               [class.text-danger]="secondsLeft <= 10 && secondsLeft > 0 && isRunning"
+               [class.text-success]="finished">
+            {{ finished ? '00:00' : display }}
+          </div>
+          <div class="text-success fw-semibold mt-2" *ngIf="finished">
+            <span class="material-symbols-outlined icon-inline">check_circle</span> Tempo scaduto!
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress mb-3" style="height:6px" *ngIf="totalSeconds > 0">
+          <div class="progress-bar"
+               [class.bg-danger]="secondsLeft <= 10 && !finished"
+               [class.bg-success]="finished"
+               [style.width.%]="progressPct">
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="d-flex gap-2 justify-content-center">
+          <button *ngIf="!isRunning && !finished"
+                  class="btn btn-success btn-lg px-4"
+                  (click)="start()">
+            <span class="material-symbols-outlined icon-inline me-1">play_arrow</span>
+            {{ secondsLeft > 0 ? 'Riprendi' : 'Avvia' }}
+          </button>
+          <button *ngIf="isRunning"
+                  class="btn btn-warning btn-lg px-4"
+                  (click)="pause()">
+            <span class="material-symbols-outlined icon-inline me-1">pause</span>Pausa
+          </button>
+          <button *ngIf="secondsLeft > 0 || finished"
+                  class="btn btn-outline-secondary btn-lg"
+                  (click)="reset()">
+            <span class="material-symbols-outlined icon-inline">restart_alt</span>
+          </button>
+        </div>
+
+      </app-section-card>
+    </div>
+  </div>
+</div>

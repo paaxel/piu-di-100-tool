@@ -1,0 +1,34 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-6">
+			<app-section-card
+				[title]="'TOOLS.SQL.TITLE' | translate"
+				[subtitle]="'TOOLS.SQL.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<textarea class="form-control font-mono" rows="14" formControlName="sql"
+							[placeholder]="'TOOLS.SQL.PLACEHOLDER' | translate"></textarea>
+					</div>
+					<div class="col-12 d-flex gap-2 align-items-center">
+						<button class="btn btn-primary flex-grow-1" (click)="formatSql()" [disabled]="!form.value.sql">
+							{{ 'TOOLS.SQL.FORMAT' | translate }}
+						</button>
+						<button class="btn btn-outline-secondary" (click)="clear()">
+							{{ 'TOOLS.SQL.CLEAR' | translate }}
+						</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-6">
+			<app-result-panel
+				[label]="'TOOLS.SQL.RESULT_TITLE' | translate"
+				[value]="output"
+				[safeHtml]="output | syntaxHighlight:'sql'"
+				[placeholder]="'TOOLS.SQL.RESULT_PLACEHOLDER' | translate"
+				(cleared)="clearOutput()">
+			</app-result-panel>
+		</div>
+	</div>
+</div>

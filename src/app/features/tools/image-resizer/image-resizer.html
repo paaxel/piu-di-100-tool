@@ -1,0 +1,104 @@
+<div class="section-block">
+  <div class="row g-4">
+
+    <!-- Controls -->
+    <div class="col-12 col-xl-4">
+      <app-section-card
+        [title]="'TOOLS.IMG_RESIZE.TITLE' | translate"
+        [subtitle]="'TOOLS.IMG_RESIZE.SUBTITLE' | translate">
+
+        <div class="mb-3">
+          <app-file-dropzone
+            [label]="'TOOLS.IMG_RESIZE.SELECT_FILE' | translate"
+            accept="image/*"
+            (fileChange)="onFile($event)">
+          </app-file-dropzone>
+          <div *ngIf="error === 'FORMAT'" class="text-danger small mt-1">
+            {{ 'TOOLS.IMG_RESIZE.ERROR_FORMAT' | translate }}
+          </div>
+          <div *ngIf="origWidth" class="text-muted small mt-1">
+            {{ 'TOOLS.IMG_RESIZE.ORIGINAL_SIZE' | translate }}: {{ origWidth }} × {{ origHeight }} px
+          </div>
+        </div>
+
+        <div class="row g-2 mb-3" *ngIf="origWidth">
+          <div class="col-6">
+            <label class="form-label fw-semibold">{{ 'TOOLS.IMG_RESIZE.WIDTH' | translate }}</label>
+            <input type="number" class="form-control" [(ngModel)]="width" min="1" max="10000"
+              (change)="onWidthChange()">
+          </div>
+          <div class="col-6">
+            <label class="form-label fw-semibold">{{ 'TOOLS.IMG_RESIZE.HEIGHT' | translate }}</label>
+            <input type="number" class="form-control" [(ngModel)]="height" min="1" max="10000"
+              (change)="onHeightChange()">
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="keepRatio" [(ngModel)]="keepRatio">
+              <label class="form-check-label" for="keepRatio">
+                {{ 'TOOLS.IMG_RESIZE.KEEP_RATIO' | translate }}
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3" *ngIf="origWidth">
+          <label class="form-label fw-semibold">{{ 'TOOLS.IMG_RESIZE.FORMAT' | translate }}</label>
+          <select class="form-select" [(ngModel)]="format">
+            <option value="image/webp">WebP</option>
+            <option value="image/png">PNG</option>
+            <option value="image/jpeg">JPG</option>
+          </select>
+        </div>
+
+        <div class="mb-3" *ngIf="origWidth && format !== 'image/png'">
+          <label class="form-label fw-semibold">
+            {{ 'TOOLS.IMG_RESIZE.QUALITY' | translate }}: <strong>{{ quality }}%</strong>
+          </label>
+          <input type="range" class="form-range" min="1" max="100" step="1" [(ngModel)]="quality">
+        </div>
+
+        <div class="d-flex gap-2" *ngIf="origWidth">
+          <button class="btn btn-primary flex-grow-1" (click)="resize()" [disabled]="!width || !height">
+            {{ 'TOOLS.IMG_RESIZE.CONVERT' | translate }}
+          </button>
+          <button class="btn btn-outline-secondary" (click)="reset()">
+            {{ 'TOOLS.IMG_RESIZE.RESET' | translate }}
+          </button>
+        </div>
+
+        <div class="mt-2" *ngIf="hasOutput">
+          <button class="btn btn-success w-100" (click)="download()">
+            <span class="material-symbols-outlined icon-inline me-1">download</span>
+            {{ 'TOOLS.IMG_RESIZE.DOWNLOAD' | translate }} ({{ outputSize | fileSize }})
+          </button>
+        </div>
+      </app-section-card>
+    </div>
+
+    <!-- Preview -->
+    <div class="col-12 col-xl-8" *ngIf="inputPreview">
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <app-section-card [title]="'TOOLS.IMG_RESIZE.ORIGINAL_PREVIEW' | translate">
+            <img [src]="inputPreview" class="img-fluid rounded" alt="Original">
+            <div class="text-muted small mt-1 text-center">{{ inputSize | fileSize }}</div>
+          </app-section-card>
+        </div>
+        <div class="col-12 col-md-6">
+          <app-section-card [title]="'TOOLS.IMG_RESIZE.OUTPUT_PREVIEW' | translate">
+            <img *ngIf="outputPreview" [src]="outputPreview" class="img-fluid rounded" alt="Resized">
+            <div *ngIf="outputPreview" class="text-muted small mt-1 text-center">
+              {{ width }} × {{ height }} px — {{ outputSize | fileSize }}
+            </div>
+            <div *ngIf="!outputPreview" class="text-muted text-center py-4">
+              <span class="material-symbols-outlined icon-xl d-block mb-2">photo_size_select_large</span>
+              <small>{{ 'TOOLS.IMG_RESIZE.OUTPUT_HINT' | translate }}</small>
+            </div>
+          </app-section-card>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

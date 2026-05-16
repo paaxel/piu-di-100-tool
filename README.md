@@ -2,6 +2,14 @@
 
 A collection of small utility tools built with Angular.
 
+> This project was created using [GitHub Copilot](https://github.com/features/copilot).
+
+**Repository:** https://github.com/paaxel/piu-di-100-tool
+
+## Contributing & Support
+
+- **Bug reports / feature requests:** [Open an issue](https://github.com/paaxel/piu-di-100-tool/issues)
+- **Contact:** use the GitHub issue tracker for any question or feedback
 
 ## Development server
 

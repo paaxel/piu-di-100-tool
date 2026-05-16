@@ -1,0 +1,9 @@
+<section class="card tool-card shadow-sm border-0">
+	<div class="card-body p-4">
+		<div class="mb-3">
+			<h2 class="h4 mb-1">{{ title }}</h2>
+			<p class="text-muted mb-0" *ngIf="subtitle">{{ subtitle }}</p>
+		</div>
+		<ng-content></ng-content>
+	</div>
+</section>

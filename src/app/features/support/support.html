@@ -1,0 +1,31 @@
+<div class="section-block support-page">
+	<header class="page-head">
+		<h1>{{ 'SUPPORT.TITLE' | translate }}</h1>
+		<p class="lead">{{ 'SUPPORT.SUBTITLE' | translate }}</p>
+	</header>
+
+	<app-section-card [title]="'SUPPORT.SECTION_FAQ' | translate" [subtitle]="'SUPPORT.SECTION_FAQ_SUB' | translate">
+		<p>{{ 'SUPPORT.FAQ_BODY' | translate }}</p>
+		<ul>
+			<li>{{ 'SUPPORT.FAQ_ITEM_1' | translate }}</li>
+			<li>{{ 'SUPPORT.FAQ_ITEM_2' | translate }}</li>
+			<li>{{ 'SUPPORT.FAQ_ITEM_3' | translate }}</li>
+		</ul>
+	</app-section-card>
+
+	<app-section-card [title]="'SUPPORT.SECTION_BUG' | translate" [subtitle]="'SUPPORT.SECTION_BUG_SUB' | translate">
+		<p>{{ 'SUPPORT.BUG_BODY' | translate }}</p>
+		<p>
+			<a href="https://github.com/paaxel/piu-di-100-tool/issues" target="_blank" rel="noopener noreferrer">
+				{{ 'SUPPORT.BUG_LINK' | translate }} →
+			</a>
+		</p>
+	</app-section-card>
+
+	<app-section-card [title]="'SUPPORT.SECTION_CONTACT' | translate" [subtitle]="'SUPPORT.SECTION_CONTACT_SUB' | translate">
+		<p>{{ 'SUPPORT.CONTACT_BODY' | translate }}</p>
+		<p><a href="mailto:support@piu-di-100-tool.it">support&#64;piu-di-100-tool.it</a></p>
+		<p><a routerLink="/privacy">{{ 'SUPPORT.PRIVACY_LINK' | translate }} →</a></p>
+		<p><a routerLink="/termini">{{ 'SUPPORT.TERMS_LINK' | translate }} →</a></p>
+	</app-section-card>
+</div>

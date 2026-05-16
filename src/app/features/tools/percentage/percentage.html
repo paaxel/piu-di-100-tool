@@ -1,0 +1,81 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'TOOLS.PERCENTAGE.TITLE' | translate"
+				[subtitle]="'TOOLS.PERCENTAGE.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.PERCENTAGE.MODE' | translate }}</label>
+						<select class="form-select" formControlName="mode">
+							<option value="percent-of">{{ 'TOOLS.PERCENTAGE.MODE_PERCENT_OF' | translate }}</option>
+							<option value="percent-of-total">{{ 'TOOLS.PERCENTAGE.MODE_PERCENT_OF_TOTAL' | translate }}</option>
+							<option value="percent-change">{{ 'TOOLS.PERCENTAGE.MODE_PERCENT_CHANGE' | translate }}</option>
+						</select>
+					</div>
+
+					<ng-container [ngSwitch]="form.value.mode">
+						<ng-container *ngSwitchCase="'percent-of'">
+							<div class="col-12 col-md-6">
+								<label class="form-label">X &mdash; {{ 'TOOLS.PERCENTAGE.PERCENT_OF_BASE' | translate }}</label>
+								<input type="number" step="any" class="form-control font-mono" formControlName="b" />
+							</div>
+							<div class="col-12 col-md-6">
+								<label class="form-label">Y &mdash; {{ 'TOOLS.PERCENTAGE.PERCENTAGE' | translate }}</label>
+								<input type="number" step="any" class="form-control font-mono" formControlName="a" />
+							</div>
+							<div class="col-12">
+								<p class="text-muted small mb-0">{{ 'TOOLS.PERCENTAGE.EXAMPLE_PERCENT_OF' | translate }}</p>
+							</div>
+							<div class="col-12" *ngIf="result">
+								<p class="text-muted small mb-0">{{ 'TOOLS.PERCENTAGE.CALC_DESCRIPTION' | translate: { y: form.value.a, x: form.value.b } }}</p>
+							</div>
+						</ng-container>
+
+						<ng-container *ngSwitchCase="'percent-of-total'">
+							<div class="col-12 col-md-6">
+								<label class="form-label">{{ 'TOOLS.PERCENTAGE.VALUE' | translate }}</label>
+								<input type="number" step="any" class="form-control font-mono" formControlName="a" />
+							</div>
+							<div class="col-12 col-md-6">
+								<label class="form-label">{{ 'TOOLS.PERCENTAGE.RESPECT_TO' | translate }}</label>
+								<input type="number" step="any" class="form-control font-mono" formControlName="b" />
+							</div>
+							<div class="col-12">
+								<p class="text-muted small mb-0">{{ 'TOOLS.PERCENTAGE.EXAMPLE_PERCENT_OF_TOTAL' | translate }}</p>
+							</div>
+							<div class="col-12" *ngIf="result">
+								<p class="text-muted small mb-0">{{ 'TOOLS.PERCENTAGE.CALC_DESCRIPTION_TOTAL' | translate: { a: form.value.a, b: form.value.b } }}</p>
+							</div>
+						</ng-container>
+
+						<ng-container *ngSwitchCase="'percent-change'">
+							<div class="col-12 col-md-6">
+								<label class="form-label">{{ 'TOOLS.PERCENTAGE.FROM' | translate }}</label>
+								<input type="number" step="any" class="form-control font-mono" formControlName="a" />
+							</div>
+							<div class="col-12 col-md-6">
+								<label class="form-label">{{ 'TOOLS.PERCENTAGE.TO' | translate }}</label>
+								<input type="number" step="any" class="form-control font-mono" formControlName="b" />
+							</div>
+							<div class="col-12">
+								<p class="text-muted small mb-0">{{ 'TOOLS.PERCENTAGE.EXAMPLE_PERCENT_CHANGE' | translate }}</p>
+							</div>
+							<div class="col-12" *ngIf="result">
+								<p class="text-muted small mb-0">{{ 'TOOLS.PERCENTAGE.CALC_DESCRIPTION_CHANGE' | translate: { a: form.value.a, b: form.value.b } }}</p>
+							</div>
+						</ng-container>
+					</ng-container>
+				</form>
+			</app-section-card>
+		</div>
+		<div class="col-12 col-xl-4">
+			<app-result-panel
+				[label]="'TOOLS.PERCENTAGE.RESULT' | translate"
+				[value]="result"
+				[placeholder]="'TOOLS.PERCENTAGE.PLACEHOLDER' | translate"
+				(cleared)="clearResult()">
+			</app-result-panel>
+		</div>
+	</div>
+</div>

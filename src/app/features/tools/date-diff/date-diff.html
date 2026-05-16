@@ -1,0 +1,51 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-6">
+			<app-section-card
+				[title]="'TOOLS.DATE_DIFF.TITLE' | translate"
+				[subtitle]="'TOOLS.DATE_DIFF.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.DATE_DIFF.FROM' | translate }}</label>
+						<input type="date" class="form-control" formControlName="from" />
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.DATE_DIFF.TO' | translate }}</label>
+						<input type="date" class="form-control" formControlName="to" />
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-6" *ngIf="result">
+			<app-section-card [title]="'TOOLS.DATE_DIFF.RESULT_TITLE' | translate">
+				<div class="alert alert-warning py-2 mb-3" *ngIf="result.swapped">
+					{{ 'TOOLS.DATE_DIFF.SWAPPED' | translate }}
+				</div>
+
+				<div class="dd-main mb-3">
+					<span class="dd-main__val">{{ result.years }}</span>&ngsp;<span class="dd-main__lbl">{{ 'TOOLS.DATE_DIFF.YEARS' | translate }}</span><span class="dd-main__sep">,</span>&ngsp;<span class="dd-main__val">{{ result.months }}</span>&ngsp;<span class="dd-main__lbl">{{ 'TOOLS.DATE_DIFF.MONTHS' | translate }}</span><span class="dd-main__sep">,</span>&ngsp;<span class="dd-main__val">{{ result.days }}</span>&ngsp;<span class="dd-main__lbl">{{ 'TOOLS.DATE_DIFF.DAYS' | translate }}</span>
+				</div>
+
+				<dl class="dd-stats">
+					<div class="dd-stats__row">
+						<dt>{{ 'TOOLS.DATE_DIFF.TOTAL_DAYS' | translate }}</dt>
+						<dd class="font-mono">{{ result.totalDays | number }}</dd>
+					</div>
+					<div class="dd-stats__row">
+						<dt>{{ 'TOOLS.DATE_DIFF.TOTAL_WEEKS' | translate }}</dt>
+						<dd class="font-mono">{{ result.totalWeeks | number }}</dd>
+					</div>
+					<div class="dd-stats__row">
+						<dt>{{ 'TOOLS.DATE_DIFF.TOTAL_MONTHS' | translate }}</dt>
+						<dd class="font-mono">{{ result.totalMonths }}</dd>
+					</div>
+					<div class="dd-stats__row">
+						<dt>{{ 'TOOLS.DATE_DIFF.TOTAL_HOURS' | translate }}</dt>
+						<dd class="font-mono">{{ result.totalHours | number }}</dd>
+					</div>
+				</dl>
+			</app-section-card>
+		</div>
+	</div>
+</div>

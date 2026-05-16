@@ -1,0 +1,18 @@
+<div class="section-block">
+	<app-section-card [title]="'TOOLS.MY_IP.TITLE' | translate" [subtitle]="'TOOLS.MY_IP.SUBTITLE' | translate">
+		<div class="alert alert-warning" role="alert">
+			<strong>{{ 'TOOLS.MY_IP.WARNING_TITLE' | translate }}:</strong> {{ 'TOOLS.MY_IP.WARNING' | translate }}
+		</div>
+
+		<div class="d-flex align-items-center gap-3 flex-wrap">
+			<span class="t-label-caps">IP:</span>
+			<code class="font-mono" style="font-size: 22px;">{{ loading ? '…' : (ip || '—') }}</code>
+			<div class="ms-auto d-flex gap-2">
+				<button class="btn btn-outline-secondary" type="button" (click)="copy()" [disabled]="!ip">Copy</button>
+				<button class="btn btn-primary" type="button" (click)="fetch()">{{ (ip ? 'TOOLS.COMMON.REFRESH' : 'TOOLS.MY_IP.LOAD') | translate }}</button>
+			</div>
+		</div>
+
+		<div class="alert alert-danger mt-3 mb-0" *ngIf="error">{{ error }}</div>
+	</app-section-card>
+</div>

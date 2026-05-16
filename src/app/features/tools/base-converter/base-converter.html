@@ -1,0 +1,51 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'TOOLS.BASE_CONV.TITLE' | translate"
+				[subtitle]="'TOOLS.BASE_CONV.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+
+					<div class="col-12 col-md-4">
+						<label class="form-label">{{ 'TOOLS.BASE_CONV.FROM_BASE' | translate }}</label>
+						<select class="form-select" formControlName="fromBase">
+							<option value="2">{{ 'TOOLS.BASE_CONV.BIN' | translate }} (Base 2)</option>
+							<option value="8">{{ 'TOOLS.BASE_CONV.OCT' | translate }} (Base 8)</option>
+							<option value="10">{{ 'TOOLS.BASE_CONV.DEC' | translate }} (Base 10)</option>
+							<option value="16">{{ 'TOOLS.BASE_CONV.HEX' | translate }} (Base 16)</option>
+						</select>
+					</div>
+
+					<div class="col-12 col-md-8">
+						<label class="form-label">{{ 'TOOLS.BASE_CONV.VALUE' | translate }}</label>
+						<input
+							type="text"
+							class="form-control font-mono"
+							formControlName="value"
+							[placeholder]="'TOOLS.BASE_CONV.PLACEHOLDER' | translate"
+							autocomplete="off"
+							autocorrect="off"
+							spellcheck="false" />
+					</div>
+
+					<div class="col-12" *ngIf="error">
+						<div class="alert alert-danger mb-0">{{ error }}</div>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-4" *ngIf="results.length > 0">
+			<app-section-card [title]="'TOOLS.BASE_CONV.RESULT_TITLE' | translate">
+				<dl class="base-result">
+					<div class="base-result__row" *ngFor="let r of results">
+						<dt>{{ r.label }}<span class="text-muted ms-1 small">({{ r.base }})</span></dt>
+						<dd class="font-mono">
+							<span class="text-muted me-1">{{ r.prefix }}</span>{{ r.value }}
+						</dd>
+					</div>
+				</dl>
+			</app-section-card>
+		</div>
+	</div>
+</div>

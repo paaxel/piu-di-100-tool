@@ -1,0 +1,50 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-5">
+      <app-section-card title="Generatore QR Code" subtitle="Testo, URL, Wi-Fi e qualsiasi contenuto testuale">
+        <div [formGroup]="form">
+        <div class="mb-3">
+          <label class="form-label">Contenuto</label>
+          <textarea class="form-control" rows="4" formControlName="value"></textarea>
+        </div>
+
+        <div class="row g-2 mb-3">
+          <div class="col-4">
+            <label class="form-label">Size</label>
+            <input type="number" class="form-control" formControlName="size" min="128" max="1024">
+          </div>
+          <div class="col-4">
+            <label class="form-label">Margin</label>
+            <input type="number" class="form-control" formControlName="margin" min="0" max="10">
+          </div>
+          <div class="col-4">
+            <label class="form-label">ECC</label>
+            <select class="form-select" formControlName="level">
+              <option value="L">L</option>
+              <option value="M">M</option>
+              <option value="Q">Q</option>
+              <option value="H">H</option>
+            </select>
+          </div>
+        </div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-primary" (click)="generate()">Genera</button>
+          <button class="btn btn-outline-secondary" (click)="copy()" [disabled]="!form.controls['value'].value">Copia testo</button>
+          <button class="btn btn-success ms-auto" (click)="download()" [disabled]="!dataUrl">Download PNG</button>
+        </div>
+        <div *ngIf="copied" class="small text-success mt-2">Copiato.</div>
+      </app-section-card>
+      <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
+    </div>
+
+    <div class="col-12 col-lg-7" *ngIf="dataUrl">
+      <app-section-card title="Anteprima">
+        <div class="text-center">
+          <img [src]="dataUrl" alt="QR Code" class="img-fluid rounded border" style="max-width: 100%; height: auto;">
+        </div>
+      </app-section-card>
+    </div>
+  </div>
+</div>

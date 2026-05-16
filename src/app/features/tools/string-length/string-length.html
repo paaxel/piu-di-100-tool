@@ -1,0 +1,43 @@
+<div class="section-block">
+	<app-section-card [title]="'TOOLS.STRING_LENGTH.TITLE' | translate" [subtitle]="'TOOLS.STRING_LENGTH.SUBTITLE' | translate">
+		<form [formGroup]="form" class="row g-3">
+			<div class="col-12">
+				<textarea class="form-control font-mono" rows="8" formControlName="value"></textarea>
+			</div>
+		</form>
+
+		<div class="row g-3 mt-2">
+			<div class="col-6 col-md-3 col-lg col-lg-2">
+				<div class="stat-tile">
+					<div class="stat-value">{{ stats.characters }}</div>
+					<div class="stat-label">{{ 'TOOLS.STRING_LENGTH.CHARS' | translate }}</div>
+				</div>
+			</div>
+			<div class="col-6 col-md-3 col-lg col-lg-3">
+				<div class="stat-tile">
+					<div class="stat-value">{{ stats.charactersNoSpaces }}</div>
+					<div class="stat-label">{{ 'TOOLS.STRING_LENGTH.CHARS_NO_SPACE' | translate }}</div>
+				</div>
+			</div>
+			<div class="col-6 col-md-3 col-lg col-lg-2">
+				<div class="stat-tile">
+					<div class="stat-value">{{ stats.words }}</div>
+					<div class="stat-label">{{ 'TOOLS.STRING_LENGTH.WORDS' | translate }}</div>
+				</div>
+			</div>
+			<div class="col-6 col-md-3 col-lg col-lg-2">
+				<div class="stat-tile">
+					<div class="stat-value">{{ stats.lines }}</div>
+					<div class="stat-label">{{ 'TOOLS.STRING_LENGTH.LINES' | translate }}</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg">
+				<div class="stat-tile">
+					<div class="stat-value">{{ stats.bytes }}</div>
+					<div class="stat-label">{{ 'TOOLS.STRING_LENGTH.BYTES' | translate }}</div>
+				</div>
+			</div>
+		</div>
+	</app-section-card>
+</div>
+

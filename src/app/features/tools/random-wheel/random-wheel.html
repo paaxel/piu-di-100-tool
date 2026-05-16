@@ -1,0 +1,52 @@
+<div class="section-block">
+  <div class="row g-4">
+
+    <!-- Items + result -->
+    <div class="col-12 col-lg-4">
+      <app-section-card title="Ruota Fortunata" subtitle="Aggiungi gli elementi, gira la ruota e scopri il vincitore">
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Elementi (uno per riga)</label>
+          <textarea class="form-control font-mono"
+                    rows="8"
+                    [(ngModel)]="itemsText"
+                    (input)="onItemsChange()"
+                    placeholder="Elemento 1&#10;Elemento 2&#10;Elemento 3"></textarea>
+          <div class="text-muted small mt-1">{{ items.length }} elementi</div>
+        </div>
+
+        <button class="btn btn-primary w-100"
+                (click)="spin()"
+                [disabled]="isSpinning || items.length < 2">
+          <span class="material-symbols-outlined icon-inline me-1">casino</span>
+          {{ isSpinning ? 'Girando…' : 'Gira!' }}
+        </button>
+
+        <!-- Winner -->
+        <div *ngIf="winner" class="mt-4 text-center p-3 rounded bg-success-subtle">
+          <div class="text-muted small mb-1">
+            <span class="material-symbols-outlined icon-inline">emoji_events</span>
+            Vincitore
+          </div>
+          <div class="fw-bold fs-4">{{ winner }}</div>
+        </div>
+
+      </app-section-card>
+    </div>
+
+    <!-- Wheel canvas -->
+    <div class="col-12 col-lg-8 d-flex align-items-start justify-content-center">
+      <app-section-card title="Ruota" class="w-100">
+        <div class="d-flex justify-content-center">
+          <canvas #canvas width="380" height="380"
+                  class="d-block rounded"
+                  style="max-width: 100%; cursor: pointer;"
+                  (click)="spin()">
+          </canvas>
+        </div>
+        <div class="text-center text-muted small mt-2">Clicca sulla ruota per girare</div>
+      </app-section-card>
+    </div>
+
+  </div>
+</div>

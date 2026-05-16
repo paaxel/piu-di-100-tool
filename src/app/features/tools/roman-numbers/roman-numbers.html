@@ -1,0 +1,46 @@
+<div class="section-block">
+	<div class="row g-4">
+		<!-- Arabo → Romano -->
+		<div class="col-12 col-md-6">
+			<app-section-card [title]="'TOOLS.ROMAN.TO_ROMAN_TITLE' | translate">
+				<form [formGroup]="toRomanForm" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.ROMAN.ARABIC_LABEL' | translate }}</label>
+						<input type="number" class="form-control font-mono text-center form-control-lg"
+							formControlName="arabic" min="1" max="3999" placeholder="1–3999" />
+						<div class="text-danger small mt-1" *ngIf="toRomanError">
+							{{ 'TOOLS.ROMAN.' + toRomanError | translate }}
+						</div>
+					</div>
+					<div class="col-12 text-center" *ngIf="romanResult">
+						<div class="roman-output">{{ romanResult }}</div>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<!-- Romano → Arabo -->
+		<div class="col-12 col-md-6">
+			<app-section-card [title]="'TOOLS.ROMAN.FROM_ROMAN_TITLE' | translate">
+				<form [formGroup]="fromRomanForm" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.ROMAN.ROMAN_LABEL' | translate }}</label>
+						<input type="text" class="form-control font-mono text-center form-control-lg"
+							formControlName="roman" [placeholder]="'TOOLS.ROMAN.ROMAN_PLACEHOLDER' | translate" />
+						<div class="text-danger small mt-1" *ngIf="arabicError">
+							{{ 'TOOLS.ROMAN.INVALID' | translate }}
+						</div>
+					</div>
+					<div class="col-12 text-center" *ngIf="arabicResult">
+						<div class="roman-output">{{ arabicResult }}</div>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+	</div>
+
+	<!-- Note -->
+	<div class="alert alert-info mt-4 mb-0 small">
+		{{ 'TOOLS.ROMAN.NOTE' | translate }}
+	</div>
+</div>

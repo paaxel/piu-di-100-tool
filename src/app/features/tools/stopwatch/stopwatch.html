@@ -1,0 +1,54 @@
+<div class="section-block">
+  <div class="row g-4 justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <app-section-card title="Cronometro">
+
+        <!-- Main display -->
+        <div class="text-center my-3">
+          <div class="display-4 fw-bold font-monospace lh-1">{{ display }}</div>
+          <div class="text-muted small mt-1" *ngIf="isRunning && laps.length > 0">
+            Giro {{ laps.length + 1 }}: {{ lapSplit }}
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="d-flex gap-2 justify-content-center mb-4">
+          <button *ngIf="!isRunning && elapsed === 0" class="btn btn-success btn-lg px-4" (click)="start()">
+            <span class="material-symbols-outlined icon-inline me-1">play_arrow</span>Start
+          </button>
+          <ng-container *ngIf="elapsed > 0 || isRunning">
+            <button class="btn btn-lg px-4"
+                    [class.btn-warning]="isRunning"
+                    [class.btn-success]="!isRunning"
+                    (click)="isRunning ? stop() : start()">
+              <span class="material-symbols-outlined icon-inline me-1">{{ isRunning ? 'pause' : 'play_arrow' }}</span>
+              {{ isRunning ? 'Pausa' : 'Riprendi' }}
+            </button>
+            <button class="btn btn-outline-primary btn-lg" (click)="lap()" [disabled]="!isRunning">
+              <span class="material-symbols-outlined icon-inline me-1">flag</span>Giro
+            </button>
+            <button class="btn btn-outline-secondary btn-lg" (click)="reset()">
+              <span class="material-symbols-outlined icon-inline">restart_alt</span>
+            </button>
+          </ng-container>
+        </div>
+
+        <!-- Laps -->
+        <div *ngIf="laps.length > 0">
+          <div class="fw-semibold small mb-2">Giri</div>
+          <ul class="list-group">
+            <li *ngFor="let lap of laps; let i = index"
+                class="list-group-item d-flex justify-content-between align-items-center py-1">
+              <span class="badge bg-secondary rounded-pill">{{ i + 1 }}</span>
+              <span class="font-monospace small">{{ format(lap) }}</span>
+              <span class="font-monospace text-muted small">
+                +{{ format(i === 0 ? lap : lap - laps[i - 1]) }}
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </app-section-card>
+    </div>
+  </div>
+</div>

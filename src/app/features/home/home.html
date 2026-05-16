@@ -1,0 +1,90 @@
+<!-- Hero -->
+<section class="hero-section">
+	<h1>{{ 'HOME.HERO_TITLE' | translate }}</h1>
+	<p class="lead">{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
+
+	<form class="hero-search" (ngSubmit)="openSearch()">
+		<span class="material-symbols-outlined search-icon">search</span>
+		<input
+			type="text"
+			name="q"
+			[(ngModel)]="search"
+			[placeholder]="'HOME.SEARCH_PLACEHOLDER' | translate"
+		/>
+		<div class="kbd-group">
+			<span class="kbd">CMD</span>
+			<span class="kbd">K</span>
+		</div>
+	</form>
+</section>
+
+<!-- Featured tools -->
+<section class="section-block">
+	<div class="section-header">
+		<div>
+			<span class="t-label-caps label-caps">{{ 'HOME.PRO_TOOLS' | translate }}</span>
+			<h2>{{ 'HOME.FEATURED' | translate }}</h2>
+		</div>
+		<a class="section-link" routerLink="/search">{{ 'HOME.VIEW_ALL' | translate }}</a>
+	</div>
+
+	<div class="feature-grid">
+		<a class="feature-card" *ngFor="let tool of featuredTools" [routerLink]="tool.route">
+			<div class="feature-icon">
+				<span class="material-symbols-outlined">{{ tool.icon || 'build' }}</span>
+			</div>
+			<h3>{{ getToolName(tool.id, tool.name) }}</h3>
+			<p>{{ getToolDescription(tool.id, tool.description) }}</p>
+		</a>
+	</div>
+</section>
+
+<!-- Bento category grid -->
+<section class="section-block">
+	<h2 class="mb-3" style="font-size: 24px; font-weight: 600;">{{ 'HOME.BROWSE_CATEGORY' | translate }}</h2>
+
+	<div class="bento-grid">
+		<a routerLink="/search" [queryParams]="{ q: 'developer' }" class="bento-tile tile-light tile-span-2 tile-row-2">
+			<div>
+				<span class="material-symbols-outlined text-primary mb-2 d-block">terminal</span>
+				<h3>{{ 'HOME.CAT_DEVELOPER' | translate }}</h3>
+				<p>JSON, XML, Regex, SQL Formatter e altro.</p>
+			</div>
+			<div class="tag-row mt-3">
+				<span class="tag-chip">JSON</span>
+				<span class="tag-chip">REXP</span>
+				<span class="tag-chip">UUID</span>
+			</div>
+		</a>
+
+		<a routerLink="/search" [queryParams]="{ q: 'image' }" class="bento-tile tile-primary tile-span-2">
+			<div style="z-index: 1; position: relative;">
+				<h3>{{ 'HOME.CAT_IMAGE' | translate }}</h3>
+				<p>{{ 'HOME.CAT_IMAGE_DESC' | translate }}</p>
+			</div>
+			<span class="material-symbols-outlined tile-bg-icon">image</span>
+		</a>
+
+		<a routerLink="/search" [queryParams]="{ q: 'text' }" class="bento-tile tile-center">
+			<span class="material-symbols-outlined text-primary">edit_note</span>
+			<span class="t-label-caps">{{ 'HOME.CAT_TEXT' | translate }}</span>
+		</a>
+
+		<a routerLink="/search" [queryParams]="{ q: 'security' }" class="bento-tile tile-center">
+			<span class="material-symbols-outlined text-primary">security</span>
+			<span class="t-label-caps">{{ 'HOME.CAT_SECURITY' | translate }}</span>
+		</a>
+	</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+	<div class="cta-inner">
+		<div>
+			<h3>{{ 'HOME.CTA_TITLE' | translate }}</h3>
+			<p>{{ 'HOME.CTA_SUBTITLE' | translate }}</p>
+			<button type="button" class="btn-cta" (click)="exploreAll()">{{ 'HOME.CTA_ACTION' | translate }}</button>
+		</div>
+	</div>
+</section>
+

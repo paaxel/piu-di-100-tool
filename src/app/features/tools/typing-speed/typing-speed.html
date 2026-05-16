@@ -1,0 +1,96 @@
+<div class="section-block">
+  <div class="row g-4 justify-content-center">
+    <div class="col-12 col-lg-8">
+      <app-section-card title="Test Velocità di Scrittura" subtitle="Misura le parole al minuto (WPM)">
+
+        <!-- Config (idle) -->
+        <div *ngIf="phase === 'idle'" class="mb-3">
+          <label class="form-label fw-semibold">Durata</label>
+          <div class="d-flex gap-2">
+            <button *ngFor="let t of [30, 60, 90, 120]"
+                    class="btn flex-fill"
+                    [class.btn-primary]="timeLimit === t"
+                    [class.btn-outline-secondary]="timeLimit !== t"
+                    (click)="timeLimit = t">
+              {{ t }}s
+            </button>
+          </div>
+          <button class="btn btn-success w-100 mt-3" (click)="start()">
+            <span class="material-symbols-outlined icon-inline me-1">keyboard</span>Inizia
+          </button>
+        </div>
+
+        <!-- Running -->
+        <ng-container *ngIf="phase === 'running'">
+          <!-- Timer bar -->
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge rounded-pill"
+                  [class.bg-danger]="secondsLeft <= 10"
+                  [class.bg-primary]="secondsLeft > 10">
+              {{ secondsLeft }}s
+            </span>
+            <div class="progress flex-grow-1" style="height:6px">
+              <div class="progress-bar" [style.width.%]="progressPct"></div>
+            </div>
+          </div>
+
+          <!-- Text display -->
+          <div class="p-3 rounded border bg-light font-monospace lh-lg mb-3" style="font-size:1.1rem">
+            <span *ngFor="let c of chars"
+                  [class.text-success]="c.state === 'correct'"
+                  [class.text-danger]="c.state === 'wrong'"
+                  [class.text-muted]="c.state === 'pending'">{{ c.char }}</span>
+          </div>
+
+          <!-- Input -->
+          <textarea class="form-control font-monospace"
+                    rows="3"
+                    placeholder="Inizia a digitare qui…"
+                    [value]="typed"
+                    (input)="onInput($any($event.target).value)"
+                    autofocus>
+          </textarea>
+
+          <button class="btn btn-outline-secondary w-100 mt-2" (click)="reset()">Annulla</button>
+        </ng-container>
+
+        <!-- Results -->
+        <div *ngIf="phase === 'finished' && result">
+          <div class="row g-3 text-center mb-3">
+            <div class="col-6 col-md-3">
+              <div class="card border-0 bg-primary-subtle h-100 py-3">
+                <div class="fs-2 fw-bold text-primary">{{ result.wpm }}</div>
+                <div class="small text-muted">WPM</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card border-0 bg-success-subtle h-100 py-3">
+                <div class="fs-2 fw-bold text-success">{{ result.accuracy }}%</div>
+                <div class="small text-muted">Accuratezza</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card border-0 bg-warning-subtle h-100 py-3">
+                <div class="fs-2 fw-bold text-warning">{{ result.errors }}</div>
+                <div class="small text-muted">Errori</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card border-0 bg-info-subtle h-100 py-3">
+                <div class="fs-2 fw-bold text-info">{{ result.time }}s</div>
+                <div class="small text-muted">Tempo</div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-success flex-grow-1" (click)="start()">
+              <span class="material-symbols-outlined icon-inline me-1">refresh</span>Riprova
+            </button>
+            <button class="btn btn-outline-secondary" (click)="reset()">Cambia durata</button>
+          </div>
+        </div>
+
+      </app-section-card>
+    </div>
+  </div>
+</div>

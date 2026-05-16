@@ -1,0 +1,75 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'TOOLS.REGEX.TITLE' | translate"
+				[subtitle]="'TOOLS.REGEX.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+
+					<div class="col-12 col-md-9">
+						<label class="form-label">{{ 'TOOLS.REGEX.PATTERN' | translate }}</label>
+						<div class="input-group">
+							<span class="input-group-text font-mono">/</span>
+							<input type="text" class="form-control font-mono" formControlName="pattern"
+								placeholder="(\w+)\s(\w+)" autocomplete="off" autocorrect="off" spellcheck="false" />
+							<span class="input-group-text font-mono">/</span>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-3">
+						<label class="form-label">{{ 'TOOLS.REGEX.FLAGS' | translate }}</label>
+						<input type="text" class="form-control font-mono" formControlName="flags"
+							placeholder="gi" maxlength="8" autocomplete="off" />
+					</div>
+
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.REGEX.TEST_STRING' | translate }}</label>
+						<textarea class="form-control font-mono" rows="6" formControlName="testString"
+							[placeholder]="'TOOLS.REGEX.TEST_PLACEHOLDER' | translate"></textarea>
+					</div>
+
+					<div class="col-12" *ngIf="error">
+						<div class="alert alert-danger mb-0 font-mono">{{ error }}</div>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-4">
+			<app-section-card [title]="'TOOLS.REGEX.MATCHES_TITLE' | translate">
+				<ng-container *ngIf="!tested">
+					<p class="text-muted mb-0">{{ 'TOOLS.REGEX.NO_TEST' | translate }}</p>
+				</ng-container>
+
+				<ng-container *ngIf="tested && matches.length === 0 && !error">
+					<p class="text-muted mb-0">{{ 'TOOLS.REGEX.NO_MATCHES' | translate }}</p>
+				</ng-container>
+
+				<ng-container *ngIf="matches.length > 0">
+					<p class="text-muted small mb-2">
+						{{ 'TOOLS.REGEX.MATCH_COUNT' | translate: { count: matches.length } }}
+					</p>
+					<ol class="regex-match-list">
+						<li *ngFor="let m of matches" class="regex-match-list__item">
+							<span class="font-mono match-text">{{ m.match }}</span>
+							<span class="text-muted small ms-2">@ {{ m.index }}</span>
+							<ng-container *ngIf="m.groups.length > 0">
+								<div class="regex-match-list__groups">
+									<span *ngFor="let g of m.groups; let i = index" class="badge bg-secondary me-1">
+										${{ i + 1 }}: {{ g ?? 'undefined' }}
+									</span>
+								</div>
+							</ng-container>
+						</li>
+					</ol>
+				</ng-container>
+			</app-section-card>
+		</div>
+
+		<div class="col-12" *ngIf="tested && highlightedHtml">
+			<app-section-card [title]="'TOOLS.REGEX.HIGHLIGHT_TITLE' | translate">
+				<div class="regex-highlight font-mono" [innerHTML]="highlightedHtml"></div>
+			</app-section-card>
+		</div>
+	</div>
+</div>

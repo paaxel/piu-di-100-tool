@@ -1,0 +1,44 @@
+<div class="section-block">
+	<app-section-card [title]="'TOOLS.CRON.TITLE' | translate" [subtitle]="'TOOLS.CRON.SUBTITLE' | translate">
+		<form [formGroup]="form" class="row g-3">
+			<div class="col-12">
+				<label class="form-label">{{ 'TOOLS.CRON.EXPRESSION' | translate }}</label>
+				<input type="text" class="form-control font-mono" formControlName="expression" />
+			</div>
+		</form>
+
+		<div class="mt-3" *ngIf="explanation.valid; else err">
+			<div class="alert alert-primary mb-3">{{ explanation.summary }}</div>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>{{ 'TOOLS.CRON.FIELD' | translate }}</th>
+							<th>{{ 'TOOLS.CRON.VALUE' | translate }}</th>
+							<th>{{ 'TOOLS.CRON.MEANING' | translate }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let f of explanation.fields; let i = index">
+							<td><span class="t-label-caps">{{ fieldLabels[i] }}</span></td>
+							<td><code class="font-mono">{{ f.raw }}</code></td>
+							<td>{{ f.description }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<ng-template #err>
+			<div class="alert alert-warning mt-3" *ngIf="explanation.error">{{ explanation.error }}</div>
+		</ng-template>
+
+		<hr class="my-4" />
+
+		<h4 class="t-label-caps mb-3">{{ 'TOOLS.CRON.EXAMPLES' | translate }}</h4>
+		<div class="d-flex flex-wrap gap-2">
+			<button *ngFor="let ex of examples" type="button" class="btn btn-outline-secondary btn-sm" (click)="apply(ex.expr)">
+				<code class="font-mono me-2">{{ ex.expr }}</code><span class="text-muted">{{ ex.label }}</span>
+			</button>
+		</div>
+	</app-section-card>
+</div>

@@ -1,0 +1,51 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-4">
+      <app-section-card [title]="'TOOLS.PDF_EXTRACT.TITLE' | translate" [subtitle]="'TOOLS.PDF_EXTRACT.SUBTITLE' | translate">
+        <app-file-dropzone
+          [label]="'TOOLS.PDF_EXTRACT.SELECT_FILE' | translate"
+          accept="application/pdf"
+          (fileChange)="onFile($event)">
+        </app-file-dropzone>
+
+        <div *ngIf="file" class="mt-3">
+          <div class="mb-1 small text-muted">{{ pageCount }} {{ 'TOOLS.PDF_EXTRACT.FILE_INFO' | translate }}</div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">
+              {{ 'TOOLS.PDF_EXTRACT.RANGE_LABEL' | translate }}
+              <small class="text-muted fw-normal">{{ 'TOOLS.PDF_EXTRACT.RANGE_HINT' | translate }}</small>
+            </label>
+            <input type="text" class="form-control" [(ngModel)]="pageRange"
+                   [placeholder]="'TOOLS.PDF_EXTRACT.RANGE_PLACEHOLDER' | translate">
+          </div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-success flex-grow-1" (click)="extract()"
+                    [disabled]="processing || !pageRange.trim()">
+              <span *ngIf="processing" class="spinner-border spinner-border-sm me-1"></span>
+              <span class="material-symbols-outlined icon-inline me-1" *ngIf="!processing">content_cut</span>
+              {{ 'TOOLS.PDF_EXTRACT.EXTRACT_DOWNLOAD' | translate }}
+            </button>
+            <button class="btn btn-outline-secondary" (click)="reset()">{{ 'TOOLS.PDF_EXTRACT.RESET' | translate }}</button>
+          </div>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0 small">{{ error | translate }}</div>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-lg-8">
+      <app-section-card [title]="'TOOLS.PDF_EXTRACT.SYNTAX_TITLE' | translate">
+        <table class="table table-sm table-borderless mb-0">
+          <thead><tr><th>{{ 'TOOLS.PDF_EXTRACT.SYNTAX_HEADER_SYNTAX' | translate }}</th><th>{{ 'TOOLS.PDF_EXTRACT.SYNTAX_HEADER_MEANING' | translate }}</th></tr></thead>
+          <tbody>
+            <tr><td><code>1-3</code></td><td>{{ 'TOOLS.PDF_EXTRACT.SYNTAX_RANGE_1_3' | translate }}</td></tr>
+            <tr><td><code>5</code></td><td>{{ 'TOOLS.PDF_EXTRACT.SYNTAX_SINGLE_5' | translate }}</td></tr>
+            <tr><td><code>1-3, 5, 8-10</code></td><td>{{ 'TOOLS.PDF_EXTRACT.SYNTAX_COMBINED' | translate }}</td></tr>
+          </tbody>
+        </table>
+      </app-section-card>
+    </div>
+  </div>
+</div>

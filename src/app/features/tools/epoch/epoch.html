@@ -1,0 +1,27 @@
+<div class="section-block">
+	<app-section-card [title]="'TOOLS.EPOCH.TITLE' | translate" [subtitle]="'TOOLS.EPOCH.SUBTITLE' | translate">
+		<p class="text-muted">{{ 'TOOLS.EPOCH.NOW' | translate }}: <span class="font-mono">{{ nowEpoch }}</span></p>
+
+		<form [formGroup]="form" class="row g-4">
+			<div class="col-12 col-lg-6">
+				<label class="form-label">{{ 'TOOLS.EPOCH.EPOCH_LABEL' | translate }}</label>
+				<div class="input-group">
+					<input type="number" class="form-control font-mono" formControlName="epoch" />
+					<select class="form-select" formControlName="unit" style="max-width: 90px;">
+						<option value="s">s</option>
+						<option value="ms">ms</option>
+					</select>
+				</div>
+				<button type="button" class="btn btn-primary mt-2" (click)="convertFromEpoch()">→ {{ 'TOOLS.EPOCH.TO_DATE' | translate }}</button>
+				<pre class="result-block mt-3" *ngIf="fromEpoch">{{ fromEpoch }}</pre>
+			</div>
+
+			<div class="col-12 col-lg-6">
+				<label class="form-label">{{ 'TOOLS.EPOCH.DATE_LABEL' | translate }}</label>
+				<input type="datetime-local" class="form-control font-mono" formControlName="date" />
+				<button type="button" class="btn btn-primary mt-2" (click)="convertFromDate()">→ {{ 'TOOLS.EPOCH.TO_EPOCH' | translate }}</button>
+				<pre class="result-block mt-3" *ngIf="fromDate">{{ fromDate }}</pre>
+			</div>
+		</form>
+	</app-section-card>
+</div>

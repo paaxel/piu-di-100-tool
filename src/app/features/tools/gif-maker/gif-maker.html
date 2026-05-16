@@ -1,0 +1,113 @@
+<div class="section-block">
+  <div class="row g-4">
+
+    <!-- Controls -->
+    <div class="col-12 col-lg-4">
+      <app-section-card title="GIF Maker" subtitle="Combina più immagini in una GIF animata">
+
+        <!-- File input -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Aggiungi frame</label>
+          <div>
+            <label class="btn btn-outline-primary btn-sm">
+              <span class="material-symbols-outlined icon-inline me-1">add_photo_alternate</span>
+              Seleziona immagini
+              <input type="file" accept="image/*" multiple hidden (change)="onFilesChange($event)">
+            </label>
+          </div>
+          <div class="text-muted small mt-1">Seleziona più file contemporaneamente</div>
+        </div>
+
+        <!-- Delay -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Durata frame: <strong>{{ delay }}ms</strong></label>
+          <input type="range" class="form-range" min="50" max="2000" step="50" [(ngModel)]="delay">
+          <div class="d-flex justify-content-between text-muted small">
+            <span>50ms (veloce)</span><span>2s (lento)</span>
+          </div>
+        </div>
+
+        <!-- Max size -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Dimensione massima output</label>
+          <div class="btn-group w-100" role="group">
+            <input type="radio" class="btn-check" [value]="128" [(ngModel)]="maxDim" id="dim128">
+            <label class="btn btn-outline-secondary btn-sm" for="dim128">128px</label>
+            <input type="radio" class="btn-check" [value]="256" [(ngModel)]="maxDim" id="dim256">
+            <label class="btn btn-outline-secondary btn-sm" for="dim256">256px</label>
+            <input type="radio" class="btn-check" [value]="320" [(ngModel)]="maxDim" id="dim320">
+            <label class="btn btn-outline-secondary btn-sm" for="dim320">320px</label>
+            <input type="radio" class="btn-check" [value]="480" [(ngModel)]="maxDim" id="dim480">
+            <label class="btn btn-outline-secondary btn-sm" for="dim480">480px</label>
+          </div>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger py-2 small mb-3">{{ error }}</div>
+
+        <!-- Actions -->
+        <div class="d-flex flex-column gap-2">
+          <button class="btn btn-primary" (click)="build()"
+                  [disabled]="isProcessing || frames.length === 0">
+            <span class="material-symbols-outlined icon-inline me-1">
+              {{ isProcessing ? 'hourglass_empty' : 'gif' }}
+            </span>
+            {{ isProcessing ? 'Elaborazione…' : 'Crea GIF' }}
+          </button>
+          <div class="d-flex gap-2" *ngIf="outputPreview">
+            <button class="btn btn-success flex-grow-1" (click)="download()">
+              <span class="material-symbols-outlined icon-inline me-1">download</span>
+              Download GIF ({{ outputSize | fileSize }})
+            </button>
+            <button class="btn btn-outline-secondary" (click)="reset()">Reset</button>
+          </div>
+        </div>
+
+      </app-section-card>
+    </div>
+
+    <!-- Frame list + preview -->
+    <div class="col-12 col-lg-8">
+
+      <!-- Frame thumbnails -->
+      <app-section-card *ngIf="frames.length" title="Frame" [subtitle]="frames.length + ' frame'">
+        <div class="d-flex flex-wrap gap-2">
+          <div *ngFor="let f of frames; let i = index"
+               class="border rounded p-1 position-relative"
+               style="width:90px;">
+            <img [src]="f.preview" class="d-block rounded mb-1"
+                 style="width:80px;height:60px;object-fit:cover;" [title]="f.name">
+            <div class="text-muted" style="font-size:0.65rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;" [title]="f.name">{{ f.name }}</div>
+            <div class="d-flex justify-content-between mt-1">
+              <button class="btn btn-outline-secondary p-0" style="width:22px;height:22px;font-size:0.65rem;"
+                      (click)="moveUp(i)" [disabled]="i === 0" title="Su">↑</button>
+              <button class="btn btn-outline-secondary p-0" style="width:22px;height:22px;font-size:0.65rem;"
+                      (click)="moveDown(i)" [disabled]="i === frames.length - 1" title="Giù">↓</button>
+              <button class="btn btn-outline-danger p-0" style="width:22px;height:22px;font-size:0.65rem;"
+                      (click)="removeFrame(i)" title="Rimuovi">✕</button>
+            </div>
+          </div>
+        </div>
+      </app-section-card>
+
+      <!-- GIF preview -->
+      <app-section-card *ngIf="outputPreview" title="Anteprima GIF" class="mt-3 d-block">
+        <div class="text-center">
+          <img [src]="outputPreview" class="img-fluid rounded border d-inline-block"
+               style="max-height:400px;" alt="GIF animata">
+        </div>
+      </app-section-card>
+
+      <!-- Empty state -->
+      <app-section-card *ngIf="!frames.length && !outputPreview" title="Come usarlo">
+        <ol class="small text-muted ps-3 mb-0">
+          <li>Aggiungi le immagini che vuoi animare (ordinate come preferisci).</li>
+          <li>Imposta la durata di ogni frame con il cursore.</li>
+          <li>Scegli la dimensione massima dell'output.</li>
+          <li>Clicca <strong>Crea GIF</strong> e scarica il risultato.</li>
+        </ol>
+      </app-section-card>
+
+    </div>
+
+  </div>
+</div>

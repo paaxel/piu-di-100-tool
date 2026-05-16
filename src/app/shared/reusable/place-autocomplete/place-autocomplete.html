@@ -1,0 +1,26 @@
+<div class="place-autocomplete">
+	<input
+		type="text"
+		class="form-control"
+		[value]="query"
+		[placeholder]="placeholder"
+		autocomplete="off"
+		(input)="onInput($event)"
+		(focus)="onFocus()"
+		(keydown)="onKeydown($event)"
+	/>
+	<ul *ngIf="isOpen" class="place-autocomplete__dropdown" role="listbox">
+		<li
+			*ngFor="let item of suggestions; let i = index"
+			class="place-autocomplete__item"
+			[class.active]="i === activeIndex"
+			(mousedown)="select(item)"
+			role="option"
+		>
+			{{ item }}
+		</li>
+	</ul>
+	<div *ngIf="showHint && !isOpen" class="place-autocomplete__hint">
+		{{ hintLabel }}
+	</div>
+</div>

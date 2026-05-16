@@ -1,0 +1,17 @@
+<div class="section-block">
+  <app-section-card title="Palette da immagine" subtitle="Estrai i colori dominanti da una foto o screenshot">
+    <app-file-dropzone label="Seleziona immagine" accept="image/*" (fileChange)="onImage($event)"></app-file-dropzone>
+
+    <img *ngIf="preview" [src]="preview" class="img-fluid rounded border mt-3 mb-3" alt="Immagine input">
+
+    <div class="d-grid gap-2" *ngIf="imagePalette.length">
+      <div class="d-flex align-items-center gap-2" *ngFor="let c of imagePalette">
+        <div class="rounded border" [style.background]="c" style="width: 36px; height: 36px;"></div>
+        <code>{{ c }}</code>
+        <button class="btn btn-outline-secondary btn-sm ms-auto" (click)="copy(c)">Copia</button>
+      </div>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
+  </app-section-card>
+</div>

@@ -1,0 +1,46 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-3">
+      <app-section-card [title]="'TOOLS.PDF_VIEWER.TITLE' | translate" [subtitle]="'TOOLS.PDF_VIEWER.SUBTITLE' | translate">
+        <app-file-dropzone
+          [label]="'TOOLS.PDF_VIEWER.SELECT_FILE' | translate"
+          accept="application/pdf"
+          (fileChange)="onFile($event)">
+        </app-file-dropzone>
+
+        <div *ngIf="fileName" class="mt-3">
+          <div class="small mb-1">
+            <span class="material-symbols-outlined icon-inline me-1 text-danger">picture_as_pdf</span>
+            <strong>{{ fileName }}</strong>
+          </div>
+          <div class="small text-muted mb-3">{{ pageCount }} {{ 'TOOLS.PDF_VIEWER.PAGES' | translate }}</div>
+          <button class="btn btn-outline-secondary w-100" (click)="reset()">{{ 'TOOLS.PDF_VIEWER.CLOSE' | translate }}</button>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0 small">{{ error | translate }}</div>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-lg-9" *ngIf="safeUrl">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body p-0">
+          <iframe [src]="safeUrl"
+                  class="w-100 rounded"
+                  style="height: 80vh; min-height: 500px; border: none;"
+                  title="PDF Viewer">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-9" *ngIf="!safeUrl && !error">
+      <app-section-card [title]="'TOOLS.PDF_VIEWER.HOW_TITLE' | translate">
+        <ol class="mb-0 ps-3">
+          <li class="mb-1">{{ 'TOOLS.PDF_VIEWER.HOW_1' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.PDF_VIEWER.HOW_2' | translate }}</li>
+          <li class="text-muted">{{ 'TOOLS.PDF_VIEWER.HOW_3' | translate }}</li>
+        </ol>
+      </app-section-card>
+    </div>
+  </div>
+</div>

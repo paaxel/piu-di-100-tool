@@ -1,0 +1,48 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12">
+			<app-section-card
+				[title]="'TOOLS.DIFF.TITLE' | translate"
+				[subtitle]="'TOOLS.DIFF.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'TOOLS.DIFF.ORIGINAL' | translate }}</label>
+						<textarea class="form-control font-mono" rows="10" formControlName="original"></textarea>
+					</div>
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'TOOLS.DIFF.MODIFIED' | translate }}</label>
+						<textarea class="form-control font-mono" rows="10" formControlName="modified"></textarea>
+					</div>
+					<div class="col-12 d-flex justify-content-end gap-2">
+						<button class="btn btn-outline-secondary" type="button" (click)="clear()">{{ 'COMMON.RESET' | translate }}</button>
+						<button class="btn btn-primary" type="button" (click)="compare()">{{ 'TOOLS.DIFF.COMPARE' | translate }}</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12" *ngIf="computed">
+			<app-section-card [title]="'TOOLS.DIFF.RESULT_TITLE' | translate">
+				<div class="diff-stats mb-3">
+					<span class="badge diff-stats__added me-2">+{{ stats.added }} {{ 'TOOLS.DIFF.ADDED' | translate }}</span>
+					<span class="badge diff-stats__removed me-2">-{{ stats.removed }} {{ 'TOOLS.DIFF.REMOVED' | translate }}</span>
+					<span class="badge diff-stats__equal">{{ stats.equal }} {{ 'TOOLS.DIFF.EQUAL' | translate }}</span>
+				</div>
+				<div class="diff-table">
+					<div
+						*ngFor="let line of diff"
+						class="diff-table__row"
+						[class.diff-table__row--added]="line.type === 'added'"
+						[class.diff-table__row--removed]="line.type === 'removed'">
+						<span class="diff-table__gutter diff-table__gutter--a">{{ line.lineA ?? '' }}</span>
+						<span class="diff-table__gutter diff-table__gutter--b">{{ line.lineB ?? '' }}</span>
+						<span class="diff-table__sign">
+							{{ line.type === 'added' ? '+' : line.type === 'removed' ? '-' : ' ' }}
+						</span>
+						<span class="diff-table__text font-mono">{{ line.text }}</span>
+					</div>
+				</div>
+			</app-section-card>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card [title]="'TOOLS.CF_CHECK.TITLE' | translate" [subtitle]="'TOOLS.CF_CHECK.SUBTITLE' | translate">
+				<p class="text-muted">{{ 'TOOLS.CF_CHECK.NOTE' | translate }}</p>
+				<form [formGroup]="form" class="row g-3" (ngSubmit)="check()">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.CF_CHECK.INPUT' | translate }}</label>
+						<input type="text" class="form-control font-mono" formControlName="value" placeholder="RSSMRA80A01H501U" />
+					</div>
+					<div class="col-12 d-flex justify-content-end">
+						<button class="btn btn-primary" type="submit">{{ 'TOOLS.COMMON.CHECK' | translate }}</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+		<div class="col-12 col-xl-4">
+			<app-result-panel
+				[label]="'TOOLS.COMMON.RESULT' | translate"
+				[value]="result ? (result.valid ? ('TOOLS.CF_CHECK.VALID' | translate) : ('TOOLS.CF_CHECK.INVALID' | translate) + ' (' + (result.reason ? ('TOOLS.CF_CHECK.REASONS.' + result.reason | translate) : '') + (result.expectedCheck ? ' — ' + ('TOOLS.CF_CHECK.EXPECTED' | translate) + ': ' + result.expectedCheck : '') + ')') : ''"
+				[placeholder]="'TOOLS.CF_CHECK.PLACEHOLDER' | translate"
+				(cleared)="clearResult()"
+			></app-result-panel>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<div
+  class="dropzone"
+  [class.drag-over]="isDragOver"
+  role="button"
+  tabindex="0"
+  (click)="openPicker()"
+  (keydown)="onKeydown($event)"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+  (drop)="onDrop($event)">
+
+  <input #fileInput type="file" [attr.accept]="accept" (change)="onInputChange($event)" hidden>
+
+  <span class="material-symbols-outlined dropzone-icon">
+    {{ isDragOver ? 'file_download' : 'cloud_upload' }}
+  </span>
+
+  <ng-container *ngIf="!selectedFileName">
+    <p class="dropzone-hint-primary mb-1">
+      {{ isDragOver
+          ? ('SHARED.FILE_DROPZONE.DROP_HERE' | translate)
+          : ('SHARED.FILE_DROPZONE.CLICK_OR_DROP' | translate) }}
+    </p>
+    <p *ngIf="acceptHint" class="dropzone-hint-secondary mb-0">{{ acceptHint }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="selectedFileName">
+    <p class="dropzone-file-name mb-1">
+      <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:middle;margin-right:0.25rem">check_circle</span>{{ selectedFileName }}
+    </p>
+    <p class="dropzone-hint-secondary mb-0">{{ 'SHARED.FILE_DROPZONE.CLICK_TO_CHANGE' | translate }}</p>
+  </ng-container>
+</div>

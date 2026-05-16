@@ -1,0 +1,50 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-4">
+			<app-section-card
+				[title]="'TOOLS.LOREM.TITLE' | translate"
+				[subtitle]="'TOOLS.LOREM.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.LOREM.COUNT' | translate }}</label>
+						<input type="number" class="form-control" formControlName="count" min="1" max="100" />
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.LOREM.UNIT' | translate }}</label>
+						<select class="form-select" formControlName="unit">
+							<option value="paragraphs">{{ 'TOOLS.LOREM.PARAGRAPHS' | translate }}</option>
+							<option value="sentences">{{ 'TOOLS.LOREM.SENTENCES' | translate }}</option>
+							<option value="words">{{ 'TOOLS.LOREM.WORDS' | translate }}</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label class="form-check">
+							<input type="checkbox" class="form-check-input" formControlName="startWithLorem" />
+							<span class="form-check-label ms-1">{{ 'TOOLS.LOREM.START_WITH_LOREM' | translate }}</span>
+						</label>
+					</div>
+					<div class="col-12 d-flex gap-2">
+						<button class="btn btn-primary flex-grow-1" (click)="generate()" [disabled]="form.invalid">
+							{{ 'TOOLS.LOREM.GENERATE' | translate }}
+						</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-8">
+			<app-section-card [title]="'TOOLS.LOREM.RESULT_TITLE' | translate">
+				<textarea class="form-control font-mono" rows="16" readonly [value]="output"
+					[placeholder]="'TOOLS.LOREM.RESULT_PLACEHOLDER' | translate"></textarea>
+				<div class="d-flex gap-2 mt-2" *ngIf="output">
+					<button class="btn btn-sm btn-outline-secondary" (click)="copy()">
+						{{ (copied ? 'TOOLS.LOREM.COPIED' : 'TOOLS.LOREM.COPY') | translate }}
+					</button>
+					<button class="btn btn-sm btn-outline-danger" (click)="clear()">
+						{{ 'TOOLS.LOREM.CLEAR' | translate }}
+					</button>
+				</div>
+			</app-section-card>
+		</div>
+	</div>
+</div>

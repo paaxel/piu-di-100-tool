@@ -1,0 +1,26 @@
+<div class="section-block">
+  <app-section-card title="Invertitore di testo" subtitle="Inverti caratteri, parole o righe">
+    <div [formGroup]="form">
+    <div class="mb-2">
+      <label class="form-label">Testo</label>
+      <textarea class="form-control" rows="6" formControlName="value"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Modalita</label>
+      <select class="form-select" formControlName="mode">
+        <option value="chars">Inverti caratteri</option>
+        <option value="words">Inverti parole</option>
+        <option value="lines">Inverti righe</option>
+      </select>
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Risultato</label>
+      <textarea class="form-control" rows="6" [value]="result" readonly></textarea>
+    </div>
+
+    <button class="btn btn-outline-secondary" (click)="copy()" [disabled]="!result">Copia</button>
+  </app-section-card>
+</div>

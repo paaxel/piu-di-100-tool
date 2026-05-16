@@ -1,0 +1,27 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12">
+			<app-section-card [title]="caseLabel + ' Converter'" [subtitle]="'TOOLS.CASE.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.CASE.INPUT' | translate }}</label>
+						<textarea
+							class="form-control font-mono"
+							rows="6"
+							formControlName="value"
+							[placeholder]="'TOOLS.CASE.PLACEHOLDER' | translate"></textarea>
+						<small class="text-muted mt-1 d-block">Es.: «Hello World» → «{{ caseExample }}»</small>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12">
+			<app-result-panel
+				[label]="caseLabel"
+				[value]="result"
+				[placeholder]="'TOOLS.COMMON.OUTPUT_PLACEHOLDER' | translate"
+				(cleared)="clearResult()"></app-result-panel>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<div class="section-block terms-page">
+	<header class="page-head">
+		<h1>{{ 'TERMS.TITLE' | translate }}</h1>
+		<p class="lead">{{ 'TERMS.SUBTITLE' | translate }}</p>
+	</header>
+
+	<app-section-card [title]="'TERMS.SECTION_USE' | translate" [subtitle]="'TERMS.SECTION_USE_SUB' | translate">
+		<p>{{ 'TERMS.USE_BODY' | translate }}</p>
+		<ul>
+			<li>{{ 'TERMS.USE_ITEM_1' | translate }}</li>
+			<li>{{ 'TERMS.USE_ITEM_2' | translate }}</li>
+			<li>{{ 'TERMS.USE_ITEM_3' | translate }}</li>
+		</ul>
+	</app-section-card>
+
+	<app-section-card [title]="'TERMS.SECTION_DISCLAIMER' | translate" [subtitle]="'TERMS.SECTION_DISCLAIMER_SUB' | translate">
+		<p>{{ 'TERMS.DISCLAIMER_BODY' | translate }}</p>
+	</app-section-card>
+
+	<app-section-card [title]="'TERMS.SECTION_IP' | translate" [subtitle]="'TERMS.SECTION_IP_SUB' | translate">
+		<p>{{ 'TERMS.IP_BODY' | translate }}</p>
+	</app-section-card>
+
+	<app-section-card [title]="'TERMS.SECTION_CHANGES' | translate" [subtitle]="'TERMS.SECTION_CHANGES_SUB' | translate">
+		<p>{{ 'TERMS.CHANGES_BODY' | translate }}</p>
+	</app-section-card>
+
+	<app-section-card [title]="'TERMS.SECTION_CONTACT' | translate" [subtitle]="'TERMS.SECTION_CONTACT_SUB' | translate">
+		<p>{{ 'TERMS.CONTACT_BODY' | translate }}</p>
+		<p><a routerLink="/supporto">{{ 'TERMS.CONTACT_LINK' | translate }} →</a></p>
+	</app-section-card>
+</div>

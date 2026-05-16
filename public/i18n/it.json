@@ -1,0 +1,1595 @@
+{
+  "APP": {
+    "SUBTITLE": "Suite professionale di utility"
+  },
+  "SHARED": {
+    "FILE_DROPZONE": {
+      "CLICK_OR_DROP": "Clicca per selezionare o trascina qui",
+      "DROP_HERE": "Rilascia il file qui",
+      "CLICK_TO_CHANGE": "Clicca per cambiare file"
+    }
+  },
+  "NAV": {
+    "HOME": "Home",
+    "TOOLS": "Strumenti",
+    "SEARCH_TOOL": "Ricerca",
+    "SEARCH": "Cerca",
+    "SEARCH_PLACEHOLDER": "Cerca tool con fuzzy search...",
+    "CODICE_FISCALE": "Codice Fiscale",
+    "BASE64": "Base64"
+  },
+  "TOOL_PAGE": {
+    "DESCRIPTION_TITLE": "Cosa Fa Questo Tool"
+  },
+  "HOME": {
+    "TITLE": "Tutti i tool in un solo posto",
+    "SUBTITLE": "Strumenti rapidi, modulari e pronti per il tuo workflow.",
+    "HERO_TITLE": "Tutti i tool di cui hai bisogno in un unico posto",
+    "HERO_SUBTITLE": "Oltre 100 tool gratuiti per sviluppatori e non. Pronti all'uso, nessuna registrazione.",
+    "SEARCH_PLACEHOLDER": "Cerca un tool... es. JWT, Base64, IBAN",
+    "SEARCH_ACTION": "Vai alla ricerca",
+    "FEATURED": "Tool in evidenza",
+    "PRO_TOOLS": "Tool Pro",
+    "VIEW_ALL": "Vedi tutti i tool",
+    "BROWSE_CATEGORY": "Sfoglia per categoria",
+    "CAT_DEVELOPER": "Strumenti per Sviluppatori",
+    "CAT_FINANCE": "Finanza",
+    "CAT_IMAGE": "Editor di Immagini",
+    "CAT_IMAGE_DESC": "Comprimi, ritaglia, ridimensiona e converti immagini.",
+    "CAT_TEXT": "Elaborazione Testo",
+    "CAT_SECURITY": "Sicurezza",
+    "CTA_TITLE": "Pronto a ottimizzare il tuo workflow?",
+    "CTA_SUBTITLE": "Tutti i tool sono eseguiti lato client per garantire la massima privacy.",
+    "CTA_ACTION": "Esplora tutti i 100+ tool",
+    "OPEN_TOOL": "Apri tool"
+  },
+  "SEARCH": {
+    "TITLE": "Tools",
+    "SUBTITLE": "Ricerca su nome, descrizione, categoria e tag.",
+    "INTRO_TITLE": "Trova il tool giusto per te",
+    "INTRO_SUBTITLE": "Oltre 100 strumenti a portata di ricerca. Digita una parola chiave per iniziare.",
+    "PLACEHOLDER": "Digita per cercare...",
+    "ACTION": "Cerca",
+    "RESULTS": "Risultati: {{count}} di {{total}} tool",
+    "PAGE_SUMMARY": "Pagina {{page}} di {{pages}} · risultati {{from}}–{{to}} di {{total}}",
+    "PAGINATION": "Paginazione risultati"
+  },
+  "FOOTER": {
+    "PRIVACY": "Politica sulla Privacy",
+    "TERMS": "Termini di Servizio",
+    "CONTACT": "Supporto",
+    "POPULAR": "Tool popolari"
+  },
+  "COMMON": {
+    "MALE": "Maschio",
+    "FEMALE": "Femmina",
+    "RESET": "Reimposta"
+  },
+  "TOOL_CATEGORIES": {
+    "DEVELOPER_TOOLS": "Strumenti per Sviluppatori",
+    "SECURITY": "Sicurezza",
+    "FINANCE": "Finanza",
+    "TEXT_PROCESSING": "Elaborazione Testo",
+    "CONVERSION": "Conversione",
+    "DATE_TIME": "Data/Ora"
+  },
+  "TOOL_CATALOG": {
+    "url-codec": {
+      "NAME": "URL Encode / Decode",
+      "DESCRIPTION": "Codifica e decodifica percentuale per URL e parametri query.",
+      "LONG_DESCRIPTION": "Codifica e decodifica stringhe URL usando il percent-encoding. Inserisci un URL o un parametro query e ottieni la versione codificata o decodificata istantaneamente. Utile per costruire URL validi, debuggare API e gestire caratteri speciali nei parametri HTTP."
+    },
+    "base64": {
+      "NAME": "Base64 / UnBase64",
+      "DESCRIPTION": "Codifica e decodifica testo in modo sicuro con Base64.",
+      "LONG_DESCRIPTION": "Codifica testo normale in Base64 e decodifica stringhe Base64 in testo leggibile. Usato per URI dati, intestazioni HTTP Basic Auth, allegati email e trasmissione di dati binari in sistemi che accettano solo testo."
+    },
+    "jwt": {
+      "NAME": "JWT Decoder",
+      "DESCRIPTION": "Decodifica e ispeziona JSON Web Token: header, payload e firma.",
+      "LONG_DESCRIPTION": "Decodifica e ispeziona JSON Web Token senza bisogno di chiave: visualizza header, algoritmo, payload e scadenza. Verifica opzionalmente la firma con il tuo segreto HMAC o chiave pubblica RSA. Tutto avviene nel browser."
+    },
+    "codice-fiscale": {
+      "NAME": "Codice Fiscale",
+      "DESCRIPTION": "Genera il codice fiscale italiano a partire dai dati anagrafici.",
+      "LONG_DESCRIPTION": "Calcola il codice fiscale italiano a partire da nome, cognome, data di nascita, genere e comune di nascita, usando l'algoritmo ufficiale dell'Agenzia delle Entrate. Il calcolo avviene interamente nel browser senza inviare dati a nessun server."
+    },
+    "cf-checker": {
+      "NAME": "Validatore Codice Fiscale",
+      "DESCRIPTION": "Verifica il carattere di controllo del codice fiscale con regex generica e checksum.",
+      "LONG_DESCRIPTION": "Verifica la correttezza di un codice fiscale italiano controllando il formato con regex generica e il carattere di controllo con l'algoritmo di checksum. Non verifica l'esistenza anagrafica della persona."
+    },
+    "codice-fiscale-inverso": {
+      "NAME": "Codice Fiscale Inverso",
+      "DESCRIPTION": "Decodifica un codice fiscale italiano — estrai data di nascita, genere e comune.",
+      "LONG_DESCRIPTION": "Dato un codice fiscale italiano, questo strumento ne interpreta la struttura per estrarre i dati codificati: anno, mese e giorno di nascita, genere e codice catastale o comune di nascita. Il controllo avviene direttamente nel browser."
+    },
+    "iban-checker": {
+      "NAME": "IBAN Checker",
+      "DESCRIPTION": "Verifica le cifre di controllo IBAN (mod-97). Solo controllo formato — nessuna verifica bancaria.",
+      "LONG_DESCRIPTION": "Verifica le cifre di controllo di un IBAN con l'algoritmo ISO 7064 Modulo 97-10. Copre oltre 40 paesi. Esegue solo il controllo del formato — non verifica l'esistenza effettiva del conto bancario."
+    },
+    "one-line": {
+      "NAME": "Testo su una riga",
+      "DESCRIPTION": "Comprimi testo su più righe in una singola riga e rimuovi spazi extra.",
+      "LONG_DESCRIPTION": "Comprime testo su più righe in una singola riga, rimuovendo ritorni a capo e spazi multipli. Ideale per ripulire query SQL, stringhe JSON o qualsiasi contenuto multiriga prima di incollarlo in terminali o variabili."
+    },
+    "space-remover": {
+      "NAME": "Rimuovi spazi",
+      "DESCRIPTION": "Elimina tutti i caratteri di spaziatura da qualsiasi testo.",
+      "LONG_DESCRIPTION": "Rimuove tutti i caratteri di spaziatura da un testo: spazi, tabulazioni, a capo e spazi unificatori. Utile per normalizzare identificatori, hash, chiavi API o qualsiasi stringa in cui gli spazi causano errori."
+    },
+    "string-length": {
+      "NAME": "Lunghezza stringa",
+      "DESCRIPTION": "Conta caratteri, parole, righe e dimensione in byte di qualsiasi testo.",
+      "LONG_DESCRIPTION": "Conta il numero di caratteri, parole, righe e la dimensione in byte di qualsiasi testo. Utile per verificare limiti di campi di database, lunghezza di tweet, SMS o testi con vincoli di dimensione."
+    },
+    "unit-converter": {
+      "NAME": "Convertitore di unità",
+      "DESCRIPTION": "Converti unità del sistema metrico SI in unità americane — lunghezza, massa, volume, temperatura, velocità.",
+      "LONG_DESCRIPTION": "Converti unità di misura del sistema metrico SI in unità americane e viceversa. Supporta lunghezza, massa, volume, temperatura e velocità. Il calcolo avviene istantaneamente lato client."
+    },
+    "json-formatter": {
+      "NAME": "Formattatore JSON",
+      "DESCRIPTION": "Formatta, minifica e valida documenti JSON.",
+      "LONG_DESCRIPTION": "Formatta e abbellisce documenti JSON con indentazione configurabile. Minifica JSON rimuovendo spazi inutili. Valida la sintassi e segnala errori. Utile per leggere risposte API e file di configurazione."
+    },
+    "json-yaml": {
+      "NAME": "JSON ↔ YAML",
+      "DESCRIPTION": "Convertitore bidirezionale JSON / YAML.",
+      "LONG_DESCRIPTION": "Converte in modo bidirezionale tra JSON e YAML. Incolla JSON e ottieni YAML, oppure incolla YAML e ottieni JSON. Utile per configurare file Kubernetes, Docker Compose e altre infrastrutture."
+    },
+    "json-csv": {
+      "NAME": "JSON ↔ CSV",
+      "DESCRIPTION": "Converti tra array JSON di oggetti e CSV.",
+      "LONG_DESCRIPTION": "Converte array JSON di oggetti in CSV scaricabile e CSV in array JSON. Rileva automaticamente le colonne dagli oggetti. Utile per importare ed esportare dati da fogli di calcolo o database."
+    },
+    "epoch": {
+      "NAME": "Epoch / Unix Timestamp",
+      "DESCRIPTION": "Converti tra timestamp Unix epoch e date leggibili.",
+      "LONG_DESCRIPTION": "Converte tra timestamp Unix epoch (secondi o millisecondi) e date leggibili. Mostra l'ora corrente in tempo reale. Utile per debuggare log, analizzare timestamp nelle risposte API e lavorare con date nei database."
+    },
+    "cron": {
+      "NAME": "Costruttore Espressioni Cron",
+      "DESCRIPTION": "Spiega e progetta espressioni cron (5 o 6 campi), come crontab.guru.",
+      "LONG_DESCRIPTION": "Spiega in linguaggio naturale le espressioni cron a 5 o 6 campi e mostra le prossime date di esecuzione. Costruisce espressioni cron da un'interfaccia visiva. Equivalente a crontab.guru."
+    },
+    "password-hash": {
+      "NAME": "Hash di password",
+      "DESCRIPTION": "Calcola hash MD5, SHA-1, SHA-256, SHA-384, SHA-512 e bcrypt — lato client.",
+      "LONG_DESCRIPTION": "Calcola hash crittografici MD5, SHA-1, SHA-256, SHA-384 e SHA-512 di qualsiasi testo, interamente nel browser. Utile per verificare l'integrità di file, confrontare password hashate e studiare algoritmi crittografici."
+    },
+    "password-generator": {
+      "NAME": "Generatore di Password",
+      "DESCRIPTION": "Genera password sicure con un generatore casuale crittograficamente sicuro.",
+      "LONG_DESCRIPTION": "Genera password forti usando un generatore pseudocasuale crittograficamente sicuro (CSPRNG). Configura lunghezza, maiuscole, numeri e simboli. Nessuna password viene inviata a server esterni."
+    },
+    "my-ip": {
+      "NAME": "Il mio IP",
+      "DESCRIPTION": "Scopri il tuo indirizzo IP pubblico (l'unico tool che effettua una richiesta di rete).",
+      "LONG_DESCRIPTION": "Mostra il tuo indirizzo IP pubblico recuperandolo da un servizio esterno. È l'unico tool di questa suite che effettua una richiesta di rete. Utile per verificare la tua connessione, VPN o proxy."
+    },
+    "cidr-subnet-calculator": {
+      "NAME": "Calcolatore CIDR / Subnet",
+      "DESCRIPTION": "Analizza blocchi CIDR e calcola subnet mask, rete, broadcast e IP disponibili.",
+      "LONG_DESCRIPTION": "Inserisci un blocco CIDR IPv4 come 192.168.1.42/24 per calcolare subnet mask, wildcard mask, indirizzo di rete, broadcast e quanti IP sono disponibili. Tutto avviene localmente nel browser."
+    },
+    "ip-subnet-calculator": {
+      "NAME": "Calcolatore IP + Subnet Mask",
+      "DESCRIPTION": "Inserisci IP e subnet mask o prefisso per calcolare rete e indirizzi IP disponibili.",
+      "LONG_DESCRIPTION": "Fornisci un indirizzo IPv4 insieme a una subnet mask come 255.255.255.0 o a un prefisso come /24 per ottenere rete, broadcast, primo e ultimo host e il numero totale di IP disponibili."
+    },
+    "percentage": {
+      "NAME": "Calcolatore di Percentuale",
+      "DESCRIPTION": "Calcola percentuali, rapporti e variazioni percentuali.",
+      "LONG_DESCRIPTION": "Calcola percentuali, rapporti e variazioni percentuali tra due valori. Supporta il calcolo di percentuale su valore, valore da percentuale e variazione percentuale tra due numeri."
+    },
+    "iva-calculator": {
+      "NAME": "Calcolatore IVA",
+      "DESCRIPTION": "Calcola il prezzo con IVA e senza IVA con aliquote italiane: 4%, 5%, 10%, 22%.",
+      "LONG_DESCRIPTION": "Calcola il prezzo IVA inclusa e IVA esclusa usando le aliquote italiane standard: 4%, 5%, 10% e 22%. Utile per fatture, preventivi e contabilità."
+    },
+    "discount-calculator": {
+      "NAME": "Calcolatore Sconto",
+      "DESCRIPTION": "Calcola il prezzo scontato a partire dal prezzo originale e dalla percentuale di sconto.",
+      "LONG_DESCRIPTION": "Inserisci il prezzo originale e la percentuale di sconto per ottenere immediatamente il prezzo finale scontato e l'importo del risparmio."
+    },
+    "uuid-generator": {
+      "NAME": "Generatore UUID / ULID",
+      "DESCRIPTION": "Genera identificatori univoci UUID v4 e ULID crittograficamente sicuri.",
+      "LONG_DESCRIPTION": "Genera identificatori univoci UUID v4 crittograficamente sicuri e ULID (Universally Unique Lexicographically Sortable Identifier). Genera singoli o multipli con un click. Tutto avviene nel browser."
+    },
+    "regex-tester": {
+      "NAME": "Regex Tester",
+      "DESCRIPTION": "Testa espressioni regolari in tempo reale con evidenziazione dei match.",
+      "LONG_DESCRIPTION": "Testa espressioni regolari JavaScript in tempo reale con evidenziazione dei match nel testo. Supporta flag globale, case-insensitive, multilinea e altri. Mostra tutti i gruppi di cattura."
+    },
+    "diff-checker": {
+      "NAME": "Diff Checker",
+      "DESCRIPTION": "Confronta due testi riga per riga ed evidenzia le differenze.",
+      "LONG_DESCRIPTION": "Confronta due testi riga per riga evidenziando le righe aggiunte, rimosse e modificate. Utile per rivedere modifiche a codice, testi o configurazioni senza usare Git."
+    },
+    "base-converter": {
+      "NAME": "Convertitore di Basi",
+      "DESCRIPTION": "Converti numeri tra binario, ottale, decimale ed esadecimale.",
+      "LONG_DESCRIPTION": "Converte numeri tra le basi binario (base 2), ottale (base 8), decimale (base 10) ed esadecimale (base 16). La conversione avviene simultaneamente in tutte le basi."
+    },
+    "case-converter": {
+      "NAME": "Case Converter",
+      "DESCRIPTION": "Converti testo in camelCase, PascalCase, snake_case, kebab-case e altri formati.",
+      "LONG_DESCRIPTION": "Converte testo tra camelCase, PascalCase, snake_case, kebab-case, UPPER_CASE, lowercase e Title Case. Utile per sviluppatori che lavorano con nomi di variabili, funzioni, classi e URL."
+    },
+    "word-counter": {
+      "NAME": "Contatore Parole",
+      "DESCRIPTION": "Conta parole, caratteri, frasi, paragrafi e stima il tempo di lettura.",
+      "LONG_DESCRIPTION": "Conta parole, caratteri (con e senza spazi), frasi, paragrafi, righe e stima il tempo di lettura. Mostra anche la dimensione in byte. Utile per articoli, tweet, SMS e limiti di campo."
+    },
+    "slug-generator": {
+      "NAME": "Generatore di Slug",
+      "DESCRIPTION": "Genera URL slug SEO-friendly da un titolo, rimuovendo accenti e caratteri speciali.",
+      "LONG_DESCRIPTION": "Genera slug URL SEO-friendly da qualsiasi titolo o testo. Rimuove accenti, converte in minuscolo, sostituisce spazi con trattini ed elimina caratteri speciali. Supporta anche il separatore underscore."
+    },
+    "age-calculator": {
+      "NAME": "Calcolatore di Età",
+      "DESCRIPTION": "Calcola l'età esatta in anni, mesi e giorni dalla data di nascita.",
+      "LONG_DESCRIPTION": "Calcola l'età esatta in anni, mesi e giorni a partire da una data di nascita. Mostra anche i giorni al prossimo compleanno e il numero totale di giorni vissuti."
+    },
+    "html-encoder": {
+      "NAME": "HTML Encode / Decode",
+      "DESCRIPTION": "Codifica e decodifica entità HTML. Converti caratteri speciali in entità HTML e viceversa.",
+      "LONG_DESCRIPTION": "Codifica caratteri speciali HTML in entità (es. < → &lt;) e decodifica entità HTML in caratteri leggibili. Utile per inserire codice HTML in articoli, documentazione o attributi."
+    },
+    "color-converter": {
+      "NAME": "Convertitore Colori",
+      "DESCRIPTION": "Converti colori tra HEX, RGB e HSL con anteprima visiva in tempo reale.",
+      "LONG_DESCRIPTION": "Converte colori tra i formati HEX, RGB e HSL con anteprima visiva in tempo reale. Copia il valore nel formato preferito con un click. Utile per designer e sviluppatori front-end."
+    },
+    "hex-to-rgb": {
+      "NAME": "HEX \u2192 RGB",
+      "DESCRIPTION": "Converti un codice colore HEX nei valori RGB corrispondenti.",
+      "LONG_DESCRIPTION": "Inserisci un codice colore HEX e ottieni immediatamente i valori RGB corrispondenti. Mostra un'anteprima visiva del colore e permette di copiare il valore CSS rgb() con un click."
+    },
+    "hex-to-hsl": {
+      "NAME": "HEX \u2192 HSL",
+      "DESCRIPTION": "Converti un codice colore HEX nei valori HSL corrispondenti.",
+      "LONG_DESCRIPTION": "Inserisci un codice colore HEX e ottieni immediatamente i valori HSL corrispondenti. Mostra un'anteprima visiva del colore e permette di copiare il valore CSS hsl() con un click."
+    },
+    "rgb-to-hex": {
+      "NAME": "RGB \u2192 HEX",
+      "DESCRIPTION": "Converti valori RGB nel codice colore HEX corrispondente.",
+      "LONG_DESCRIPTION": "Inserisci i valori R, G, B (0-255) e ottieni immediatamente il codice colore HEX corrispondente. Mostra un'anteprima visiva del colore e permette di copiare il valore con un click."
+    },
+    "hsl-to-hex": {
+      "NAME": "HSL \u2192 HEX",
+      "DESCRIPTION": "Converti valori HSL nel codice colore HEX corrispondente.",
+      "LONG_DESCRIPTION": "Inserisci i valori H (0-360), S (0-100%) e L (0-100%) e ottieni immediatamente il codice colore HEX corrispondente. Mostra un'anteprima visiva del colore e permette di copiare il valore con un click."
+    },
+    "rgb-to-hsl": {
+      "NAME": "RGB \u2192 HSL",
+      "DESCRIPTION": "Converti valori RGB nei valori HSL corrispondenti.",
+      "LONG_DESCRIPTION": "Inserisci i valori R, G, B (0-255) e ottieni immediatamente i valori HSL corrispondenti. Mostra un'anteprima visiva del colore e permette di copiare il valore CSS hsl() con un click."
+    },
+    "hsl-to-rgb": {
+      "NAME": "HSL \u2192 RGB",
+      "DESCRIPTION": "Converti valori HSL nei valori RGB corrispondenti.",
+      "LONG_DESCRIPTION": "Inserisci i valori H (0-360), S (0-100%) e L (0-100%) e ottieni immediatamente i valori RGB corrispondenti. Mostra un'anteprima visiva del colore e permette di copiare il valore CSS rgb() con un click."
+    },
+    "lorem-ipsum": {
+      "NAME": "Generatore Lorem Ipsum",
+      "DESCRIPTION": "Genera testo Lorem Ipsum per mockup e prototipi. Paragrafi, frasi o parole.",
+      "LONG_DESCRIPTION": "Genera testo Lorem Ipsum per mockup, wireframe e prototipi. Scegli il numero di paragrafi, frasi o parole. Testo casuale classico o variante moderna."
+    },
+    "sql-formatter": {
+      "NAME": "Formattatore SQL",
+      "DESCRIPTION": "Formatta e abbellisce query SQL con indentazione automatica.",
+      "LONG_DESCRIPTION": "Formatta e abbellisce query SQL con indentazione automatica e maiuscole sulle keyword. Supporta i principali dialetti SQL. Utile per rendere leggibili query complesse o generate automaticamente."
+    },
+    "date-diff": {
+      "NAME": "Differenza tra Date",
+      "DESCRIPTION": "Calcola la differenza esatta tra due date in giorni, settimane, mesi e anni.",
+      "LONG_DESCRIPTION": "Calcola la differenza esatta tra due date in giorni, settimane, mesi e anni. Utile per calcolare scadenze, durate di contratti, anni di esperienza lavorativa e giorni mancanti a un evento."
+    },
+    "timezone-converter": {
+      "NAME": "Convertitore Fuso Orario",
+      "DESCRIPTION": "Converti un orario tra i principali fusi orari del mondo.",
+      "LONG_DESCRIPTION": "Converte un orario tra i principali fusi orari del mondo. Utile per pianificare riunioni internazionali, capire quando è disponibile un team remoto o convertire orari di log server."
+    },
+    "partita-iva": {
+      "NAME": "Validatore Partita IVA",
+      "DESCRIPTION": "Verifica la validità di una Partita IVA italiana con controllo del checksum.",
+      "LONG_DESCRIPTION": "Verifica la validità formale di una Partita IVA italiana usando l'algoritmo di checksum ufficiale. Controlla solo il formato e la cifra di controllo — non verifica se la P.IVA è attiva o registrata."
+    },
+    "hmac-generator": {
+      "NAME": "Generatore HMAC",
+      "DESCRIPTION": "Genera firme HMAC SHA-256 e SHA-512 con chiave segreta per API e autenticazione.",
+      "LONG_DESCRIPTION": "Genera firme HMAC SHA-256 e SHA-512 con una chiave segreta. Usato per autenticare richieste API, webhook e comunicazioni sicure. Tutto il calcolo avviene nel browser."
+    },
+    "random-token": {
+      "NAME": "Generatore Token / Secret",
+      "DESCRIPTION": "Genera token casuali sicuri per API key, JWT secret e password.",
+      "LONG_DESCRIPTION": "Genera token casuali crittograficamente sicuri in formato HEX o Base64. Utile per API key, segreti JWT, nonce, CSRF token e qualsiasi applicazione che richiede casualità sicura."
+    },
+    "roman-numbers": {
+      "NAME": "Numeri Romani",
+      "DESCRIPTION": "Converti numeri arabi in numeri romani e viceversa. Da I a MMMCMXCIX.",
+      "LONG_DESCRIPTION": "Converte numeri arabi in numeri romani e viceversa. Supporta valori da 1 a 3999 (MMMCMXCIX). Utile per titoli, date, capitoli e notazioni storiche."
+    },
+    "number-words": {
+      "NAME": "Numero in Lettere",
+      "DESCRIPTION": "Converti numeri in parole italiane. Es. 1234 → milleduecentotrentaquattro.",
+      "LONG_DESCRIPTION": "Converte numeri interi in parole italiane. Ad esempio: 1234 → milleduecentotrentaquattro. Utile per redigere assegni, fatture, atti notarili e documenti formali."
+    },
+    "jpg-to-webp": {
+      "NAME": "JPG → WebP",
+      "DESCRIPTION": "Converti immagini JPG/JPEG in formato WebP con controllo qualità.",
+      "LONG_DESCRIPTION": "Converte immagini JPG/JPEG in formato WebP direttamente nel browser. Riduci il peso delle immagini mantenendo qualità visiva elevata. WebP è supportato da tutti i browser moderni."
+    },
+    "png-to-webp": {
+      "NAME": "PNG → WebP",
+      "DESCRIPTION": "Converti immagini PNG in formato WebP con controllo qualità.",
+      "LONG_DESCRIPTION": "Converte immagini PNG in formato WebP direttamente nel browser, preservando la trasparenza. Riduci il peso delle immagini per migliorare le performance del sito."
+    },
+    "webp-converter": {
+      "NAME": "WebP → PNG / JPG",
+      "DESCRIPTION": "Converti immagini WebP in PNG o JPG. Compatibile con tutti i browser.",
+      "LONG_DESCRIPTION": "Converte immagini WebP in PNG o JPG direttamente nel browser. Utile per condividere immagini su sistemi che non supportano ancora il formato WebP."
+    },
+    "image-resizer": {
+      "NAME": "Ridimensiona Immagine",
+      "DESCRIPTION": "Ridimensiona immagini impostando larghezza e altezza. Mantieni le proporzioni.",
+      "LONG_DESCRIPTION": "Ridimensiona immagini impostando larghezza e altezza personalizzate. Mantieni le proporzioni originali o impostale liberamente. Il ridimensionamento avviene lato client senza caricare file su server."
+    },
+    "image-to-base64": {
+      "NAME": "Immagine in Base64",
+      "DESCRIPTION": "Converti file immagine in stringhe Base64 o data URL e scarica il risultato in TXT quando serve.",
+      "LONG_DESCRIPTION": "Converti PNG, JPG, WebP e altri file immagine in stringhe Base64 o data URL completi interamente nel browser. Utile per embed CSS, snippet HTML, placeholder e debugging. Se l'output è troppo lungo, puoi scaricarlo come file .txt."
+    },
+    "image-compressor": {
+      "NAME": "Comprimi Immagine",
+      "DESCRIPTION": "Comprimi immagini con controllo qualità in tempo reale. Vedi la riduzione delle dimensioni.",
+      "LONG_DESCRIPTION": "Comprimi immagini riducendo la qualità JPEG con anteprima in tempo reale. Vedi immediatamente la riduzione delle dimensioni in byte prima di scaricare il file compresso."
+    },
+    "image-crop": {
+      "NAME": "Ritaglia Immagine",
+      "DESCRIPTION": "Ritaglia immagini con selettore interattivo. Trascina per selezionare l'area.",
+      "LONG_DESCRIPTION": "Ritaglia immagini con un selettore interattivo. Trascina e ridimensiona l'area di selezione, poi scarica l'immagine ritagliata. Tutto avviene nel browser senza caricare file."
+    },
+    "tira-il-dado": {
+      "NAME": "Tira il Dado",
+      "DESCRIPTION": "Lancia uno o più dadi virtuali: D4, D6, D8, D10, D12, D20, D100.",
+      "LONG_DESCRIPTION": "Lancia uno o più dadi virtuali tra D4, D6, D8, D10, D12, D20 e D100. Ideale per giochi di ruolo, decisioni casuali e simulazioni. I risultati sono generati con un generatore casuale crittograficamente sicuro."
+    },
+    "numero-random": {
+      "NAME": "Numero Casuale",
+      "DESCRIPTION": "Estrai uno o più numeri casuali in un intervallo personalizzato.",
+      "LONG_DESCRIPTION": "Estrai uno o più numeri casuali in un intervallo personalizzato. Utile per sorteggi, lotterie, campionamenti statistici e qualsiasi situazione che richiede casualità verificabile."
+    },
+    "testa-o-croce": {
+      "NAME": "Testa o Croce",
+      "DESCRIPTION": "Lancia una moneta virtuale: testa o croce. Con storico dei lanci.",
+      "LONG_DESCRIPTION": "Lancia una moneta virtuale: testa o croce. Tiene uno storico di tutti i lanci con statistiche in tempo reale. I risultati sono generati con un generatore casuale crittograficamente sicuro."
+    },
+    "camel-case": {
+      "NAME": "Convertitore camelCase",
+      "DESCRIPTION": "Converti testo in camelCase — ideale per nomi di variabili e funzioni.",
+      "LONG_DESCRIPTION": "Converte qualsiasi testo nel formato camelCase, ideale per nominare variabili, funzioni e metodi in JavaScript/TypeScript. Esempio: «hello world» → «helloWorld». Gestisce accenti, spazi e caratteri speciali."
+    },
+    "pascal-case": {
+      "NAME": "Convertitore PascalCase",
+      "DESCRIPTION": "Converti testo in PascalCase — ideale per nomi di classi e componenti.",
+      "LONG_DESCRIPTION": "Converte qualsiasi testo nel formato PascalCase, ideale per classi, componenti, interfacce e tipi. Esempio: «hello world» → «HelloWorld». Gestisce accenti, spazi e caratteri speciali."
+    },
+    "snake-case": {
+      "NAME": "Convertitore snake_case",
+      "DESCRIPTION": "Converti testo in snake_case — ideale per variabili Python e colonne di database.",
+      "LONG_DESCRIPTION": "Converte qualsiasi testo nel formato snake_case, molto usato in Python, Ruby e SQL. Esempio: «hello world» → «hello_world». Gestisce accenti, spazi e caratteri speciali."
+    },
+    "kebab-case": {
+      "NAME": "Convertitore kebab-case",
+      "DESCRIPTION": "Converti testo in kebab-case — ideale per classi CSS e URL slug.",
+      "LONG_DESCRIPTION": "Converte qualsiasi testo nel formato kebab-case, usato comunemente in HTML, CSS e URL. Esempio: «hello world» → «hello-world». Gestisce accenti, spazi e caratteri speciali."
+    },
+    "constant-case": {
+      "NAME": "Convertitore CONSTANT_CASE",
+      "DESCRIPTION": "Converti testo in CONSTANT_CASE — ideale per costanti e variabili d'ambiente.",
+      "LONG_DESCRIPTION": "Converte qualsiasi testo nel formato CONSTANT_CASE (anche detto SCREAMING_SNAKE_CASE), usato per costanti, valori di enum e variabili d'ambiente. Esempio: «hello world» → «HELLO_WORLD»."
+    },
+    "upper-case": {
+      "NAME": "Convertitore MAIUSCOLO",
+      "DESCRIPTION": "Converti testo in MAIUSCOLO — tutti i caratteri in maiuscolo.",
+      "LONG_DESCRIPTION": "Converte qualsiasi testo in maiuscolo. Esempio: «hello world» → «HELLO WORLD». Conserva spazi, numeri e punteggiatura."
+    },
+    "lower-case": {
+      "NAME": "Convertitore minuscolo",
+      "DESCRIPTION": "Converti testo in minuscolo — tutti i caratteri in minuscolo.",
+      "LONG_DESCRIPTION": "Converte qualsiasi testo in minuscolo. Esempio: «Hello World» → «hello world». Conserva spazi, numeri e punteggiatura."
+    },
+    "title-case": {
+      "NAME": "Convertitore Title Case",
+      "DESCRIPTION": "Converti testo in Title Case — prima lettera di ogni parola in maiuscolo.",
+      "LONG_DESCRIPTION": "Converte qualsiasi testo in Title Case: la prima lettera di ogni parola viene messa in maiuscolo. Esempio: «hello world» → «Hello World». Utile per titoli, intestazioni e nomi propri."
+    },
+    "color-picker": {
+      "NAME": "Color Picker",
+      "DESCRIPTION": "Scegli un colore visivamente e ottieni i valori HEX, RGB e HSL con un clic.",
+      "LONG_DESCRIPTION": "Seleziona qualsiasi colore visivamente e ottieni immediatamente i valori HEX, RGB e HSL. Copia i valori con un click. Utile per designer e sviluppatori front-end che lavorano con CSS e design system."
+    },
+    "favicon-generator": {
+      "NAME": "Generatore Favicon",
+      "DESCRIPTION": "Genera un favicon.ico da qualsiasi immagine nel browser.",
+      "LONG_DESCRIPTION": "Genera un file favicon.ico da qualsiasi immagine direttamente nel browser. Crea un file ICO multi-dimensione (16×16, 32×32, 48×48) senza alcun upload su server. Scarica e usa su qualsiasi sito web."
+    },
+    "credit-card-validator": {
+      "NAME": "Validatore Carta di Credito",
+      "DESCRIPTION": "Valida numeri di carte con algoritmo Luhn e rileva il circuito di pagamento.",
+      "LONG_DESCRIPTION": "Valida numeri di carte di credito usando l'algoritmo di Luhn e rileva automaticamente il circuito (Visa, Mastercard, American Express, Discover e altri). Utile per la validazione di form front-end e test di flussi di pagamento."
+    },
+    "semver-checker": {
+      "NAME": "Comparatore Semver",
+      "DESCRIPTION": "Confronta versioni semantiche e verifica se una versione soddisfa un range.",
+      "LONG_DESCRIPTION": "Confronta numeri di versione semantica e verifica se una versione soddisfa un range semver (stile npm). Utile per gestire dipendenze di pacchetti, pipeline CI/CD e compatibilità tra versioni."
+    },
+    "qr-generator": {
+      "NAME": "Generatore QR Code",
+      "DESCRIPTION": "Genera QR Code personalizzati da testo o URL con download PNG.",
+      "LONG_DESCRIPTION": "Genera QR Code da qualsiasi testo, URL, numero di telefono o indirizzo email. Personalizza le dimensioni e scarica come immagine PNG. La generazione avviene direttamente nel browser."
+    },
+    "barcode-generator": {
+      "NAME": "Generatore Barcode",
+      "DESCRIPTION": "Genera barcode 1D online: CODE128, EAN13, EAN8, UPC, ITF14, MSI, Pharmacode.",
+      "LONG_DESCRIPTION": "Generatore barcode 1D online nel browser: crea codici CODE128, EAN13, EAN8, UPC, ITF14, MSI e Pharmacode con anteprima immediata e download PNG. Nessun upload su server richiesto."
+    },
+    "barcode-reader": {
+      "NAME": "Lettore Barcode",
+      "DESCRIPTION": "Legge barcode da immagini con riconoscimento locale nel browser.",
+      "LONG_DESCRIPTION": "Scansiona e decodifica barcode da immagini caricate o foto direttamente nel browser. Supporta EAN, UPC, CODE128 e altri formati 1D comuni. Nessun dato viene inviato a server esterni."
+    },
+    "qrcode-reader": {
+      "NAME": "Lettore QR Code",
+      "DESCRIPTION": "Decodifica QR Code da immagini e copia il contenuto estratto.",
+      "LONG_DESCRIPTION": "Carica o trascina un'immagine contenente un QR Code per decodificarla istantaneamente nel browser. Estrae URL, testo, contatti e qualsiasi dato codificato nel QR. Nessun upload su server richiesto."
+    },
+    "text-inverter": {
+      "NAME": "Invertitore di Testo",
+      "DESCRIPTION": "Inverti testo per caratteri, parole o righe.",
+      "LONG_DESCRIPTION": "Inverti qualsiasi testo per caratteri, parole o righe. Utile per generare testo specchio, invertire l'ordine delle parole nelle frasi o capovolgere l'ordine delle righe in contenuti multiriga."
+    },
+    "find-replace": {
+      "NAME": "Trova e Sostituisci",
+      "DESCRIPTION": "Trova e sostituisci testo con supporto regex, case sensitive e globale.",
+      "LONG_DESCRIPTION": "Trova e sostituisce testo con supporto per testo semplice ed espressioni regolari, corrispondenza case-sensitive e sostituzione globale. Utile per trasformazioni di testo in blocco, snippet di codice e modifica di template."
+    },
+    "image-rotate": {
+      "NAME": "Ruota Immagine",
+      "DESCRIPTION": "Ruota immagini di qualsiasi angolo con anteprima in tempo reale.",
+      "LONG_DESCRIPTION": "Ruota immagini di qualsiasi angolo personalizzato direttamente nel browser. Visualizza il risultato in tempo reale e scarica l'immagine ruotata. Supporta tutti i formati immagine comuni inclusi JPG, PNG e WebP."
+    },
+    "image-flip": {
+      "NAME": "Ribalta Immagine",
+      "DESCRIPTION": "Ribalta immagini orizzontalmente o verticalmente.",
+      "LONG_DESCRIPTION": "Ribalta immagini orizzontalmente (specchio) o verticalmente direttamente nel browser. Visualizza il risultato istantaneamente e scarica l'immagine ribaltata. Supporta tutti i formati immagine comuni."
+    },
+    "image-watermark": {
+      "NAME": "Watermark Immagine",
+      "DESCRIPTION": "Aggiungi un watermark testuale su immagini direttamente nel browser.",
+      "LONG_DESCRIPTION": "Aggiungi un watermark testuale personalizzato su qualsiasi immagine direttamente nel browser. Configura posizione, dimensione del font, colore e opacità. Scarica l'immagine con watermark senza caricare nulla su server."
+    },
+    "palette-generator": {
+      "NAME": "Generatore Palette",
+      "DESCRIPTION": "Genera una palette colori da un colore base con input HEX e color picker.",
+      "LONG_DESCRIPTION": "Genera una palette colori completa da un singolo colore base. Inserisci un codice HEX o usa il color picker per ottenere combinazioni complementari, analoghe e triadiche. Utile per design UI e identità visiva."
+    },
+    "palette-from-image": {
+      "NAME": "Palette da Immagine",
+      "DESCRIPTION": "Estrai i colori dominanti da una foto o screenshot.",
+      "LONG_DESCRIPTION": "Estrai i colori dominanti da qualsiasi immagine o screenshot caricato. Utile per abbinare i colori di un brand, creare design system ispirati da una foto o identificare rapidamente una palette cromatica."
+    },
+    "pdf-merge": {
+      "NAME": "Unisci PDF",
+      "DESCRIPTION": "Unisci più file PDF in un unico documento. Riordina i file prima di combinarli.",
+      "LONG_DESCRIPTION": "Combina più file PDF in un unico documento direttamente nel browser. Aggiungi tutti i file necessari, riordinali con le frecce e uniscili con un click. Nessun upload, nessuna elaborazione su server."
+    },
+    "pdf-split": {
+      "NAME": "Dividi PDF",
+      "DESCRIPTION": "Dividi un PDF in pagine singole. Scarica le pagine separatamente o tutte insieme.",
+      "LONG_DESCRIPTION": "Dividi qualsiasi PDF nelle sue singole pagine — ogni pagina diventa un file PDF separato scaricabile. Scarica le pagine una per una o tutte insieme. Tutto avviene lato client, nessun upload."
+    },
+    "pdf-compress": {
+      "NAME": "Comprimi PDF",
+      "DESCRIPTION": "Ottimizza la struttura interna di un PDF per ridurne le dimensioni.",
+      "LONG_DESCRIPTION": "Riduci le dimensioni di un PDF ottimizzando la sua struttura interna (object streams) senza alterare il contenuto visivo. Per PDF già ottimizzati il risparmio potrebbe essere minimo. Tutto avviene nel browser."
+    },
+    "pdf-rotate": {
+      "NAME": "Ruota PDF",
+      "DESCRIPTION": "Ruota le pagine di un PDF di 90°, 180° o 270°. Applica a tutte o a una selezione.",
+      "LONG_DESCRIPTION": "Ruota tutte le pagine o un intervallo personalizzato di un PDF di 90°, 180° o 270°. Specifica le pagine con un range come «1-3, 5» e scarica il PDF ruotato. Nessun upload su server."
+    },
+    "pdf-reorder": {
+      "NAME": "Riordina Pagine PDF",
+      "DESCRIPTION": "Cambia l'ordine delle pagine di un PDF con semplici frecce su/giù.",
+      "LONG_DESCRIPTION": "Riorganizza le pagine di qualsiasi PDF con semplici pulsanti freccia su/giù. Carica un PDF, riordina le pagine e scarica il documento riordinato. Tutto avviene localmente nel browser."
+    },
+    "pdf-extract": {
+      "NAME": "Estrai Pagine PDF",
+      "DESCRIPTION": "Estrai un intervallo di pagine da un PDF e salvale in un nuovo documento.",
+      "LONG_DESCRIPTION": "Estrai pagine specifiche da qualsiasi PDF specificando un range come «1-3, 5, 8-10». Le pagine selezionate vengono salvate in un nuovo file PDF scaricabile immediatamente. Tutto avviene lato client."
+    },
+    "pdf-viewer": {
+      "NAME": "Visualizza PDF",
+      "DESCRIPTION": "Apri e visualizza file PDF direttamente nel browser senza installare nulla.",
+      "LONG_DESCRIPTION": "Visualizza qualsiasi file PDF direttamente nel browser usando il renderer PDF nativo. Nessun plugin, nessun upload, nessun servizio esterno. Carica un file e inizia a leggere subito."
+    },
+    "pdf-to-image": {
+      "NAME": "PDF in Immagini",
+      "DESCRIPTION": "Converti ogni pagina di un PDF in un'immagine PNG ad alta risoluzione.",
+      "LONG_DESCRIPTION": "Converti ogni pagina di un PDF in un'immagine PNG a risoluzione regolabile. Scarica le immagini una per una o tutte insieme. La conversione avviene nel browser usando un motore PDF WebAssembly."
+    },
+    "image-to-pdf": {
+      "NAME": "Immagini in PDF",
+      "DESCRIPTION": "Converti una o più immagini (JPG, PNG) in un PDF. Ogni immagine diventa una pagina.",
+      "LONG_DESCRIPTION": "Combina una o più immagini JPG o PNG in un unico documento PDF. Ogni immagine viene inserita in una pagina dedicata. Aggiungi file, riordinali con le frecce e crea il PDF — tutto nel browser."
+    },
+    "stopwatch": {
+      "NAME": "Cronometro",
+      "DESCRIPTION": "Cronometro online con giri e tempi parziali. Preciso al centesimo di secondo.",
+      "LONG_DESCRIPTION": "Un cronometro online preciso con registrazione dei tempi sul giro. Misura il tempo trascorso al centesimo di secondo, registra i tempi parziali e rivedi la cronologia completa dei giri. Tutto nel browser."
+    },
+    "countdown-timer": {
+      "NAME": "Conto alla Rovescia",
+      "DESCRIPTION": "Timer conto alla rovescia con ore, minuti e secondi. Barra di avanzamento e avviso di scadenza.",
+      "LONG_DESCRIPTION": "Imposta un conto alla rovescia personalizzato in ore, minuti e secondi. Osserva la barra di avanzamento riempirsi e ricevi un avviso visivo e sonoro allo scadere del tempo. Il timer gira interamente nel browser."
+    },
+    "tic-tac-toe": {
+      "NAME": "Tris (Tic Tac Toe)",
+      "DESCRIPTION": "Gioca a Tris contro un amico o sfida l'IA imbattibile con minimax.",
+      "LONG_DESCRIPTION": "Gioca al classico Tris nel browser. Sfida un amico in modalità multiplayer locale o affronta un avversario CPU imbattibile basato sull'algoritmo minimax con potatura alfa-beta."
+    },
+    "typing-speed": {
+      "NAME": "Test Velocità di Scrittura",
+      "DESCRIPTION": "Misura le tue parole al minuto (WPM) e accuratezza digitando testi in italiano.",
+      "LONG_DESCRIPTION": "Metti alla prova la velocità e l'accuratezza di digitazione con brani in italiano selezionati. Ottieni subito le tue WPM (parole al minuto), i caratteri al minuto e il tasso di errore. Nessun account richiesto."
+    },
+    "reaction-time": {
+      "NAME": "Test Tempo di Reazione",
+      "DESCRIPTION": "Misura il tuo tempo di reazione in millisecondi con il test semaforo o eventi casuali.",
+      "LONG_DESCRIPTION": "Testa il tuo tempo di reazione in millisecondi in due modalità: semaforo (seguendo le regole stradali: spento → rosso → giallo → verde) e evento casuale. Confronta i risultati con le medie e tieni traccia dei miglioramenti."
+    }
+  },
+  "CF_INVERSO": {
+    "TITLE": "Decodifica Codice Fiscale",
+    "SUBTITLE": "Estrai i dati anagrafici da un codice fiscale italiano",
+    "DESCRIPTION": "Questo strumento decodifica un codice fiscale italiano e mostra anno, mese, giorno di nascita, genere e codice o comune di nascita.",
+    "DESCRIPTION_TITLE": "Cosa Fa Questo Tool",
+    "LONG_DESCRIPTION": "Dato un codice fiscale italiano, questo strumento ne interpreta la struttura per estrarre i dati codificati: anno, mese e giorno di nascita, genere e codice catastale o comune di nascita. Il controllo avviene direttamente nel browser.",
+    "DECODE": "Decodifica",
+    "FORM": {
+      "CF_LABEL": "Codice Fiscale",
+      "CF_PLACEHOLDER": "RSSMRA80A01H501Z"
+    },
+    "RESULT": {
+      "TITLE": "Dati estratti",
+      "VALID": "Codice fiscale valido",
+      "INVALID": "Codice fiscale non valido",
+      "SURNAME_CODE": "Codice cognome",
+      "NAME_CODE": "Codice nome",
+      "BIRTH_YEAR": "Anno di nascita",
+      "BIRTH_MONTH": "Mese di nascita",
+      "BIRTH_DAY": "Giorno di nascita",
+      "GENDER": "Genere",
+      "PLACE_CODE": "Codice comune",
+      "PLACE_NAME": "Comune di nascita",
+      "UNKNOWN_PLACE": "Sconosciuto",
+      "MONTHS": {
+        "1": "Gennaio",
+        "2": "Febbraio",
+        "3": "Marzo",
+        "4": "Aprile",
+        "5": "Maggio",
+        "6": "Giugno",
+        "7": "Luglio",
+        "8": "Agosto",
+        "9": "Settembre",
+        "10": "Ottobre",
+        "11": "Novembre",
+        "12": "Dicembre"
+      }
+    }
+  },
+  "CODICE_FISCALE": {
+    "TITLE": "Calcolo Codice Fiscale",
+    "SUBTITLE": "Genera il codice fiscale con algoritmo standard",
+    "FORM": {
+      "NAME": "Nome",
+      "SURNAME": "Cognome",
+      "BIRTH_DATE": "Data di nascita",
+      "GENDER": "Genere",
+      "BIRTH_PLACE": "Luogo di nascita",
+      "BIRTH_PLACE_PLACEHOLDER": "Seleziona comune...",
+      "BIRTH_PLACE_HINT": "Inizia a digitare per filtrare i comuni"
+    },
+    "GENERATE": "Calcola",
+    "RESULT_LABEL": "Risultato",
+    "RESULT_PLACEHOLDER": "Compila il form per generare il codice fiscale"
+  },
+  "BASE64": {
+    "TITLE": "Base64 / UnBase64",
+    "SUBTITLE": "Codifica e decodifica testo in modo sicuro",
+    "INPUT_LABEL": "Input",
+    "ENCODE": "Codifica",
+    "DECODE": "Decodifica",
+    "RESULT_LABEL": "Output",
+    "RESULT_PLACEHOLDER": "Inserisci un testo o una stringa Base64",
+    "INVALID_INPUT": "Input Base64 non valido"
+  },
+  "TOOLS": {
+    "COMMON": {
+      "CHECK": "Verifica",
+      "RESULT": "Risultato",
+      "CONVERT": "Converti",
+      "OUTPUT_PLACEHOLDER": "L'output apparirà qui",
+      "REFRESH": "Aggiorna",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "IBAN": {
+      "TITLE": "Verificatore IBAN",
+      "SUBTITLE": "Verifica solo il carattere di controllo (mod-97). Nessuna validazione bancaria o verifica di esistenza del conto.",
+      "INPUT": "IBAN",
+      "PLACEHOLDER": "IT60X0542811101000000123456",
+      "NOTE": "Controlla solo il carattere di controllo (formato + mod-97). Non verifica l'esistenza del conto.",
+      "SMALL_NOTE": "Il calcolo della cifra di controllo segue la regola ISO 7064 Modulo 97-10.",
+      "VALID": "IBAN valido (checksum corretto)",
+      "INVALID": "IBAN non valido",
+      "REASONS": {
+        "LENGTH": "lunghezza non valida",
+        "FORMAT": "formato non valido",
+        "CHECKSUM": "errore di checksum"
+      }
+    },
+    "CF_CHECK": {
+      "TITLE": "Validatore Codice Fiscale",
+      "SUBTITLE": "Verifica solo il carattere di controllo tramite regex generica.",
+      "INPUT": "Codice fiscale",
+      "PLACEHOLDER": "Inserisci un codice fiscale e premi Verifica",
+      "NOTE": "Verifica solo il carattere di controllo. Non controlla l'effettiva esistenza anagrafica.",
+      "VALID": "Codice fiscale valido",
+      "INVALID": "Codice fiscale non valido",
+      "EXPECTED": "Atteso",
+      "RECEIVED": "Ricevuto",
+      "REASONS": {
+        "FORMAT": "formato non valido",
+        "CHECKSUM": "errore di checksum"
+      }
+    },
+    "JWT": {
+      "TITLE": "Decodificatore JWT",
+      "SUBTITLE": "Decodifica e verifica opzionalmente un JSON Web Token (header, payload, firma).",
+      "TOKEN": "Token",
+      "DECODE": "Decodifica",
+      "HEADER": "Header",
+      "PAYLOAD": "Payload",
+      "SIGNATURE": "Firma",
+      "VERIFY_SECTION": "Verifica firma",
+      "DETECTED_ALG": "Algoritmo",
+      "SECRET": "Secret",
+      "PUBLIC_KEY": "Chiave pubblica (PEM)",
+      "VERIFY": "Verifica",
+      "VERIFYING": "Verifica in corso…",
+      "VALID": "Firma valida",
+      "INVALID": "Firma non valida",
+      "UNSUPPORTED_ALG": "La verifica della firma non è supportata per l'algoritmo: {{alg}}"
+    },
+    "ONE_LINE": {
+      "TITLE": "Testo su una riga",
+      "SUBTITLE": "Rimuove a-capo e spazi multipli.",
+      "INPUT": "Testo",
+      "REMOVE_SPACES": "Rimuovi anche spazi multipli"
+    },
+    "SPACE_REMOVER": {
+      "TITLE": "Rimuovi spazi",
+      "SUBTITLE": "Elimina tutti i caratteri di spaziatura.",
+      "INPUT": "Testo",
+      "ONLY_DOUBLE": "Rimuovi solo i doppi spazi (mantieni gli spazi singoli)"
+    },
+    "STRING_LENGTH": {
+      "TITLE": "Lunghezza stringa",
+      "SUBTITLE": "Conta caratteri, parole, righe e byte.",
+      "INPUT": "Testo",
+      "CHARS": "Caratteri",
+      "CHARS_NO_SPACE": "Senza spazi",
+      "WORDS": "Parole",
+      "LINES": "Righe",
+      "BYTES": "Byte (UTF-8)"
+    },
+    "URL_CODEC": {
+      "TITLE": "URL Encode / Decode",
+      "SUBTITLE": "Percent-encoding per URL e query string.",
+      "INPUT": "Testo o URL",
+      "ENCODE": "Codifica",
+      "DECODE": "Decodifica"
+    },
+    "UNITS": {
+      "TITLE": "Convertitore di unità",
+      "SUBTITLE": "Sistema metrico internazionale ↔ unità americane.",
+      "CATEGORY": "Categoria",
+      "FROM": "Da",
+      "TO": "A",
+      "VALUE": "Valore",
+      "RESULT": "Risultato",
+      "PLACEHOLDER": "Inserisci un valore numerico",
+      "CAT_LENGTH": "Lunghezza",
+      "CAT_MASS": "Massa",
+      "CAT_VOLUME": "Volume",
+      "CAT_TEMPERATURE": "Temperatura",
+      "CAT_SPEED": "Velocità",
+      "LABELS": {
+        "m": "Metri (m)",
+        "km": "Chilometri (km)",
+        "cm": "Centimetri (cm)",
+        "mm": "Millimetri (mm)",
+        "in": "Pollici (in)",
+        "ft": "Piedi (ft)",
+        "yd": "Iarde (yd)",
+        "mi": "Miglia (mi)",
+        "g": "Grammi (g)",
+        "kg": "Chilogrammi (kg)",
+        "mg": "Milligrammi (mg)",
+        "t": "Tonnellate metriche (t)",
+        "oz": "Once (oz)",
+        "lb": "Libbre (lb)",
+        "st": "Stones (st)",
+        "l": "Litri (L)",
+        "ml": "Millilitri (mL)",
+        "m3": "Metri cubi (m³)",
+        "gal_us": "Galloni US",
+        "qt_us": "Quart US",
+        "pt_us": "Pinte US",
+        "cup_us": "Tazze US",
+        "floz_us": "Once liquide US",
+        "c": "Celsius (°C)",
+        "f": "Fahrenheit (°F)",
+        "k": "Kelvin (K)",
+        "mps": "m/s",
+        "kph": "km/h",
+        "mph": "mph",
+        "kn": "Nodi (kn)"
+      }
+    },
+    "JSON_FORMATTER": {
+      "TITLE": "Formattatore JSON",
+      "SUBTITLE": "Formatta, minifica e valida documenti JSON.",
+      "INDENT": "Indentazione",
+      "FORMAT": "Formatta",
+      "MINIFY": "Minifica"
+    },
+    "JSON_YAML": {
+      "TITLE": "JSON ↔ YAML",
+      "SUBTITLE": "Converti tra JSON e YAML in entrambe le direzioni.",
+      "ENCODE": "A YAML",
+      "DECODE": "A JSON"
+    },
+    "JSON_CSV": {
+      "TITLE": "JSON ↔ CSV",
+      "SUBTITLE": "Converti tra JSON (array di oggetti) e CSV.",
+      "ENCODE": "A CSV",
+      "DECODE": "A JSON"
+    },
+    "EPOCH": {
+      "TITLE": "Epoch / Unix Timestamp",
+      "SUBTITLE": "Converti tra timestamp Unix e date leggibili.",
+      "NOW": "Ora attuale (epoch)",
+      "EPOCH_LABEL": "Timestamp",
+      "DATE_LABEL": "Data e ora",
+      "TO_DATE": "Converti in data",
+      "TO_EPOCH": "Converti in epoch"
+    },
+    "HASH": {
+      "TITLE": "Hash di password / stringhe",
+      "SUBTITLE": "MD5, SHA-1, SHA-256, SHA-384, SHA-512, bcrypt — calcolati lato client.",
+      "INPUT": "Testo o password",
+      "COMPUTE": "Calcola",
+      "ALGO": "Algoritmo",
+      "DIGEST": "Digest",
+      "SALT": "Salt (prefisso)",
+      "SALT_PLACEHOLDER": "Opzionale — lascia vuoto per ignorare",
+      "SALT_HINT": "Il salt viene preposto all'input prima dell'hashing. bcrypt genera automaticamente il proprio salt.",
+      "BCRYPT_ROUNDS": "Fattore di costo (cicli)",
+      "BCRYPT_ROUNDS_HINT": "Costo maggiore = hash più lento. 10 è il valore predefinito comune.",
+      "BCRYPT_SALT_NOTE": "Ogni hash bcrypt incorpora un salt casuale univoco — lo stesso input produce hash diversi ad ogni calcolo."
+    },
+    "PWGEN": {
+      "TITLE": "Generatore di Password",
+      "SUBTITLE": "Genera password sicure.",
+      "CRYPTO_NOTE": "Generato con un generatore casuale crittograficamente sicuro.",
+      "REGENERATE": "Rigenera",
+      "LENGTH": "Lunghezza",
+      "CHARSET": "Set di caratteri",
+      "EXCLUDE_AMBIGUOUS": "Escludi ambigui (0/O, 1/l)",
+      "STRENGTH_WEAK": "Debole",
+      "STRENGTH_FAIR": "Discreta",
+      "STRENGTH_STRONG": "Forte",
+      "STRENGTH_EXCELLENT": "Eccellente"
+    },
+    "MY_IP": {
+      "TITLE": "Il Mio IP",
+      "SUBTITLE": "Mostra il tuo indirizzo IP pubblico.",
+      "WARNING_TITLE": "Avviso privacy",
+      "WARNING": "Cliccando il pulsante il browser invierà una richiesta a api.ipify.org per ottenere il tuo IP pubblico. Questo è l'unico tool che effettua una richiesta esterna. Nessun altro dato viene inviato a server.",
+      "LOAD": "Mostra il mio IP"
+    },
+    "CRON": {
+      "TITLE": "Costruttore Espressioni Cron",
+      "SUBTITLE": "Spiega espressioni cron a 5 o 6 campi.",
+      "EXPRESSION": "Espressione cron",
+      "FIELD": "Campo",
+      "VALUE": "Valore",
+      "MEANING": "Significato",
+      "EXAMPLES": "Esempi"
+    },
+    "PERCENTAGE": {
+      "TITLE": "Calcolatore di Percentuale",
+      "SUBTITLE": "Calcola percentuali, rapporti e variazioni percentuali.",
+      "MODE": "Modalità",
+      "MODE_PERCENT_OF": "X% di Y",
+      "MODE_PERCENT_OF_TOTAL": "X è quale % di Y",
+      "MODE_PERCENT_CHANGE": "Variazione % da X a Y",
+      "PERCENTAGE": "Percentuale (%)",
+      "VALUE": "Valore",
+      "TOTAL": "Totale",
+      "PERCENT_OF_BASE": "Valore di cui calcolare la percentuale",
+      "EXAMPLE_PERCENT_OF": "Es. qual è il 20% di 150?",
+      "EXAMPLE_PERCENT_OF_TOTAL": "Es. ho ricevuto 10€ di sconto su un capo da 90€ — che percentuale di sconto è?",
+      "EXAMPLE_PERCENT_CHANGE": "Es. un prodotto costava 80€ e ora costa 100€ — di quanto è cambiato percentualmente?",
+      "CALC_DESCRIPTION": "Calcolo del {{y}}% di {{x}}",
+      "CALC_DESCRIPTION_TOTAL": "Determinazione della percentuale che {{a}} rappresenta rispetto a {{b}}",
+      "CALC_DESCRIPTION_CHANGE": "Variazione percentuale da {{a}} a {{b}}",
+      "RESPECT_TO": "Rispetto a",
+      "FROM": "Da",
+      "TO": "A",
+      "RESULT": "Risultato",
+      "PLACEHOLDER": "Inserisci i valori sopra"
+    },
+    "DISCOUNT": {
+      "TITLE": "Calcolatore Sconto",
+      "SUBTITLE": "Inserisci il prezzo originale e la percentuale di sconto per calcolare il prezzo finale.",
+      "PRICE": "Prezzo originale",
+      "DISCOUNT": "Sconto",
+      "RESULT_TITLE": "Risultato",
+      "DISCOUNT_AMOUNT": "Importo sconto",
+      "DISCOUNTED_PRICE": "Prezzo scontato",
+      "EXAMPLE": "Es. un capo costa 90€ con il 20% di sconto — quanto pago?"
+    },
+    "IVA": {
+      "TITLE": "Calcolatore IVA",
+      "SUBTITLE": "Calcola il prezzo ivato o scorporato con le aliquote IVA italiane.",
+      "MODE": "Modalità",
+      "MODE_ADD": "Aggiungi IVA (prezzo netto → prezzo ivato)",
+      "MODE_EXTRACT": "Scorporo IVA (prezzo ivato → prezzo netto)",
+      "RATE": "Aliquota IVA",
+      "PRICE_NET": "Prezzo netto (imponibile)",
+      "PRICE_GROSS": "Prezzo ivato (totale)",
+      "PRICE_PLACEHOLDER": "0.00",
+      "RESULT_TITLE": "Risultato",
+      "IMPONIBILE": "Imponibile",
+      "IMPORTO_IVA": "IVA",
+      "TOTALE": "Totale"
+    },
+    "UUID": {
+      "TITLE": "Generatore UUID / ULID",
+      "SUBTITLE": "Genera identificatori univoci crittograficamente sicuri.",
+      "TYPE": "Tipo",
+      "COUNT": "Quantità (1–100)",
+      "GENERATE": "Genera",
+      "COPY": "Copia",
+      "COPY_ALL": "Copia tutto",
+      "COPIED": "Copiato!"
+    },
+    "REGEX": {
+      "TITLE": "Regex Tester",
+      "SUBTITLE": "Testa espressioni regolari in tempo reale con evidenziazione dei match.",
+      "PATTERN": "Pattern",
+      "FLAGS": "Flag",
+      "TEST_STRING": "Testo di test",
+      "TEST_PLACEHOLDER": "Incolla il testo su cui testare l'espressione...",
+      "MATCHES_TITLE": "Match",
+      "NO_TEST": "Inserisci un pattern e un testo per vedere i match.",
+      "NO_MATCHES": "Nessun match trovato.",
+      "MATCH_COUNT": "{{count}} match trovati",
+      "HIGHLIGHT_TITLE": "Testo con evidenziazione"
+    },
+    "DIFF": {
+      "TITLE": "Diff Checker",
+      "SUBTITLE": "Confronta due testi riga per riga ed evidenzia le differenze.",
+      "ORIGINAL": "Testo originale",
+      "MODIFIED": "Testo modificato",
+      "COMPARE": "Confronta",
+      "RESULT_TITLE": "Differenze",
+      "ADDED": "aggiunte",
+      "REMOVED": "rimosse",
+      "EQUAL": "invariate"
+    },
+    "BASE_CONV": {
+      "TITLE": "Convertitore di Basi Numeriche",
+      "SUBTITLE": "Converti numeri tra binario, ottale, decimale ed esadecimale.",
+      "FROM_BASE": "Dalla base",
+      "VALUE": "Valore",
+      "PLACEHOLDER": "Inserisci il numero da convertire",
+      "RESULT_TITLE": "Conversioni",
+      "BIN": "Binario",
+      "OCT": "Ottale",
+      "DEC": "Decimale",
+      "HEX": "Esadecimale"
+    },
+    "CASE": {
+      "TITLE": "Case Converter",
+      "SUBTITLE": "Converti il testo nei principali formati di scrittura.",
+      "INPUT": "Testo da convertire",
+      "PLACEHOLDER": "Incolla o scrivi il testo qui...",
+      "RESULT_TITLE": "Risultati",
+      "FORMAT": "Formato",
+      "ALL_FORMATS": "Tutti i formati",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "WORD_COUNT": {
+      "TITLE": "Contatore di Parole Avanzato",
+      "SUBTITLE": "Analizza il testo e ottieni statistiche dettagliate.",
+      "PLACEHOLDER": "Incolla o scrivi il testo qui...",
+      "RESULT_TITLE": "Statistiche",
+      "WORDS": "Parole",
+      "READ_TIME": "Tempo di lettura",
+      "CHARS": "Caratteri (spazi inclusi)",
+      "CHARS_NO_SPACE": "Caratteri (senza spazi)",
+      "SENTENCES": "Frasi",
+      "PARAGRAPHS": "Paragrafi",
+      "LINES": "Righe",
+      "BYTES": "Byte (UTF-8)",
+      "FREQ_TITLE": "Parole più frequenti"
+    },
+    "SLUG": {
+      "TITLE": "Generatore di Slug",
+      "SUBTITLE": "Crea URL slug SEO-friendly da qualsiasi testo.",
+      "INPUT": "Titolo o testo",
+      "PLACEHOLDER": "es. Come creare un blog con Angular",
+      "REMOVE_STOP_WORDS": "Rimuovi stop-word italiane",
+      "RESULT_LABEL": "Slug generato",
+      "RESULT_PLACEHOLDER": "Lo slug apparirà qui..."
+    },
+    "AGE": {
+      "TITLE": "Calcolatore di Età",
+      "SUBTITLE": "Calcola l'età esatta in anni, mesi e giorni.",
+      "BIRTH_DATE": "Data di nascita",
+      "REFERENCE_DATE": "Data di riferimento",
+      "REFERENCE_HINT": "Lascia vuoto per usare la data odierna",
+      "RESULT_TITLE": "Risultato",
+      "BIRTHDAY_TODAY": "Buon compleanno!",
+      "YEARS": "anni",
+      "MONTHS": "mesi",
+      "DAYS": "giorni",
+      "TOTAL_DAYS": "Giorni totali",
+      "TOTAL_WEEKS": "Settimane totali",
+      "TOTAL_MONTHS": "Mesi totali",
+      "NEXT_BIRTHDAY": "Prossimo compleanno",
+      "DAYS_LABEL": "giorni"
+    },
+    "HTML_ENCODER": {
+      "TITLE": "HTML Encode / Decode",
+      "SUBTITLE": "Codifica e decodifica entità HTML in tempo reale.",
+      "PLACEHOLDER": "Incolla HTML o testo con entità...",
+      "ENCODED_TITLE": "Testo codificato (HTML Encode)",
+      "DECODED_TITLE": "Testo decodificato (HTML Decode)",
+      "EMPTY": "Il risultato apparirà qui...",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "COLOR": {
+      "TITLE": "Convertitore Colori",
+      "SUBTITLE": "Converti colori tra HEX, RGB e HSL con anteprima.",
+      "RESULT_TITLE": "Valori colore"
+    },
+    "HEX_RGB": {
+      "TITLE": "HEX → RGB",
+      "SUBTITLE": "Inserisci un colore HEX e ottieni i valori RGB corrispondenti.",
+      "RESULT_TITLE": "Valori RGB",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "HEX_HSL": {
+      "TITLE": "HEX → HSL",
+      "SUBTITLE": "Inserisci un colore HEX e ottieni i valori HSL corrispondenti.",
+      "RESULT_TITLE": "Valori HSL",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "RGB_HEX": {
+      "TITLE": "RGB → HEX",
+      "SUBTITLE": "Inserisci i valori RGB e ottieni il codice colore HEX corrispondente.",
+      "RESULT_TITLE": "Valore HEX",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "HSL_HEX": {
+      "TITLE": "HSL → HEX",
+      "SUBTITLE": "Inserisci i valori HSL e ottieni il codice colore HEX corrispondente.",
+      "RESULT_TITLE": "Valore HEX",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "RGB_HSL": {
+      "TITLE": "RGB → HSL",
+      "SUBTITLE": "Inserisci i valori RGB e ottieni i valori HSL corrispondenti.",
+      "RESULT_TITLE": "Valori HSL",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "HSL_RGB": {
+      "TITLE": "HSL → RGB",
+      "SUBTITLE": "Inserisci i valori HSL e ottieni i valori RGB corrispondenti.",
+      "RESULT_TITLE": "Valori RGB",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "COLOR_PICKER": {
+      "TITLE": "Color Picker",
+      "SUBTITLE": "Scegli un colore visivamente e ottieni i valori HEX, RGB e HSL."
+    },
+    "LOREM": {
+      "TITLE": "Generatore Lorem Ipsum",
+      "SUBTITLE": "Genera testo placeholder per mockup e design.",
+      "COUNT": "Quantità",
+      "UNIT": "Unità",
+      "PARAGRAPHS": "Paragrafi",
+      "SENTENCES": "Frasi",
+      "WORDS": "Parole",
+      "START_WITH_LOREM": "Inizia con \"Lorem ipsum\"",
+      "GENERATE": "Genera",
+      "RESULT_TITLE": "Testo generato",
+      "RESULT_PLACEHOLDER": "Il testo apparirà qui...",
+      "COPY": "Copia",
+      "COPIED": "Copiato!",
+      "CLEAR": "Cancella"
+    },
+    "SQL": {
+      "TITLE": "Formattatore SQL",
+      "SUBTITLE": "Formatta e indenta query SQL automaticamente.",
+      "PLACEHOLDER": "Incolla la query SQL qui...",
+      "FORMAT": "Formatta",
+      "CLEAR": "Cancella",
+      "RESULT_TITLE": "SQL formattato",
+      "RESULT_PLACEHOLDER": "La query formattata apparirà qui...",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "DATE_DIFF": {
+      "TITLE": "Differenza tra Date",
+      "SUBTITLE": "Calcola il tempo esatto tra due date.",
+      "FROM": "Data iniziale",
+      "TO": "Data finale",
+      "RESULT_TITLE": "Risultato",
+      "SWAPPED": "Le date sono state invertite per il calcolo.",
+      "YEARS": "anni",
+      "MONTHS": "mesi",
+      "DAYS": "giorni",
+      "TOTAL_DAYS": "Giorni totali",
+      "TOTAL_WEEKS": "Settimane totali",
+      "TOTAL_MONTHS": "Mesi totali",
+      "TOTAL_HOURS": "Ore totali"
+    },
+    "TZ": {
+      "TITLE": "Convertitore Fuso Orario",
+      "SUBTITLE": "Converti un orario tra i fusi orari di tutto il mondo.",
+      "DATETIME": "Data e ora",
+      "SOURCE_TZ": "Fuso orario di partenza",
+      "RESULT_TITLE": "Orari nel mondo",
+      "COL_ZONE": "Zona",
+      "COL_OFFSET": "Offset",
+      "COL_TIME": "Orario locale"
+    },
+    "PIVA": {
+      "TITLE": "Validatore Partita IVA",
+      "SUBTITLE": "Verifica la validità di una Partita IVA italiana.",
+      "LABEL": "Partita IVA",
+      "PLACEHOLDER": "12345678901",
+      "HINT": "Inserisci 11 cifre",
+      "VALID": "Partita IVA valida",
+      "INVALID": "Partita IVA non valida",
+      "REASON_FORMAT": "Il formato non è corretto. La Partita IVA deve essere composta da 11 cifre.",
+      "REASON_CHECKSUM": "La cifra di controllo non è corretta.",
+      "INFO_TITLE": "Come funziona il controllo?",
+      "INFO_BODY": "La validazione usa l'algoritmo di checksum ufficiale dell'Agenzia delle Entrate: somma alternata di cifre con raddoppio e verifica della cifra di controllo (11ª cifra)."
+    },
+    "HMAC": {
+      "TITLE": "Generatore HMAC",
+      "SUBTITLE": "Firma messaggi con HMAC SHA-256 o SHA-512 e una chiave segreta.",
+      "ALGO": "Algoritmo",
+      "KEY": "Chiave segreta",
+      "KEY_PLACEHOLDER": "Inserisci la chiave segreta...",
+      "MESSAGE": "Messaggio",
+      "MESSAGE_PLACEHOLDER": "Inserisci il messaggio da firmare...",
+      "COMPUTE": "Calcola HMAC",
+      "COMPUTING": "Calcolo in corso...",
+      "CLEAR": "Cancella",
+      "RESULT_LABEL": "HMAC",
+      "RESULT_PLACEHOLDER": "La firma HMAC apparirà qui..."
+    },
+    "TOKEN": {
+      "TITLE": "Generatore Token / Secret",
+      "SUBTITLE": "Genera token casuali crittograficamente sicuri.",
+      "BYTES": "Numero di byte",
+      "BYTES_HINT": "Lunghezza in byte dell'entropia generata",
+      "ENCODING": "Formato di output",
+      "COUNT": "Quanti token generare",
+      "GENERATE": "Genera",
+      "RESULT_TITLE": "Token generati",
+      "COPY": "Copia",
+      "COPIED": "Copiato!"
+    },
+    "ROMAN": {
+      "TO_ROMAN_TITLE": "Da arabo a romano",
+      "FROM_ROMAN_TITLE": "Da romano ad arabo",
+      "ARABIC_LABEL": "Numero arabo (1–3999)",
+      "ROMAN_LABEL": "Numero romano",
+      "ROMAN_PLACEHOLDER": "Es. MMXXVI",
+      "INVALID": "Numero romano non valido",
+      "TOO_LARGE": "Numero troppo grande. Il massimo è 3.999 (MMMCMXCIX).",
+      "NOTE": "Il numero più alto esprimibile in forma romana pura è 3.999, scritto come MMMCMXCIX. Questo perché il 4.000 dovrebbe essere scritto come MMMM, il che va contro il principio di non avere quattro lettere consecutive uguali."
+    },
+    "NUM_WORDS": {
+      "TITLE": "Numero in Lettere",
+      "SUBTITLE": "Converti un numero in parole italiane per documenti e contratti.",
+      "LABEL": "Numero",
+      "PLACEHOLDER": "Es. 1234",
+      "HINT": "Supporta da 0 a 999.999.999.999",
+      "COPY": "Copia",
+      "COPIED": "Copiato!",
+      "TOO_HIGH": "Numero troppo grande. Supporta fino a 999.999.999.999."
+    },
+    "JPG_WEBP": {
+      "TITLE": "JPG → WebP",
+      "SUBTITLE": "Converti immagini JPG in WebP con controllo qualità.",
+      "SELECT_FILE": "Seleziona file JPG",
+      "ERROR_FORMAT": "Seleziona un file JPG o JPEG valido.",
+      "QUALITY": "Qualità",
+      "QUALITY_MIN": "Maggiore compressione",
+      "QUALITY_MAX": "Migliore qualità",
+      "ORIGINAL": "Originale",
+      "OUTPUT": "Output",
+      "SAVINGS": "Risparmio",
+      "DOWNLOAD": "Scarica WebP",
+      "RESET": "Azzera",
+      "ORIGINAL_PREVIEW": "Anteprima originale",
+      "OUTPUT_PREVIEW": "Anteprima WebP"
+    },
+    "PNG_WEBP": {
+      "TITLE": "PNG → WebP",
+      "SUBTITLE": "Converti immagini PNG in WebP con controllo qualità.",
+      "SELECT_FILE": "Seleziona file PNG",
+      "ERROR_FORMAT": "Seleziona un file PNG valido.",
+      "QUALITY": "Qualità",
+      "QUALITY_MIN": "Maggiore compressione",
+      "QUALITY_MAX": "Migliore qualità",
+      "ORIGINAL": "Originale",
+      "OUTPUT": "Output",
+      "SAVINGS": "Risparmio",
+      "DOWNLOAD": "Scarica WebP",
+      "RESET": "Azzera",
+      "ORIGINAL_PREVIEW": "Anteprima originale",
+      "OUTPUT_PREVIEW": "Anteprima WebP"
+    },
+    "WEBP_CONV": {
+      "TITLE": "WebP → PNG / JPG",
+      "SUBTITLE": "Converti immagini WebP in PNG o JPG.",
+      "SELECT_FILE": "Seleziona file WebP",
+      "ERROR_FORMAT": "Seleziona un file WebP valido.",
+      "FORMAT": "Formato di output",
+      "QUALITY": "Qualità (solo JPG)",
+      "ORIGINAL": "Originale",
+      "OUTPUT": "Output",
+      "DIFF": "Differenza",
+      "DOWNLOAD": "Scarica",
+      "RESET": "Azzera",
+      "ORIGINAL_PREVIEW": "Anteprima originale",
+      "OUTPUT_PREVIEW": "Anteprima output"
+    },
+    "IMG_RESIZE": {
+      "TITLE": "Ridimensiona Immagine",
+      "SUBTITLE": "Modifica le dimensioni di un'immagine e convertila in un altro formato.",
+      "SELECT_FILE": "Seleziona immagine",
+      "ERROR_FORMAT": "Seleziona un file immagine valido.",
+      "ORIGINAL_SIZE": "Dimensioni originali",
+      "WIDTH": "Larghezza (px)",
+      "HEIGHT": "Altezza (px)",
+      "KEEP_RATIO": "Mantieni proporzioni",
+      "FORMAT": "Formato di output",
+      "QUALITY": "Qualità",
+      "CONVERT": "Ridimensiona e converti",
+      "DOWNLOAD": "Scarica",
+      "RESET": "Azzera",
+      "ORIGINAL_PREVIEW": "Originale",
+      "OUTPUT_PREVIEW": "Output",
+      "OUTPUT_HINT": "Premi \"Ridimensiona e converti\" per vedere il risultato"
+    },
+    "IMG_BASE64": {
+      "TITLE": "Immagine in Base64",
+      "SUBTITLE": "Converti un'immagine in stringa Base64 o data URL completo senza uscire dal browser.",
+      "SELECT_FILE": "Seleziona immagine",
+      "ERROR_FORMAT": "Seleziona un file immagine valido.",
+      "FILE_NAME": "Nome file",
+      "MIME_TYPE": "Tipo MIME",
+      "FILE_SIZE": "Dimensione file",
+      "OUTPUT_LENGTH": "Caratteri output",
+      "MODE": "Formato output",
+      "MODE_DATA_URL": "Data URL completo",
+      "MODE_RAW": "Solo Base64",
+      "COPY": "Copia output",
+      "COPIED": "Copiato",
+      "DOWNLOAD_TXT": "Scarica TXT",
+      "RESET": "Azzera",
+      "PREVIEW_TITLE": "Immagine originale",
+      "OUTPUT_TITLE": "Output Base64",
+      "OUTPUT_HINT": "Passa dal data URL completo al payload Base64 puro.",
+      "OUTPUT_TRUNCATED": "Gli output grandi vengono mostrati in anteprima troncata. Usa Scarica TXT per ottenere la stringa completa.",
+      "DOWNLOAD_NOTE": "Quando l'output è molto lungo, scaricare un file TXT è di solito più pratico che copiarlo tutto in linea.",
+      "EMPTY": "Carica un'immagine per generare la sua stringa Base64."
+    },
+    "IMG_COMPRESS": {
+      "TITLE": "Comprimi Immagine",
+      "SUBTITLE": "Comprimi immagini con controllo qualità in tempo reale.",
+      "SELECT_FILE": "Seleziona immagine",
+      "ERROR_FORMAT": "Seleziona un file immagine valido.",
+      "FORMAT": "Formato di output",
+      "QUALITY": "Qualità",
+      "QUALITY_MIN": "Maggiore compressione",
+      "QUALITY_MAX": "Migliore qualità",
+      "ORIGINAL": "Originale",
+      "OUTPUT": "Output",
+      "SAVINGS": "Risparmio",
+      "DOWNLOAD": "Scarica",
+      "RESET": "Azzera",
+      "ORIGINAL_PREVIEW": "Immagine originale",
+      "OUTPUT_PREVIEW": "Immagine compressa"
+    },
+    "IMG_CROP": {
+      "TITLE": "Ritaglia Immagine",
+      "SUBTITLE": "Trascina sull'immagine per selezionare l'area da ritagliare.",
+      "SELECT_FILE": "Seleziona immagine",
+      "ERROR_FORMAT": "Seleziona un file immagine valido.",
+      "FORMAT": "Formato di output",
+      "SELECTION": "Selezione",
+      "CROP": "Ritaglia",
+      "DOWNLOAD": "Scarica",
+      "RESET": "Azzera",
+      "HINT": "Trascina sull'immagine per selezionare l'area.",
+      "CANVAS_TITLE": "Seleziona area",
+      "EMPTY": "Carica un'immagine per iniziare.",
+      "OUTPUT_PREVIEW": "Immagine ritagliata"
+    },
+    "FAVICON": {
+      "TITLE": "Favicon Generator",
+      "SUBTITLE": "Genera un favicon.ico da qualsiasi immagine. Crea un file ICO multi-risoluzione (16×16, 32×32, 48×48) direttamente nel browser — nessun file viene caricato.",
+      "SELECT_FILE": "Seleziona immagine",
+      "ERROR_FORMAT": "Seleziona un file immagine valido.",
+      "SIZES_INFO": "Genera dimensioni 16×16, 32×32 e 48×48 in un unico file .ico.",
+      "DOWNLOAD": "Scarica favicon.ico",
+      "RESET": "Azzera",
+      "ORIGINAL_PREVIEW": "Immagine originale",
+      "OUTPUT_PREVIEW": "Dimensioni generate"
+    },
+    "SUBNET": {
+      "RESULT_TITLE": "Dettagli subnet",
+      "RESULT_SUBTITLE": "Visualizza mask, intervallo di rete e numero di host disponibili in tempo reale.",
+      "EMPTY": "Inserisci un blocco CIDR o un indirizzo IP con subnet mask per calcolare i dettagli della rete.",
+      "IP_ADDRESS": "Indirizzo IP",
+      "PREFIX": "CIDR / prefisso",
+      "SUBNET_MASK": "Subnet mask",
+      "WILDCARD_MASK": "Wildcard mask",
+      "NETWORK_ADDRESS": "Indirizzo di rete",
+      "BROADCAST_ADDRESS": "Indirizzo broadcast",
+      "FIRST_HOST": "Primo host",
+      "LAST_HOST": "Ultimo host",
+      "TOTAL_ADDRESSES": "IP totali",
+      "USABLE_HOSTS": "IP disponibili"
+    },
+    "SUBNET_CIDR": {
+      "TITLE": "Calcolatore CIDR / Subnet",
+      "SUBTITLE": "Incolla un blocco CIDR IPv4 e calcola mask, intervallo e numero di IP utilizzabili.",
+      "INPUT": "Blocco CIDR",
+      "INPUT_HINT": "Esempi: 192.168.1.42/24, 10.0.0.1/16",
+      "ERROR": "Inserisci un blocco CIDR IPv4 valido, ad esempio 192.168.1.42/24."
+    },
+    "SUBNET_IP_MASK": {
+      "TITLE": "Calcolatore IP + Subnet Mask",
+      "SUBTITLE": "Inserisci un indirizzo IPv4 e una subnet mask o un prefisso per vedere rete e IP disponibili.",
+      "IP_ADDRESS": "Indirizzo IP",
+      "SUBNET_MASK": "Subnet mask o prefisso",
+      "SUBNET_HINT": "Formati accettati: 255.255.255.0, /24 oppure 24",
+      "ERROR": "Inserisci un indirizzo IPv4 valido e una subnet mask o un prefisso corretto.",
+      "ERROR_DETAIL_INVALID_PREFIX": "{{value}} non rientra nell'intervallo valido dei prefissi. Usa un valore da 0 a 32, ad esempio /24.",
+      "ERROR_DETAIL_INVALID_FORMAT": "{{value}} non ha un formato valido per una subnet mask. Usa la notazione puntata come 255.255.255.0 oppure un prefisso come /24.",
+      "ERROR_DETAIL_INVALID_OCTET": "{{value}} non è una subnet mask valida. L'ottetto {{octet}} (in binario {{binary}}) non può comparire in una mask. Gli ottetti validi per una mask sono 255, 254, 252, 248, 240, 224, 192, 128 e 0.",
+      "ERROR_DETAIL_NON_CONTIGUOUS": "{{value}} non è una subnet mask valida perché i bit a 1 non sono contigui. Una mask deve contenere solo 1 consecutivi seguiti da 0, come 255.255.252.0."
+    },
+    "DADO": {
+      "TITLE": "Tira il Dado",
+      "SUBTITLE": "Lancia uno o più dadi virtuali e ottieni il risultato.",
+      "FACES": "Tipo di dado",
+      "COUNT": "Numero di dadi (1–20)",
+      "ROLL": "Lancia",
+      "RESULT_TITLE": "Risultato",
+      "TOTAL": "Totale"
+    },
+    "NUMRAND": {
+      "TITLE": "Numero Casuale",
+      "SUBTITLE": "Estrai uno o più numeri casuali in un intervallo personalizzato.",
+      "MIN": "Minimo",
+      "MAX": "Massimo",
+      "COUNT": "Quanti numeri (1–100)",
+      "GENERATE": "Estrai",
+      "RESULT_TITLE": "Risultato",
+      "HISTORY": "Ultimi estratti",
+      "CLEAR": "Cancella",
+      "PLACEHOLDER": "Imposta l'intervallo e premi Estrai."
+    },
+    "COIN": {
+      "TITLE": "Testa o Croce",
+      "SUBTITLE": "Lancia una moneta virtuale.",
+      "FLIP": "Lancia",
+      "FLIPPING": "In volo…",
+      "RESET": "Azzera",
+      "HEADS": "Testa",
+      "TAILS": "Croce",
+      "TOTAL": "Totale",
+      "PLACEHOLDER": "Premi Lancia per scoprire il risultato."
+    },
+    "PDF_MERGE": {
+      "TITLE": "Unisci PDF",
+      "SUBTITLE": "Combina pi\u00f9 file PDF in un unico documento",
+      "ADD_PDF": "Aggiungi PDF",
+      "EMPTY_HINT": "Aggiungi almeno 2 file PDF per iniziare",
+      "MERGE_DOWNLOAD": "Unisci e Scarica",
+      "RESET": "Reset",
+      "ERROR": "Errore durante la fusione dei PDF.",
+      "HOW_TITLE": "Come funziona",
+      "HOW_1": "Clicca Aggiungi PDF e seleziona i file (anche pi\u00f9 file insieme)",
+      "HOW_2": "Usa le frecce \u2191 \u2193 per riordinare i documenti",
+      "HOW_3": "Clicca Unisci e Scarica \u2014 il PDF combinato viene scaricato",
+      "HOW_4": "Tutto avviene nel browser, nessun file viene inviato a server"
+    },
+    "PDF_SPLIT": {
+      "TITLE": "Dividi PDF",
+      "SUBTITLE": "Separa ogni pagina in un file PDF distinto",
+      "SELECT_FILE": "Seleziona PDF",
+      "PROCESSING": "Elaborazione in corso\u2026",
+      "PAGES_FOUND": "pagine trovate",
+      "DOWNLOAD_ALL": "Scarica tutte",
+      "PAGE": "Pagina",
+      "RESET": "Reset",
+      "ERROR": "Impossibile leggere il file PDF.",
+      "HOW_TITLE": "Come funziona",
+      "HOW_1": "Carica un file PDF",
+      "HOW_2": "Ogni pagina viene estratta in un file PDF separato",
+      "HOW_3": "Scarica le pagine singolarmente o tutte insieme",
+      "HOW_4": "Tutto avviene nel browser, nessun file viene inviato a server"
+    },
+    "PDF_COMPRESS": {
+      "TITLE": "Comprimi PDF",
+      "SUBTITLE": "Ottimizza la struttura interna del PDF per ridurne le dimensioni",
+      "SELECT_FILE": "Seleziona PDF",
+      "PROCESSING": "Compressione in corso\u2026",
+      "ORIGINAL": "Originale",
+      "COMPRESSED": "Compresso",
+      "SAVINGS": "Risparmio",
+      "DOWNLOAD_COMPRESSED": "Scarica compresso",
+      "RESET": "Reset",
+      "ERROR": "Errore durante la compressione del PDF.",
+      "NOTE_TITLE": "Note sulla compressione",
+      "NOTE_1": "La compressione avviene ottimizzando la struttura interna del PDF (object streams) senza alterare il contenuto visivo.",
+      "NOTE_2": "Per PDF gi\u00e0 ottimizzati il risparmio potrebbe essere minimo. La compressione aggressiva delle immagini integrate richiede strumenti server-side."
+    },
+    "PDF_ROTATE": {
+      "TITLE": "Ruota PDF",
+      "SUBTITLE": "Ruota le pagine di un PDF nel browser",
+      "SELECT_FILE": "Seleziona PDF",
+      "ROTATION_LABEL": "Rotazione",
+      "APPLY_TO_LABEL": "Applica a",
+      "ALL_PAGES": "Tutte",
+      "SELECT_RANGE": "Seleziona",
+      "PAGE_RANGE_LABEL": "Pagine (es. 1-3, 5, 8)",
+      "PAGE_RANGE_PLACEHOLDER": "1-3, 5, 8",
+      "ROTATE_DOWNLOAD": "Ruota e Scarica",
+      "RESET": "Reset",
+      "ERROR": "Errore durante la rotazione del PDF.",
+      "ERROR_INVALID_RANGE": "Nessuna pagina valida nel range specificato.",
+      "ERROR_READ": "Impossibile leggere il file PDF.",
+      "HOW_TITLE": "Come funziona",
+      "HOW_1": "Carica un PDF",
+      "HOW_2": "Scegli l'angolo di rotazione: 90\u00b0, 180\u00b0 o 270\u00b0",
+      "HOW_3": "Applica a tutte le pagine o a un intervallo specifico",
+      "HOW_4": "Tutto avviene nel browser, nessun file viene inviato a server"
+    },
+    "PDF_REORDER": {
+      "TITLE": "Riordina Pagine PDF",
+      "SUBTITLE": "Cambia l'ordine delle pagine con le frecce",
+      "SELECT_FILE": "Seleziona PDF",
+      "PAGES_HINT": "pagine \u2014 usa le frecce",
+      "SAVE_DOWNLOAD": "Salva e Scarica",
+      "RESET": "Reset",
+      "ERROR": "Errore durante il riordino del PDF.",
+      "ERROR_READ": "Impossibile leggere il file PDF.",
+      "HOW_TITLE": "Come funziona",
+      "HOW_1": "Carica un PDF \u2014 le pagine appaiono nell'elenco",
+      "HOW_2": "Usa \u2191 \u2193 per spostare le pagine nell'ordine desiderato",
+      "HOW_3": "Clicca Salva e Scarica per ottenere il PDF riordinato",
+      "HOW_4": "Tutto avviene nel browser, nessun file viene inviato a server"
+    },
+    "PDF_EXTRACT": {
+      "TITLE": "Estrai Pagine PDF",
+      "SUBTITLE": "Crea un nuovo PDF con solo le pagine selezionate",
+      "SELECT_FILE": "Seleziona PDF",
+      "FILE_INFO": "pagine totali",
+      "RANGE_LABEL": "Pagine da estrarre",
+      "RANGE_HINT": "(es. 1-3, 5, 8-10)",
+      "RANGE_PLACEHOLDER": "es. 1-3, 5, 8",
+      "EXTRACT_DOWNLOAD": "Estrai e Scarica",
+      "RESET": "Reset",
+      "ERROR": "Errore durante l'estrazione delle pagine.",
+      "ERROR_INVALID_RANGE": "Nessuna pagina valida nel range specificato.",
+      "ERROR_READ": "Impossibile leggere il file PDF.",
+      "SYNTAX_TITLE": "Sintassi del range di pagine",
+      "SYNTAX_HEADER_SYNTAX": "Sintassi",
+      "SYNTAX_HEADER_MEANING": "Significato",
+      "SYNTAX_RANGE_1_3": "Pagine da 1 a 3",
+      "SYNTAX_SINGLE_5": "Solo pagina 5",
+      "SYNTAX_COMBINED": "Pagine 1, 2, 3, 5, 8, 9, 10"
+    },
+    "PDF_VIEWER": {
+      "TITLE": "Visualizza PDF",
+      "SUBTITLE": "Apri un PDF nel browser",
+      "SELECT_FILE": "Seleziona PDF",
+      "PAGES": "pagine",
+      "CLOSE": "Chiudi",
+      "ERROR": "Impossibile aprire il file PDF.",
+      "HOW_TITLE": "Come funziona",
+      "HOW_1": "Carica un file PDF",
+      "HOW_2": "Il documento viene visualizzato nel pannello di destra",
+      "HOW_3": "Il visualizzatore usa il renderer nativo del browser \u2014 nessun upload"
+    },
+    "PDF_TO_IMAGE": {
+      "TITLE": "PDF in Immagini",
+      "SUBTITLE": "Converti ogni pagina PDF in un'immagine PNG",
+      "SELECT_FILE": "Seleziona PDF",
+      "QUALITY_LABEL": "Qualit\u00e0 (scala):",
+      "QUALITY_LOW": "Bassa (veloce)",
+      "QUALITY_HIGH": "Alta (lenta)",
+      "PROCESSING": "Conversione in corso\u2026 (pu\u00f2 richiedere qualche secondo)",
+      "PAGES": "pagine",
+      "DOWNLOAD_ALL": "Scarica tutte",
+      "RESET": "Reset",
+      "PREVIEW_TITLE": "Anteprima pagine",
+      "PAGE": "Pagina",
+      "ERROR": "Errore durante la conversione. Controlla che il file non sia protetto da password."
+    },
+    "IMAGE_TO_PDF": {
+      "TITLE": "Immagini in PDF",
+      "SUBTITLE": "Ogni immagine diventa una pagina del PDF",
+      "ADD_IMAGES": "Aggiungi immagini",
+      "EMPTY_HINT": "Aggiungi una o pi\u00f9 immagini (JPG, PNG)",
+      "CONVERT_DOWNLOAD": "Crea PDF e Scarica",
+      "RESET": "Reset",
+      "ERROR": "Errore durante la creazione del PDF. Usa solo immagini JPG o PNG.",
+      "HOW_TITLE": "Come funziona",
+      "HOW_1": "Aggiungi una o pi\u00f9 immagini (JPG o PNG)",
+      "HOW_2": "Riordina se necessario con \u2191 \u2193",
+      "HOW_3": "Ogni immagine viene inserita in una pagina dedicata nel PDF",
+      "HOW_4": "Tutto avviene nel browser, nessun file viene inviato a server",
+      "NOTE": "Nota: sono supportati formati JPG e PNG. I file WebP vengono accettati se il browser li espone come PNG al momento del caricamento."
+    }
+  },
+  "TERMS": {
+    "TITLE": "Termini di Servizio",
+    "SUBTITLE": "Regole e condizioni per l'utilizzo di piu-di-100-tool.it.",
+    "SECTION_USE": "Utilizzo consentito",
+    "SECTION_USE_SUB": "Gratuito e aperto a tutti",
+    "USE_BODY": "Tutti i tool di questo sito sono forniti gratuitamente per uso personale e professionale. Utilizzando il sito accetti di:",
+    "USE_ITEM_1": "Non utilizzare i tool per attività illegali o dannose.",
+    "USE_ITEM_2": "Non tentare di sovraccaricare o attaccare l'infrastruttura.",
+    "USE_ITEM_3": "Utilizzare i risultati a proprio rischio e verificare autonomamente i dati critici.",
+    "SECTION_DISCLAIMER": "Assenza di garanzie",
+    "SECTION_DISCLAIMER_SUB": "I tool sono forniti così come sono",
+    "DISCLAIMER_BODY": "I tool vengono forniti \"così come sono\" senza alcuna garanzia di accuratezza o idoneità a uno scopo specifico. Non siamo responsabili per eventuali danni derivanti dall'affidamento ai risultati prodotti.",
+    "SECTION_IP": "Proprietà intellettuale",
+    "SECTION_IP_SUB": "Contenuti e codice",
+    "IP_BODY": "Il codice sorgente di questo progetto è open source. Il brand, il logo e il design grafico rimangono di esclusiva proprietà degli autori. È vietato riprodurre l'interfaccia senza autorizzazione.",
+    "SECTION_CHANGES": "Modifiche ai termini",
+    "SECTION_CHANGES_SUB": "Potremmo aggiornare questi termini",
+    "CHANGES_BODY": "Ci riserviamo il diritto di modificare questi termini in qualsiasi momento. Il proseguimento dell'utilizzo del sito dopo eventuali modifiche costituisce accettazione dei nuovi termini.",
+    "SECTION_CONTACT": "Domande?",
+    "SECTION_CONTACT_SUB": "Contattaci",
+    "CONTACT_BODY": "Per qualsiasi domanda su questi termini, visita la nostra pagina di supporto.",
+    "CONTACT_LINK": "Vai al supporto"
+  },
+  "SUPPORT": {
+    "TITLE": "Supporto",
+    "SUBTITLE": "Trova risposte e ottieni aiuto su piu-di-100-tool.it.",
+    "SECTION_FAQ": "Domande frequenti",
+    "SECTION_FAQ_SUB": "Risposte rapide",
+    "FAQ_BODY": "Le domande più comuni dei nostri utenti:",
+    "FAQ_ITEM_1": "I tool sono gratuiti? Sì, tutti i tool sono completamente gratuiti.",
+    "FAQ_ITEM_2": "I miei dati vengono inviati a un server? No, tutta l'elaborazione avviene nel tuo browser.",
+    "FAQ_ITEM_3": "Posso usare i tool offline? La maggior parte dei tool funziona senza connessione internet.",
+    "SECTION_BUG": "Segnala un bug",
+    "SECTION_BUG_SUB": "Aiutaci a migliorare",
+    "BUG_BODY": "Hai trovato un bug o vuoi suggerire una funzionalità? Apri una issue su GitHub.",
+    "BUG_LINK": "Apri una issue su GitHub",
+    "SECTION_CONTACT": "Link utili",
+    "SECTION_CONTACT_SUB": "Altre pagine",
+    "CONTACT_BODY": "Per qualsiasi domanda o richiesta di supporto, scrivici a:",
+    "PRIVACY_LINK": "Politica sulla Privacy",
+    "TERMS_LINK": "Termini di Servizio"
+  },
+  "PRIVACY": {
+    "TITLE": "Informativa sulla Privacy",
+    "SUBTITLE": "Informativa ai sensi del Regolamento UE 2016/679 (GDPR).",
+    "LAST_UPDATED": "Ultimo aggiornamento: maggio 2026",
+    "SECTION_OWNER": "Titolare del trattamento",
+    "SECTION_OWNER_SUB": "Chi è responsabile dei tuoi dati",
+    "OWNER_BODY": "Il titolare del trattamento dei dati personali è il gestore del sito piu-di-100-tool.it, contattabile via email a privacy@piu-di-100-tool.it o tramite il repository GitHub del progetto. Non è stato nominato un Responsabile della Protezione dei Dati (DPO) in quanto il titolare non rientra nelle categorie previste dall'art. 37 GDPR.",
+    "SECTION_DATA_COLLECTED": "Dati trattati",
+    "SECTION_DATA_COLLECTED_SUB": "Cosa tratta questo sito",
+    "DATA_COLLECTED_BODY": "In ragione della natura client-side del sito, la quantità di dati trattati è ridotta al minimo necessario:",
+    "DATA_COLLECTED_ITEM_1": "Dati di navigazione: l'indirizzo IP e i metadati della richiesta HTTP sono trattati temporaneamente dall'infrastruttura di hosting per garantire il funzionamento del servizio e la sicurezza. Non sono conservati a lungo termine né associati a un'identità.",
+    "DATA_COLLECTED_ITEM_2": "Preferenze locali: la lingua selezionata viene salvata in localStorage del browser, esclusivamente sul dispositivo dell'utente.",
+    "DATA_COLLECTED_ITEM_3": "Tool My IP: se l'utente utilizza il tool \"My IP\", il browser effettua una richiesta GET verso api.ipify.org che riceve l'indirizzo IP pubblico dell'utente.",
+    "SECTION_CLIENT_SIDE": "Elaborazione lato client",
+    "SECTION_CLIENT_SIDE_SUB": "I tuoi dati non lasciano il browser",
+    "CLIENT_BODY": "Tutti i tool di questo sito — calcolatori, formattatori, convertitori, generatori — vengono eseguiti interamente nel browser tramite JavaScript. I dati inseriti (testo, JSON, IBAN, codici fiscali, password, JWT, immagini, ecc.) non sono mai trasmessi a server.",
+    "CLIENT_ITEM_1": "Nessun dato elaborato viene inviato a server del titolare.",
+    "CLIENT_ITEM_2": "Nessun log lato server dei dati inseriti nei tool.",
+    "CLIENT_ITEM_3": "Alla chiusura della pagina o del browser, tutti i dati in uso vengono eliminati.",
+    "SECTION_LEGAL_BASIS": "Base giuridica del trattamento",
+    "SECTION_LEGAL_BASIS_SUB": "Art. 6 GDPR",
+    "LEGAL_BASIS_BODY": "Il trattamento dei dati si fonda sulle seguenti basi giuridiche:",
+    "LEGAL_BASIS_ITEM_1": "Art. 6(1)(f) GDPR – Legittimo interesse: i dati di navigazione trattati dall'hosting sono strettamente necessari per la sicurezza e il corretto funzionamento del servizio.",
+    "LEGAL_BASIS_ITEM_2": "Art. 6(1)(b) GDPR – Esecuzione del servizio: il tool \"My IP\" necessita di contattare api.ipify.org per poter funzionare. La richiesta avviene esclusivamente su azione esplicita dell'utente.",
+    "LEGAL_BASIS_ITEM_3": "Art. 6(1)(b) GDPR – Esecuzione del servizio: le preferenze locali (es. lingua) sono salvate nel solo interesse dell'utente per fornire il servizio richiesto.",
+    "SECTION_THIRD_PARTY": "Terze parti",
+    "SECTION_THIRD_PARTY_SUB": "Solo api.ipify.org nel tool My IP",
+    "THIRD_PARTY_TITLE": "Attenzione",
+    "THIRD_PARTY_BODY": "Il tool \"My IP\" trasmette l'indirizzo IP dell'utente a api.ipify.org, un servizio esterno non controllato dal titolare. Il suo utilizzo è facoltativo.",
+    "THIRD_PARTY_DETAIL": "Nessun altro dato personale viene trasferito a terze parti. Si consiglia di consultare la privacy policy di ipify.org per le modalità di trattamento adottate da tale servizio. Il sito è inoltre erogato tramite un'infrastruttura di hosting di terze parti che tratta i dati di navigazione in qualità di responsabile del trattamento (art. 28 GDPR), nell'ambito delle rispettive condizioni contrattuali standard.",
+    "THIRD_PARTY_LINK": "Vai al tool My IP",
+    "SECTION_NO_TRACKING": "Assenza di tracciamento",
+    "SECTION_NO_TRACKING_SUB": "Nessun cookie, nessun analytics",
+    "NO_TRACKING_BODY": "Questo sito non utilizza alcuno strumento di tracciamento o profilazione:",
+    "NO_TRACKING_ITEM_1": "Nessun cookie di profilazione o marketing.",
+    "NO_TRACKING_ITEM_2": "Nessun servizio di analytics (Google Analytics, Matomo o simili).",
+    "NO_TRACKING_ITEM_3": "Nessun pixel di tracciamento di terze parti.",
+    "NO_TRACKING_ITEM_4": "Nessuna tecnica di fingerprinting del browser.",
+    "SECTION_COOKIES": "Cookie e storage locale",
+    "SECTION_COOKIES_SUB": "Nessun dato conservato",
+    "COOKIES_BODY": "Questo sito non installa cookie e non utilizza localStorage né sessionStorage. Nessun dato viene conservato nel browser tra una sessione e l'altra.",
+    "COOKIES_ITEM_1": "localStorage: memorizza la preferenza di lingua. Può essere eliminato dall'utente in qualsiasi momento dalle impostazioni del browser.",
+    "COOKIES_ITEM_2": "sessionStorage: utilizzato da alcuni tool per mantenere lo stato temporaneo nella sessione corrente. Non contiene dati personali e viene cancellato alla chiusura del tab.",
+    "SECTION_RETENTION": "Conservazione dei dati",
+    "SECTION_RETENTION_SUB": "Per quanto tempo",
+    "RETENTION_BODY": "I dati di navigazione trattati dall'hosting sono conservati per il tempo strettamente necessario alla sicurezza del servizio, generalmente non oltre 30 giorni. Nessun dato personale viene conservato su server del titolare.",
+    "SECTION_RIGHTS": "Diritti dell'interessato",
+    "SECTION_RIGHTS_SUB": "Artt. 15–22 GDPR",
+    "RIGHTS_BODY": "Nella misura in cui vengono trattati dati personali che ti riguardano, hai diritto a:",
+    "RIGHTS_ITEM_1": "Accesso (art. 15): ottenere conferma del trattamento e riceverne copia.",
+    "RIGHTS_ITEM_2": "Rettifica (art. 16): richiedere la correzione di dati inesatti o incompleti.",
+    "RIGHTS_ITEM_3": "Cancellazione (art. 17): richiedere la cancellazione dei dati (\"diritto all'oblio\").",
+    "RIGHTS_ITEM_4": "Limitazione (art. 18): richiedere la limitazione del trattamento in determinati casi.",
+    "RIGHTS_ITEM_5": "Portabilità (art. 20): ricevere i dati in formato strutturato e machine-readable.",
+    "RIGHTS_ITEM_6": "Opposizione (art. 21): opporti al trattamento basato sul legittimo interesse.",
+    "RIGHTS_ITEM_7": "Revoca del consenso (art. 7): revocare il consenso in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente.",
+    "RIGHTS_FOOTER": "Per esercitare i tuoi diritti contatta il titolare via email a privacy@piu-di-100-tool.it o apri una issue su GitHub. Hai inoltre il diritto di proporre reclamo all'Autorità Garante per la protezione dei dati personali (www.garanteprivacy.it).",
+    "SECTION_CHANGES": "Aggiornamenti all'informativa",
+    "SECTION_CHANGES_SUB": "Modifiche future",
+    "CHANGES_BODY": "Il titolare si riserva il diritto di aggiornare la presente informativa per adeguarla a modifiche normative o operative. La data di ultimo aggiornamento è indicata in cima alla pagina. Si consiglia di consultarla periodicamente.",
+    "SECTION_CONTACT": "Contatti",
+    "SECTION_CONTACT_SUB": "Titolare del trattamento",
+    "CONTACT_BODY": "Per qualsiasi richiesta in materia di privacy o per esercitare i diritti di cui sopra, contattaci a:",
+    "CONTACT_GITHUB_LINK": "Apri una issue su GitHub"
+  }
+}

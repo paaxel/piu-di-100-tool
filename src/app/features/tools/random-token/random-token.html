@@ -1,0 +1,45 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-4">
+			<app-section-card
+				[title]="'TOOLS.TOKEN.TITLE' | translate"
+				[subtitle]="'TOOLS.TOKEN.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.TOKEN.BYTES' | translate }}</label>
+						<input type="number" class="form-control" formControlName="bytes" min="8" max="256" />
+						<div class="form-text">{{ 'TOOLS.TOKEN.BYTES_HINT' | translate }}</div>
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.TOKEN.ENCODING' | translate }}</label>
+						<select class="form-select" formControlName="encoding">
+							<option *ngFor="let e of encodings" [value]="e.value">{{ e.label }}</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.TOKEN.COUNT' | translate }}</label>
+						<input type="number" class="form-control" formControlName="count" min="1" max="20" />
+					</div>
+					<div class="col-12">
+						<button class="btn btn-primary w-100" (click)="generate()" [disabled]="form.invalid">
+							{{ 'TOOLS.TOKEN.GENERATE' | translate }}
+						</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-8">
+			<app-section-card [title]="'TOOLS.TOKEN.RESULT_TITLE' | translate">
+				<ul class="token-list list-unstyled mb-0">
+					<li *ngFor="let t of tokens; let i = index" class="token-list__item">
+						<code class="token-list__val font-mono">{{ t }}</code>
+						<button class="btn btn-sm btn-outline-secondary ms-2 flex-shrink-0" (click)="copy(i)">
+							{{ (copied === i ? 'TOOLS.TOKEN.COPIED' : 'TOOLS.TOKEN.COPY') | translate }}
+						</button>
+					</li>
+				</ul>
+			</app-section-card>
+		</div>
+	</div>
+</div>

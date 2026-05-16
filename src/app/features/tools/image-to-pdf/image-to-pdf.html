@@ -1,0 +1,55 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-5">
+      <app-section-card [title]="'TOOLS.IMAGE_TO_PDF.TITLE' | translate" [subtitle]="'TOOLS.IMAGE_TO_PDF.SUBTITLE' | translate">
+        <label class="btn btn-outline-primary w-100 mb-3">
+          <span class="material-symbols-outlined icon-inline me-1">add_photo_alternate</span>
+          {{ 'TOOLS.IMAGE_TO_PDF.ADD_IMAGES' | translate }}
+          <input type="file" class="d-none" accept="image/jpeg,image/png,image/webp" multiple
+                 (change)="onFiles($event)">
+        </label>
+
+        <div *ngIf="images.length === 0" class="text-center text-muted py-3 border rounded">
+          {{ 'TOOLS.IMAGE_TO_PDF.EMPTY_HINT' | translate }}
+        </div>
+
+        <ul class="list-group mb-3" *ngIf="images.length > 0">
+          <li *ngFor="let img of images; let i = index"
+              class="list-group-item d-flex align-items-center gap-2 py-2">
+            <img [src]="img.preview" class="rounded flex-shrink-0"
+                 style="width:40px;height:40px;object-fit:cover" alt="">
+            <span class="flex-grow-1 text-truncate small">{{ img.file.name }}</span>
+            <div class="btn-group btn-group-sm flex-shrink-0">
+              <button class="btn btn-outline-secondary" (click)="moveUp(i)" [disabled]="i === 0">↑</button>
+              <button class="btn btn-outline-secondary" (click)="moveDown(i)" [disabled]="i === images.length - 1">↓</button>
+              <button class="btn btn-outline-danger" (click)="remove(i)">✕</button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="d-flex gap-2" *ngIf="images.length > 0">
+          <button class="btn btn-success flex-grow-1" (click)="convert()" [disabled]="processing">
+            <span *ngIf="processing" class="spinner-border spinner-border-sm me-1"></span>
+            <span class="material-symbols-outlined icon-inline me-1" *ngIf="!processing">picture_as_pdf</span>
+            {{ 'TOOLS.IMAGE_TO_PDF.CONVERT_DOWNLOAD' | translate }}
+          </button>
+          <button class="btn btn-outline-secondary" (click)="reset()">{{ 'TOOLS.IMAGE_TO_PDF.RESET' | translate }}</button>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0 small">{{ error | translate }}</div>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-lg-7">
+      <app-section-card [title]="'TOOLS.IMAGE_TO_PDF.HOW_TITLE' | translate">
+        <ol class="mb-0 ps-3">
+          <li class="mb-1">{{ 'TOOLS.IMAGE_TO_PDF.HOW_1' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.IMAGE_TO_PDF.HOW_2' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.IMAGE_TO_PDF.HOW_3' | translate }}</li>
+          <li class="text-muted">{{ 'TOOLS.IMAGE_TO_PDF.HOW_4' | translate }}</li>
+        </ol>
+        <p class="mt-2 mb-0 small text-muted">{{ 'TOOLS.IMAGE_TO_PDF.NOTE' | translate }}</p>
+      </app-section-card>
+    </div>
+  </div>
+</div>

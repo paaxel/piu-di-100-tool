@@ -1,0 +1,14 @@
+.numrand-big {
+	font-size: 5rem;
+	font-weight: 700;
+	text-align: center;
+	color: var(--primary);
+	line-height: 1;
+	padding: var(--space-md) 0;
+}
+
+.numrand-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}

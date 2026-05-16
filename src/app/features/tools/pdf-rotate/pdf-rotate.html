@@ -1,0 +1,74 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-4">
+      <app-section-card [title]="'TOOLS.PDF_ROTATE.TITLE' | translate" [subtitle]="'TOOLS.PDF_ROTATE.SUBTITLE' | translate">
+        <app-file-dropzone
+          [label]="'TOOLS.PDF_ROTATE.SELECT_FILE' | translate"
+          accept="application/pdf"
+          (fileChange)="onFile($event)">
+        </app-file-dropzone>
+
+        <div *ngIf="file" class="mt-3">
+          <div class="mb-3">
+            <label class="form-label fw-semibold">{{ 'TOOLS.PDF_ROTATE.ROTATION_LABEL' | translate }}</label>
+            <div class="d-flex gap-2">
+              <button *ngFor="let a of [90, 180, 270]"
+                      class="btn flex-fill"
+                      [class.btn-primary]="angle === a"
+                      [class.btn-outline-secondary]="angle !== a"
+                      (click)="angle = a">
+                {{ a }}°
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">{{ 'TOOLS.PDF_ROTATE.APPLY_TO_LABEL' | translate }}</label>
+            <div class="d-flex gap-2">
+              <button class="btn flex-fill"
+                      [class.btn-primary]="applyTo === 'all'"
+                      [class.btn-outline-secondary]="applyTo !== 'all'"
+                      (click)="applyTo = 'all'">
+                {{ 'TOOLS.PDF_ROTATE.ALL_PAGES' | translate }} ({{ pageCount }})
+              </button>
+              <button class="btn flex-fill"
+                      [class.btn-primary]="applyTo === 'range'"
+                      [class.btn-outline-secondary]="applyTo !== 'range'"
+                      (click)="applyTo = 'range'">
+                {{ 'TOOLS.PDF_ROTATE.SELECT_RANGE' | translate }}
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-3" *ngIf="applyTo === 'range'">
+            <label class="form-label fw-semibold">{{ 'TOOLS.PDF_ROTATE.PAGE_RANGE_LABEL' | translate }}</label>
+            <input type="text" class="form-control" [(ngModel)]="pageRange"
+                   [placeholder]="'TOOLS.PDF_ROTATE.PAGE_RANGE_PLACEHOLDER' | translate">
+          </div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-success flex-grow-1" (click)="rotate()" [disabled]="processing">
+              <span *ngIf="processing" class="spinner-border spinner-border-sm me-1"></span>
+              <span class="material-symbols-outlined icon-inline me-1" *ngIf="!processing">rotate_right</span>
+              {{ 'TOOLS.PDF_ROTATE.ROTATE_DOWNLOAD' | translate }}
+            </button>
+            <button class="btn btn-outline-secondary" (click)="reset()">{{ 'TOOLS.PDF_ROTATE.RESET' | translate }}</button>
+          </div>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0 small">{{ error | translate }}</div>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-lg-8">
+      <app-section-card [title]="'TOOLS.PDF_ROTATE.HOW_TITLE' | translate">
+        <ol class="mb-0 ps-3">
+          <li class="mb-1">{{ 'TOOLS.PDF_ROTATE.HOW_1' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.PDF_ROTATE.HOW_2' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.PDF_ROTATE.HOW_3' | translate }}</li>
+          <li class="text-muted">{{ 'TOOLS.PDF_ROTATE.HOW_4' | translate }}</li>
+        </ol>
+      </app-section-card>
+    </div>
+  </div>
+</div>

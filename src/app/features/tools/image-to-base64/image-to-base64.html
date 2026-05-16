@@ -1,0 +1,88 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-xl-4">
+      <app-section-card
+        [title]="'TOOLS.IMG_BASE64.TITLE' | translate"
+        [subtitle]="'TOOLS.IMG_BASE64.SUBTITLE' | translate">
+
+        <div class="mb-3">
+          <app-file-dropzone
+            [label]="'TOOLS.IMG_BASE64.SELECT_FILE' | translate"
+            accept="image/*"
+            (fileChange)="onFile($event)">
+          </app-file-dropzone>
+          @if (error === 'FORMAT') {
+            <div class="text-danger small mt-2">{{ 'TOOLS.IMG_BASE64.ERROR_FORMAT' | translate }}</div>
+          }
+        </div>
+
+        @if (dataUrl) {
+          <div class="small text-muted d-grid gap-1">
+            <div>
+              {{ 'TOOLS.IMG_BASE64.FILE_NAME' | translate }}:
+              <span class="font-mono text-break">{{ inputName }}</span>
+            </div>
+            <div>
+              {{ 'TOOLS.IMG_BASE64.MIME_TYPE' | translate }}:
+              <span class="font-mono">{{ mimeType }}</span>
+            </div>
+            <div>{{ 'TOOLS.IMG_BASE64.FILE_SIZE' | translate }}: {{ inputSize | fileSize }}</div>
+            <div>{{ 'TOOLS.IMG_BASE64.OUTPUT_LENGTH' | translate }}: {{ output.length | number }}</div>
+          </div>
+
+          <div class="mt-3">
+            <label class="form-label fw-semibold">{{ 'TOOLS.IMG_BASE64.MODE' | translate }}</label>
+            <select class="form-select" [(ngModel)]="outputMode">
+              <option value="dataUrl">{{ 'TOOLS.IMG_BASE64.MODE_DATA_URL' | translate }}</option>
+              <option value="raw">{{ 'TOOLS.IMG_BASE64.MODE_RAW' | translate }}</option>
+            </select>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button class="btn btn-primary flex-grow-1" (click)="copy()">
+              {{ (copied ? 'TOOLS.IMG_BASE64.COPIED' : 'TOOLS.IMG_BASE64.COPY') | translate }}
+            </button>
+            <button class="btn btn-outline-secondary" (click)="downloadText()">
+              {{ 'TOOLS.IMG_BASE64.DOWNLOAD_TXT' | translate }}
+            </button>
+          </div>
+
+          <button class="btn btn-outline-secondary w-100 mt-2" (click)="reset()">
+            {{ 'TOOLS.IMG_BASE64.RESET' | translate }}
+          </button>
+        }
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-xl-8">
+      <div class="row g-3">
+        @if (inputPreview) {
+          <div class="col-12 col-lg-5">
+            <app-section-card [title]="'TOOLS.IMG_BASE64.PREVIEW_TITLE' | translate">
+              <img [src]="inputPreview" class="img-fluid rounded" alt="Selected image preview">
+            </app-section-card>
+          </div>
+        }
+
+        <div class="col-12" [class.col-lg-7]="!!inputPreview">
+          <app-section-card
+            [title]="'TOOLS.IMG_BASE64.OUTPUT_TITLE' | translate"
+            [subtitle]="(isLongOutput ? 'TOOLS.IMG_BASE64.OUTPUT_TRUNCATED' : 'TOOLS.IMG_BASE64.OUTPUT_HINT') | translate">
+
+            @if (output) {
+              <textarea class="form-control font-mono" rows="16" [value]="displayOutput" readonly></textarea>
+              @if (isLongOutput) {
+                <div class="small text-muted mt-2">{{ 'TOOLS.IMG_BASE64.DOWNLOAD_NOTE' | translate }}</div>
+              }
+            } @else {
+              <div class="text-muted text-center py-5">
+                <span class="material-symbols-outlined icon-xl d-block mb-2">image</span>
+                <small>{{ 'TOOLS.IMG_BASE64.EMPTY' | translate }}</small>
+              </div>
+            }
+          </app-section-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

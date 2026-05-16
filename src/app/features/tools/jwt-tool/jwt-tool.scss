@@ -1,0 +1,32 @@
+.jwt-card {
+	background: var(--surface-container-lowest);
+	border: 1px solid var(--outline-variant);
+	border-radius: var(--radius-lg);
+	padding: var(--space-md);
+	height: 100%;
+}
+
+.jwt-card.jwt-header { border-top: 4px solid #d33682; }
+.jwt-card.jwt-payload { border-top: 4px solid #9333ea; }
+.jwt-card.jwt-signature { border-top: 4px solid #06b6d4; }
+
+.jwt-label {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	color: var(--on-surface-variant);
+	margin-bottom: var(--space-sm);
+}
+
+.jwt-pre {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 13px;
+	background: var(--surface-container-low);
+	padding: var(--space-sm);
+	border-radius: var(--radius-md);
+	max-height: 320px;
+	overflow: auto;
+	margin: 0;
+	white-space: pre-wrap;
+	word-break: break-word;
+}

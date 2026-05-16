@@ -1,0 +1,52 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-6">
+			<app-section-card
+				[title]="'TOOLS.AGE.TITLE' | translate"
+				[subtitle]="'TOOLS.AGE.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.AGE.BIRTH_DATE' | translate }}</label>
+						<input type="date" class="form-control" formControlName="birthDate" [max]="today" />
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.AGE.REFERENCE_DATE' | translate }}</label>
+						<input type="date" class="form-control" formControlName="referenceDate" />
+						<div class="form-text">{{ 'TOOLS.AGE.REFERENCE_HINT' | translate }}</div>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-6" *ngIf="result">
+			<app-section-card [title]="'TOOLS.AGE.RESULT_TITLE' | translate">
+				<div class="age-birthday" *ngIf="result.isToday">
+					🎂 {{ 'TOOLS.AGE.BIRTHDAY_TODAY' | translate }}
+				</div>
+
+				<div class="age-main">
+					<span class="age-main__years">{{ result.years }}</span>&ngsp;<span class="age-main__label">{{ 'TOOLS.AGE.YEARS' | translate }}</span><span class="age-main__sep">,</span>&ngsp;<span class="age-main__value">{{ result.months }}</span>&ngsp;<span class="age-main__label">{{ 'TOOLS.AGE.MONTHS' | translate }}</span><span class="age-main__sep">,</span>&ngsp;<span class="age-main__value">{{ result.days }}</span>&ngsp;<span class="age-main__label">{{ 'TOOLS.AGE.DAYS' | translate }}</span>
+				</div>
+
+				<dl class="age-details">
+					<div class="age-details__row">
+						<dt>{{ 'TOOLS.AGE.TOTAL_DAYS' | translate }}</dt>
+						<dd class="font-mono">{{ result.totalDays | number }}</dd>
+					</div>
+					<div class="age-details__row">
+						<dt>{{ 'TOOLS.AGE.TOTAL_WEEKS' | translate }}</dt>
+						<dd class="font-mono">{{ result.totalWeeks | number }}</dd>
+					</div>
+					<div class="age-details__row">
+						<dt>{{ 'TOOLS.AGE.TOTAL_MONTHS' | translate }}</dt>
+						<dd class="font-mono">{{ result.totalMonths }}</dd>
+					</div>
+					<div class="age-details__row" *ngIf="!result.isToday">
+						<dt>{{ 'TOOLS.AGE.NEXT_BIRTHDAY' | translate }}</dt>
+						<dd class="font-mono">{{ result.nextBirthdayDays }} {{ 'TOOLS.AGE.DAYS_LABEL' | translate }}</dd>
+					</div>
+				</dl>
+			</app-section-card>
+		</div>
+	</div>
+</div>

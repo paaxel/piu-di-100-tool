@@ -1,0 +1,76 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-5">
+      <app-section-card [title]="'TOOLS.PDF_MERGE.TITLE' | translate" [subtitle]="'TOOLS.PDF_MERGE.SUBTITLE' | translate">
+
+        <label class="btn btn-outline-primary w-100 mb-3">
+          <span class="material-symbols-outlined icon-inline me-1">add</span>
+          {{ 'TOOLS.PDF_MERGE.ADD_PDF' | translate }}
+          <input type="file" class="d-none" accept="application/pdf" multiple (change)="onFiles($event)">
+        </label>
+
+        <div *ngIf="files.length === 0" class="text-center text-muted py-3 border rounded">
+          {{ 'TOOLS.PDF_MERGE.EMPTY_HINT' | translate }}
+        </div>
+
+        <ul class="list-group mb-3" *ngIf="files.length > 0">
+          <li *ngFor="let e of files; let i = index"
+              class="list-group-item d-flex align-items-center gap-2 py-2">
+            <div class="flex-shrink-0" style="width:52px;height:72px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer"
+                 (click)="openPreview(e.file, 0)">
+              <img *ngIf="e.thumb" [src]="e.thumb" alt="" class="rounded border w-100 h-100" style="object-fit:cover">
+              <span *ngIf="!e.thumb" class="material-symbols-outlined text-danger">picture_as_pdf</span>
+            </div>
+            <span class="flex-grow-1 text-truncate small">{{ e.file.name }}</span>
+            <div class="btn-group btn-group-sm flex-shrink-0">
+              <button class="btn btn-outline-secondary" (click)="moveUp(i)" [disabled]="i === 0">↑</button>
+              <button class="btn btn-outline-secondary" (click)="moveDown(i)" [disabled]="i === files.length - 1">↓</button>
+              <button class="btn btn-outline-danger" (click)="remove(i)">✕</button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="d-flex gap-2" *ngIf="files.length >= 2">
+          <button class="btn btn-success flex-grow-1" (click)="merge()" [disabled]="processing">
+            <span *ngIf="processing" class="spinner-border spinner-border-sm me-1"></span>
+            <span class="material-symbols-outlined icon-inline me-1" *ngIf="!processing">merge</span>
+            {{ 'TOOLS.PDF_MERGE.MERGE_DOWNLOAD' | translate }}
+          </button>
+          <button class="btn btn-outline-secondary" (click)="reset()">{{ 'TOOLS.PDF_MERGE.RESET' | translate }}</button>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0 small">{{ error | translate }}</div>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-lg-7">
+      <app-section-card [title]="'TOOLS.PDF_MERGE.HOW_TITLE' | translate">
+        <ol class="mb-0 ps-3">
+          <li class="mb-1">{{ 'TOOLS.PDF_MERGE.HOW_1' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.PDF_MERGE.HOW_2' | translate }}</li>
+          <li class="mb-1">{{ 'TOOLS.PDF_MERGE.HOW_3' | translate }}</li>
+          <li class="text-muted">{{ 'TOOLS.PDF_MERGE.HOW_4' | translate }}</li>
+        </ol>
+      </app-section-card>
+    </div>
+  </div>
+
+  <div *ngIf="previewSrc || previewLoading"
+       class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+       style="z-index:1055;background:rgba(0,0,0,0.75)"
+       (click)="closePreview()">
+    <div class="bg-white rounded-3 shadow-lg d-flex flex-column"
+         (click)="$event.stopPropagation()">
+      <div class="d-flex justify-content-end p-2 pb-0">
+        <button type="button" class="btn-close" (click)="closePreview()"></button>
+      </div>
+      <div class="p-3 pt-1 text-center">
+        <div *ngIf="previewLoading" class="py-5 px-4">
+          <span class="spinner-border text-secondary"></span>
+        </div>
+        <img *ngIf="previewSrc" [src]="previewSrc" class="d-block"
+             style="max-width:85vw;max-height:82vh;object-fit:contain">
+      </div>
+    </div>
+  </div>
+</div>

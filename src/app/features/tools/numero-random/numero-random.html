@@ -1,0 +1,56 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-md-5 col-xl-4">
+			<app-section-card
+				[title]="'TOOLS.NUMRAND.TITLE' | translate"
+				[subtitle]="'TOOLS.NUMRAND.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-6">
+						<label class="form-label">{{ 'TOOLS.NUMRAND.MIN' | translate }}</label>
+						<input type="number" class="form-control" formControlName="min" />
+					</div>
+					<div class="col-6">
+						<label class="form-label">{{ 'TOOLS.NUMRAND.MAX' | translate }}</label>
+						<input type="number" class="form-control" formControlName="max" />
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.NUMRAND.COUNT' | translate }}</label>
+						<input type="number" class="form-control" formControlName="count" min="1" max="100" />
+					</div>
+					<div class="col-12">
+						<button class="btn btn-primary w-100" type="button" (click)="generate()" [disabled]="form.invalid">
+							{{ 'TOOLS.NUMRAND.GENERATE' | translate }}
+						</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-md-7 col-xl-8">
+			<app-section-card [title]="'TOOLS.NUMRAND.RESULT_TITLE' | translate">
+				<ng-container *ngIf="results.length; else placeholder">
+					<div class="numrand-big" *ngIf="results.length === 1">{{ result }}</div>
+					<div class="numrand-chips" *ngIf="results.length > 1">
+						<span *ngFor="let n of results" class="badge bg-primary fs-6 px-3 py-2">{{ n }}</span>
+					</div>
+				</ng-container>
+
+				<div class="numrand-history mt-4" *ngIf="history.length > results.length">
+					<div class="d-flex align-items-center justify-content-between mb-2">
+						<small class="text-muted">{{ 'TOOLS.NUMRAND.HISTORY' | translate }}</small>
+						<button class="btn btn-sm btn-outline-secondary" type="button" (click)="clearHistory()">
+							{{ 'TOOLS.NUMRAND.CLEAR' | translate }}
+						</button>
+					</div>
+					<div class="numrand-chips">
+						<span *ngFor="let n of history.slice(results.length)" class="badge bg-secondary">{{ n }}</span>
+					</div>
+				</div>
+
+				<ng-template #placeholder>
+					<div class="text-muted small">{{ 'TOOLS.NUMRAND.PLACEHOLDER' | translate }}</div>
+				</ng-template>
+			</app-section-card>
+		</div>
+	</div>
+</div>

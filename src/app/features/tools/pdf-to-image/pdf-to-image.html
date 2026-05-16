@@ -1,0 +1,62 @@
+<div class="section-block">
+  <div class="row g-4">
+    <div class="col-12 col-lg-4">
+      <app-section-card [title]="'TOOLS.PDF_TO_IMAGE.TITLE' | translate" [subtitle]="'TOOLS.PDF_TO_IMAGE.SUBTITLE' | translate">
+        <app-file-dropzone
+          [label]="'TOOLS.PDF_TO_IMAGE.SELECT_FILE' | translate"
+          accept="application/pdf"
+          (fileChange)="onFile($event)">
+        </app-file-dropzone>
+
+        <div class="mb-3 mt-3">
+          <label class="form-label fw-semibold">
+            {{ 'TOOLS.PDF_TO_IMAGE.QUALITY_LABEL' | translate }} <strong>{{ scale }}×</strong>
+          </label>
+          <input type="range" class="form-range" min="1" max="3" step="0.5"
+                 [(ngModel)]="scale">
+          <div class="d-flex justify-content-between text-muted small">
+            <span>{{ 'TOOLS.PDF_TO_IMAGE.QUALITY_LOW' | translate }}</span>
+            <span>{{ 'TOOLS.PDF_TO_IMAGE.QUALITY_HIGH' | translate }}</span>
+          </div>
+        </div>
+
+        <div *ngIf="processing" class="text-center py-3">
+          <span class="spinner-border spinner-border-sm me-2"></span>
+          {{ 'TOOLS.PDF_TO_IMAGE.PROCESSING' | translate }}
+        </div>
+
+        <div *ngIf="images.length > 0" class="mt-2">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="fw-semibold">{{ images.length }} {{ 'TOOLS.PDF_TO_IMAGE.PAGES' | translate }}</span>
+            <button class="btn btn-sm btn-success" (click)="downloadAll()">
+              <span class="material-symbols-outlined icon-inline me-1">download_for_offline</span>
+              {{ 'TOOLS.PDF_TO_IMAGE.DOWNLOAD_ALL' | translate }}
+            </button>
+          </div>
+          <button class="btn btn-outline-secondary w-100" (click)="reset()">{{ 'TOOLS.PDF_TO_IMAGE.RESET' | translate }}</button>
+        </div>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0 small">{{ error | translate }}</div>
+      </app-section-card>
+    </div>
+
+    <div class="col-12 col-lg-8" *ngIf="images.length > 0">
+      <app-section-card [title]="'TOOLS.PDF_TO_IMAGE.PREVIEW_TITLE' | translate">
+        <div class="row g-3">
+          <div *ngFor="let img of images; let i = index" class="col-12 col-md-6 col-xl-4">
+            <div class="card h-100">
+              <img [src]="img" class="card-img-top img-fluid" [alt]="('TOOLS.PDF_TO_IMAGE.PAGE' | translate) + ' ' + (i+1)"
+                   style="object-fit: contain; max-height: 220px;">
+              <div class="card-footer d-flex align-items-center justify-content-between py-1 px-2">
+                <small class="text-muted">{{ 'TOOLS.PDF_TO_IMAGE.PAGE' | translate }} {{ i + 1 }}</small>
+                <button class="btn btn-sm btn-outline-primary" (click)="downloadImage(img, i)">
+                  <span class="material-symbols-outlined icon-inline">download</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </app-section-card>
+    </div>
+  </div>
+</div>

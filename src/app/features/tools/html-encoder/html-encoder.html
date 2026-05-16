@@ -1,0 +1,35 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-5">
+			<app-section-card
+				[title]="'TOOLS.HTML_ENCODER.TITLE' | translate"
+				[subtitle]="'TOOLS.HTML_ENCODER.SUBTITLE' | translate">
+				<form [formGroup]="form">
+					<textarea class="form-control font-mono" rows="12" formControlName="value"
+						[placeholder]="'TOOLS.HTML_ENCODER.PLACEHOLDER' | translate"></textarea>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-7">
+			<div class="row g-3">
+				<div class="col-12">
+					<app-section-card [title]="'TOOLS.HTML_ENCODER.ENCODED_TITLE' | translate">
+						<div class="he-output font-mono">{{ encoded || ('TOOLS.HTML_ENCODER.EMPTY' | translate) }}</div>
+						<button class="btn btn-sm btn-outline-secondary mt-2" (click)="copyEncoded()" [disabled]="!encoded">
+							{{ (copiedEncoded ? 'TOOLS.HTML_ENCODER.COPIED' : 'TOOLS.HTML_ENCODER.COPY') | translate }}
+						</button>
+					</app-section-card>
+				</div>
+				<div class="col-12">
+					<app-section-card [title]="'TOOLS.HTML_ENCODER.DECODED_TITLE' | translate">
+						<div class="he-output font-mono">{{ decoded || ('TOOLS.HTML_ENCODER.EMPTY' | translate) }}</div>
+						<button class="btn btn-sm btn-outline-secondary mt-2" (click)="copyDecoded()" [disabled]="!decoded">
+							{{ (copiedDecoded ? 'TOOLS.HTML_ENCODER.COPIED' : 'TOOLS.HTML_ENCODER.COPY') | translate }}
+						</button>
+					</app-section-card>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'TOOLS.SLUG.TITLE' | translate"
+				[subtitle]="'TOOLS.SLUG.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.SLUG.INPUT' | translate }}</label>
+						<input type="text" class="form-control" formControlName="value"
+							[placeholder]="'TOOLS.SLUG.PLACEHOLDER' | translate" />
+					</div>
+					<div class="col-12">
+						<label class="form-check">
+							<input type="checkbox" class="form-check-input" formControlName="removeStopWords" />
+							<span class="form-check-label ms-1">{{ 'TOOLS.SLUG.REMOVE_STOP_WORDS' | translate }}</span>
+						</label>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-4">
+			<app-result-panel
+				[label]="'TOOLS.SLUG.RESULT_LABEL' | translate"
+				[value]="slug"
+				[placeholder]="'TOOLS.SLUG.RESULT_PLACEHOLDER' | translate"
+				(cleared)="clearResult()">
+			</app-result-panel>
+		</div>
+	</div>
+</div>

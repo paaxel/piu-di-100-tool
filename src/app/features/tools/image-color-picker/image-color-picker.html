@@ -1,0 +1,70 @@
+<div class="section-block">
+  <div class="row g-4">
+
+    <!-- Controls + color result -->
+    <div class="col-12 col-lg-4">
+      <app-section-card title="Colore da Immagine" subtitle="Carica un'immagine e clicca su un punto per campionarne il colore">
+
+        <app-file-dropzone label="Seleziona immagine" accept="image/*" (fileChange)="onFile($event)"></app-file-dropzone>
+
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
+
+        <p *ngIf="hasImage && !pickedHex" class="text-muted small mt-3 mb-0">
+          <span class="material-symbols-outlined icon-inline me-1">colorize</span>
+          Clicca sull'immagine per campionare un colore.
+        </p>
+
+        <ng-container *ngIf="pickedHex">
+          <div class="mt-4">
+
+            <!-- Color swatch + values summary -->
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="rounded border shadow-sm flex-shrink-0"
+                   [style.background]="pickedHex"
+                   style="width:56px;height:56px"></div>
+              <div>
+                <div class="fw-bold font-mono fs-5">{{ hexUpper }}</div>
+                <div class="text-muted small">{{ rgbStr }}</div>
+                <div class="text-muted small">{{ hslStr }}</div>
+              </div>
+            </div>
+
+            <!-- Copy buttons -->
+            <div class="d-flex flex-column gap-2">
+              <div class="d-flex align-items-center gap-2">
+                <code class="flex-grow-1 text-truncate">{{ hexUpper }}</code>
+                <button class="btn btn-sm btn-outline-secondary flex-shrink-0" (click)="copy(hexUpper, 'hex')">
+                  {{ copiedKey === 'hex' ? 'Copiato!' : 'HEX' }}
+                </button>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <code class="flex-grow-1 text-truncate">{{ rgbStr }}</code>
+                <button class="btn btn-sm btn-outline-secondary flex-shrink-0" (click)="copy(rgbStr, 'rgb')">
+                  {{ copiedKey === 'rgb' ? 'Copiato!' : 'RGB' }}
+                </button>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <code class="flex-grow-1 text-truncate">{{ hslStr }}</code>
+                <button class="btn btn-sm btn-outline-secondary flex-shrink-0" (click)="copy(hslStr, 'hsl')">
+                  {{ copiedKey === 'hsl' ? 'Copiato!' : 'HSL' }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+
+      </app-section-card>
+    </div>
+
+    <!-- Canvas image -->
+    <div class="col-12 col-lg-8" *ngIf="hasImage">
+      <app-section-card title="Immagine — clicca per campionare">
+        <canvas #canvas
+                class="d-block rounded border"
+                style="cursor: crosshair; max-width: 100%; height: auto;"
+                (click)="onCanvasClick($event)"></canvas>
+      </app-section-card>
+    </div>
+
+  </div>
+</div>

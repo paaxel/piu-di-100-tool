@@ -1,0 +1,59 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'CODICE_FISCALE.TITLE' | translate"
+				[subtitle]="'CODICE_FISCALE.SUBTITLE' | translate"
+			>
+				<form class="row g-3" [formGroup]="form" (ngSubmit)="generate()">
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'CODICE_FISCALE.FORM.NAME' | translate }}</label>
+						<input type="text" class="form-control" formControlName="name" />
+					</div>
+
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'CODICE_FISCALE.FORM.SURNAME' | translate }}</label>
+						<input type="text" class="form-control" formControlName="surname" />
+					</div>
+
+					<div class="col-12 col-md-4">
+						<label class="form-label">{{ 'CODICE_FISCALE.FORM.BIRTH_DATE' | translate }}</label>
+						<input type="date" class="form-control" formControlName="birthDate" />
+					</div>
+
+					<div class="col-12 col-md-4">
+						<label class="form-label">{{ 'CODICE_FISCALE.FORM.GENDER' | translate }}</label>
+						<select class="form-select" formControlName="gender">
+							<option value="M">{{ 'COMMON.MALE' | translate }}</option>
+							<option value="F">{{ 'COMMON.FEMALE' | translate }}</option>
+						</select>
+					</div>
+
+					<div class="col-12 col-md-4">
+						<label class="form-label">{{ 'CODICE_FISCALE.FORM.BIRTH_PLACE' | translate }}</label>
+						<app-place-autocomplete
+							[items]="(places$ | async) ?? []"
+							[placeholder]="'CODICE_FISCALE.FORM.BIRTH_PLACE_PLACEHOLDER' | translate"
+							[hintLabel]="'CODICE_FISCALE.FORM.BIRTH_PLACE_HINT' | translate"
+							formControlName="birthPlace"
+						></app-place-autocomplete>
+					</div>
+
+					<div class="col-12 d-flex justify-content-end">
+						<button class="btn btn-primary px-4" type="submit">{{ 'CODICE_FISCALE.GENERATE' | translate }}</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-4">
+			<app-result-panel
+				[label]="'CODICE_FISCALE.RESULT_LABEL' | translate"
+				[value]="result"
+				[placeholder]="'CODICE_FISCALE.RESULT_PLACEHOLDER' | translate"
+				(cleared)="clearResult()"
+			></app-result-panel>
+		</div>
+	</div>
+</div>
+

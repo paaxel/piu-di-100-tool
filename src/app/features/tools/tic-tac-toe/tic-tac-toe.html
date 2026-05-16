@@ -1,0 +1,81 @@
+<div class="section-block">
+  <div class="row g-4 justify-content-center">
+    <div class="col-12 col-md-8 col-lg-5">
+      <app-section-card title="Tris" subtitle="Tic Tac Toe">
+
+        <!-- Mode selector -->
+        <div class="d-flex gap-2 mb-3">
+          <button class="btn flex-fill"
+                  [class.btn-primary]="mode === 'pvp'"
+                  [class.btn-outline-secondary]="mode !== 'pvp'"
+                  (click)="setMode('pvp')">
+            <span class="material-symbols-outlined icon-inline me-1">group</span>2 Giocatori
+          </button>
+          <button class="btn flex-fill"
+                  [class.btn-primary]="mode === 'cpu'"
+                  [class.btn-outline-secondary]="mode !== 'cpu'"
+                  (click)="setMode('cpu')">
+            <span class="material-symbols-outlined icon-inline me-1">smart_toy</span>vs Computer
+          </button>
+        </div>
+
+        <!-- Score -->
+        <div class="d-flex justify-content-around text-center mb-3">
+          <div>
+            <div class="fw-bold text-primary fs-4">{{ scores.X }}</div>
+            <div class="small text-muted">{{ mode === 'cpu' ? 'Tu (X)' : 'X' }}</div>
+          </div>
+          <div>
+            <div class="fw-bold text-secondary fs-4">{{ scores.draw }}</div>
+            <div class="small text-muted">Pari</div>
+          </div>
+          <div>
+            <div class="fw-bold text-danger fs-4">{{ scores.O }}</div>
+            <div class="small text-muted">{{ mode === 'cpu' ? 'CPU (O)' : 'O' }}</div>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="text-center mb-3 fw-semibold">
+          <span *ngIf="!winner && !isDraw && !cpuThinking">
+            Turno di <span [class.text-primary]="currentPlayer === 'X'" [class.text-danger]="currentPlayer === 'O'">{{ currentPlayer }}</span>
+          </span>
+          <span *ngIf="cpuThinking" class="text-muted">
+            <span class="spinner-border spinner-border-sm me-1"></span>Il computer pensa…
+          </span>
+          <span *ngIf="winner" class="text-success">
+            <span class="material-symbols-outlined icon-inline">emoji_events</span>
+            {{ mode === 'cpu' && winner === 'O' ? 'Il computer vince!' : winner + ' vince!' }}
+          </span>
+          <span *ngIf="isDraw" class="text-warning">Pari!</span>
+        </div>
+
+        <!-- Board -->
+        <div class="d-grid gap-2 mb-3" style="grid-template-columns: repeat(3,1fr); display:grid;">
+          <button *ngFor="let cell of board; let i = index"
+                  class="btn btn-outline-secondary fw-bold fs-1 d-flex align-items-center justify-content-center"
+                  style="aspect-ratio:1; font-size:2.5rem !important;"
+                  [class.btn-outline-secondary]="!isWinCell(i)"
+                  [class.btn-success]="isWinCell(i)"
+                  [class.text-primary]="cell === 'X'"
+                  [class.text-danger]="cell === 'O'"
+                  (click)="move(i)"
+                  [disabled]="!!cell || !!winner || isDraw || cpuThinking">
+            {{ cell ?? '' }}
+          </button>
+        </div>
+
+        <!-- Actions -->
+        <div class="d-flex gap-2">
+          <button class="btn btn-primary flex-grow-1" (click)="newGame()">
+            <span class="material-symbols-outlined icon-inline me-1">refresh</span>Nuova partita
+          </button>
+          <button class="btn btn-outline-secondary" (click)="resetScores()" title="Azzera punteggi">
+            <span class="material-symbols-outlined icon-inline">scoreboard</span>
+          </button>
+        </div>
+
+      </app-section-card>
+    </div>
+  </div>
+</div>

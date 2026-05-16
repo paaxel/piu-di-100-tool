@@ -1,0 +1,26 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12">
+			<app-section-card [title]="'TOOLS.SPACE_REMOVER.TITLE' | translate" [subtitle]="'TOOLS.SPACE_REMOVER.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<textarea class="form-control font-mono" rows="8" formControlName="value"></textarea>
+					</div>
+					<div class="col-12">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="onlyDouble" formControlName="onlyDouble" />
+							<label class="form-check-label" for="onlyDouble">{{ 'TOOLS.SPACE_REMOVER.ONLY_DOUBLE' | translate }}</label>
+						</div>
+					</div>
+					<div class="col-12 d-flex justify-content-end">
+						<button class="btn btn-primary" type="button" (click)="apply()">{{ 'TOOLS.COMMON.CONVERT' | translate }}</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+		<div class="col-12">
+			<app-result-panel [label]="'TOOLS.COMMON.RESULT' | translate" [value]="result"
+				[placeholder]="'TOOLS.COMMON.OUTPUT_PLACEHOLDER' | translate" (cleared)="clearResult()"></app-result-panel>
+		</div>
+	</div>
+</div>

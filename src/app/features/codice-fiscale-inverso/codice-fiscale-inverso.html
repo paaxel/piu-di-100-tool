@@ -1,0 +1,71 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'CF_INVERSO.TITLE' | translate"
+				[subtitle]="'CF_INVERSO.SUBTITLE' | translate"
+			>
+				<form class="row g-3" [formGroup]="form" (ngSubmit)="decode()">
+					<div class="col-12">
+						<label class="form-label">{{ 'CF_INVERSO.FORM.CF_LABEL' | translate }}</label>
+						<input
+							type="text"
+							class="form-control font-monospace text-uppercase"
+							formControlName="cf"
+							[placeholder]="'CF_INVERSO.FORM.CF_PLACEHOLDER' | translate"
+							maxlength="16"
+							autocomplete="off"
+						/>
+					</div>
+
+					<div class="col-12 d-flex justify-content-end gap-2">
+						<button class="btn btn-outline-secondary px-4" type="button" (click)="reset()">
+							{{ 'COMMON.RESET' | translate }}
+						</button>
+						<button class="btn btn-primary px-4" type="submit" [disabled]="form.invalid">
+							{{ 'CF_INVERSO.DECODE' | translate }}
+						</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-4" *ngIf="result">
+			<app-section-card [title]="'CF_INVERSO.RESULT.TITLE' | translate">
+				<div class="cf-result">
+					<div class="cf-result__validity" [class.cf-result__validity--ok]="result.valid" [class.cf-result__validity--err]="!result.valid">
+						<span class="material-symbols-outlined">{{ result.valid ? 'check_circle' : 'cancel' }}</span>
+						<span>{{ (result.valid ? 'CF_INVERSO.RESULT.VALID' : 'CF_INVERSO.RESULT.INVALID') | translate }}</span>
+					</div>
+
+					<dl class="cf-result__list">
+						<div class="cf-result__row">
+							<dt>{{ 'CF_INVERSO.RESULT.BIRTH_YEAR' | translate }}</dt>
+							<dd>{{ result.year }}</dd>
+						</div>
+						<div class="cf-result__row">
+							<dt>{{ 'CF_INVERSO.RESULT.BIRTH_MONTH' | translate }}</dt>
+							<dd>{{ ('CF_INVERSO.RESULT.MONTHS.' + result.month) | translate }}</dd>
+						</div>
+						<div class="cf-result__row">
+							<dt>{{ 'CF_INVERSO.RESULT.BIRTH_DAY' | translate }}</dt>
+							<dd>{{ result.day }}</dd>
+						</div>
+						<div class="cf-result__row">
+							<dt>{{ 'CF_INVERSO.RESULT.GENDER' | translate }}</dt>
+							<dd>{{ (result.gender === 'M' ? 'COMMON.MALE' : 'COMMON.FEMALE') | translate }}</dd>
+						</div>
+						<div class="cf-result__row">
+							<dt>{{ 'CF_INVERSO.RESULT.PLACE_CODE' | translate }}</dt>
+							<dd><code>{{ result.placeCode }}</code></dd>
+						</div>
+						<div class="cf-result__row">
+							<dt>{{ 'CF_INVERSO.RESULT.PLACE_NAME' | translate }}</dt>
+							<dd>{{ result.placeName ?? ('CF_INVERSO.RESULT.UNKNOWN_PLACE' | translate) }}</dd>
+						</div>
+					</dl>
+				</div>
+			</app-section-card>
+		</div>
+	</div>
+</div>

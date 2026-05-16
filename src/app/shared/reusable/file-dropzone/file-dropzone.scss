@@ -1,0 +1,51 @@
+:host {
+  display: block;
+}
+
+.dropzone {
+  border: 2px dashed var(--surface-dim);
+  border-radius: 0.5rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  background: var(--surface-container-low);
+  user-select: none;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--primary);
+    background: var(--surface-container);
+    outline: none;
+  }
+
+  &.drag-over {
+    border-color: var(--primary);
+    border-style: solid;
+    background: var(--primary-fixed);
+  }
+}
+
+.dropzone-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.dropzone-hint-primary {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.dropzone-hint-secondary {
+  font-size: 0.78rem;
+  color: var(--on-surface-variant);
+}
+
+.dropzone-file-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+}

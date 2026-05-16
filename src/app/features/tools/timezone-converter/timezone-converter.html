@@ -1,0 +1,45 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-4">
+			<app-section-card
+				[title]="'TOOLS.TZ.TITLE' | translate"
+				[subtitle]="'TOOLS.TZ.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.TZ.DATETIME' | translate }}</label>
+						<input type="datetime-local" class="form-control" formControlName="datetime" />
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.TZ.SOURCE_TZ' | translate }}</label>
+						<select class="form-select" formControlName="sourceTz">
+							<option *ngFor="let tz of timezones" [value]="tz.id">{{ tz.label }}</option>
+						</select>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-8">
+			<app-section-card [title]="'TOOLS.TZ.RESULT_TITLE' | translate">
+				<div class="tz-table-wrap">
+					<table class="table table-sm table-hover tz-table mb-0">
+						<thead>
+							<tr>
+								<th>{{ 'TOOLS.TZ.COL_ZONE' | translate }}</th>
+								<th>{{ 'TOOLS.TZ.COL_OFFSET' | translate }}</th>
+								<th>{{ 'TOOLS.TZ.COL_TIME' | translate }}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let r of results" [class.table-primary]="r.tz.id === form.value.sourceTz">
+								<td>{{ r.tz.label }}</td>
+								<td class="font-mono text-secondary">{{ r.offset }}</td>
+								<td class="font-mono">{{ r.formatted }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</app-section-card>
+		</div>
+	</div>
+</div>

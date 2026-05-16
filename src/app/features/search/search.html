@@ -1,0 +1,54 @@
+<div class="section-block">
+	<div class="mb-3 text-center">
+		<p class="fw-bold fs-3 mb-1">{{ 'SEARCH.INTRO_TITLE' | translate }}</p>
+		<p class="text-muted small mb-0">{{ 'SEARCH.INTRO_SUBTITLE' | translate }}</p>
+	</div>
+
+	<section class="mb-4">
+		<app-section-card [title]="'SEARCH.TITLE' | translate" [subtitle]="'SEARCH.SUBTITLE' | translate">
+			<input
+				class="form-control"
+				type="text"
+				name="query"
+				[ngModel]="query"
+				(ngModelChange)="onQueryChange($event)"
+				[placeholder]="'SEARCH.PLACEHOLDER' | translate"
+			/>
+		</app-section-card>
+	</section>
+
+	<section>
+		<p class="text-muted mb-3">{{ 'SEARCH.RESULTS' | translate:{ count: results.length, total: totalTools } }}</p>
+
+		<div class="row g-3">
+			<div class="col-12 col-md-6" *ngFor="let tool of pagedResults">
+				<app-section-card [title]="getToolName(tool)" [subtitle]="getToolCategory(tool)">
+					<p class="text-muted mb-3">{{ getToolDescription(tool) }}</p>
+					<a class="btn btn-outline-primary" [routerLink]="tool.route">{{ 'HOME.OPEN_TOOL' | translate }}</a>
+				</app-section-card>
+			</div>
+		</div>
+
+		<nav class="paginator mt-4" *ngIf="totalPages > 1" [attr.aria-label]="'SEARCH.PAGINATION' | translate">
+			<ul class="pagination justify-content-center align-items-center mb-0 gap-1">
+				<li class="page-item" [class.disabled]="page === 1">
+					<button class="page-link page-link--edge" (click)="goToPage(1)" [disabled]="page === 1" title="Prima pagina">&laquo;</button>
+				</li>
+				<li class="page-item" [class.disabled]="page === 1">
+					<button class="page-link page-link--nav" (click)="goToPage(page - 1)" [disabled]="page === 1">&lsaquo;</button>
+				</li>
+				<li class="page-item" *ngFor="let p of pages" [class.active]="p === page">
+					<button class="page-link page-link--num" (click)="goToPage(p)">{{ p }}</button>
+				</li>
+				<li class="page-item" [class.disabled]="page === totalPages">
+					<button class="page-link page-link--nav" (click)="goToPage(page + 1)" [disabled]="page === totalPages">&rsaquo;</button>
+				</li>
+				<li class="page-item" [class.disabled]="page === totalPages">
+					<button class="page-link page-link--edge" (click)="goToPage(totalPages)" [disabled]="page === totalPages" title="Ultima pagina">&raquo;</button>
+				</li>
+			</ul>
+			<p class="text-center text-muted small mt-2">{{ 'SEARCH.PAGE_SUMMARY' | translate:{ page: page, pages: totalPages, from: firstItem, to: lastItem, total: results.length } }}</p>
+		</nav>
+	</section>
+</div>
+

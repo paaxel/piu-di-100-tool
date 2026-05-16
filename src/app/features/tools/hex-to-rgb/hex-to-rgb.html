@@ -1,0 +1,42 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-5">
+			<app-section-card
+				[title]="'TOOLS.HEX_RGB.TITLE' | translate"
+				[subtitle]="'TOOLS.HEX_RGB.SUBTITLE' | translate">
+				<form [formGroup]="form">
+					<label class="form-label fw-semibold">HEX</label>
+					<input type="text" class="form-control font-mono" formControlName="hex" placeholder="#3b82f6" />
+					<div *ngIf="error" class="text-danger small mt-1">{{ error }}</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-7">
+			<app-section-card [title]="'TOOLS.HEX_RGB.RESULT_TITLE' | translate">
+				<div *ngIf="preview" class="color-preview mb-3" [style.background]="preview"></div>
+				<dl *ngIf="rgb" class="color-results">
+					<div class="color-results__row">
+						<dt>R</dt>
+						<dd class="font-mono">{{ rgb.r }}</dd>
+					</div>
+					<div class="color-results__row">
+						<dt>G</dt>
+						<dd class="font-mono">{{ rgb.g }}</dd>
+					</div>
+					<div class="color-results__row">
+						<dt>B</dt>
+						<dd class="font-mono">{{ rgb.b }}</dd>
+					</div>
+					<div class="color-results__row">
+						<dt>CSS</dt>
+						<dd class="font-mono">{{ rgbString }}</dd>
+					</div>
+				</dl>
+				<button *ngIf="rgb" class="btn btn-sm btn-outline-secondary mt-3" (click)="copy()">
+					{{ (copied ? 'TOOLS.HEX_RGB.COPIED' : 'TOOLS.HEX_RGB.COPY') | translate }}
+				</button>
+			</app-section-card>
+		</div>
+	</div>
+</div>

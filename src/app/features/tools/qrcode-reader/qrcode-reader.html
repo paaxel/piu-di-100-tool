@@ -1,0 +1,35 @@
+<div class="section-block">
+  <app-section-card title="Lettore QR Code" subtitle="Carica un'immagine per estrarre il contenuto del QR">
+    <app-file-dropzone label="Seleziona immagine" accept="image/*" (fileChange)="onFile($event)"></app-file-dropzone>
+    <div class="mt-3" *ngIf="preview">
+      <button class="btn btn-primary me-2" (click)="decode()" [disabled]="loading">Decodifica</button>
+      <button class="btn btn-outline-secondary" (click)="reset()" [disabled]="loading">Reset</button>
+      <span *ngIf="loading" class="ms-2 spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    </div>
+
+    <div *ngIf="!nativeSupported" class="alert alert-info mt-3 mb-0">
+      BarcodeDetector non disponibile: uso fallback ZXing (potrebbe essere piu lento).
+    </div>
+
+    <div *ngIf="usingFallback && nativeSupported" class="alert alert-info mt-3 mb-0">
+      BarcodeDetector non ha rilevato codici: uso fallback ZXing.
+    </div>
+
+    <div class="row g-3 mt-2" *ngIf="preview">
+      <div class="col-12 col-lg-5">
+        <img [src]="preview" class="img-fluid rounded border" alt="Input QR">
+      </div>
+      <div class="col-12 col-lg-7">
+        <div *ngIf="loading" class="alert alert-info">Decodifica in corso...</div>
+        <div *ngIf="!loading && value" class="border rounded p-3 bg-body-tertiary">
+          <div class="mb-2"><strong>Contenuto:</strong></div>
+          <code style="word-break: break-all; white-space: pre-wrap;">{{ value }}</code>
+          <div class="mt-3">
+            <button class="btn btn-outline-secondary btn-sm" (click)="copy()">Copia</button>
+          </div>
+        </div>
+        <div *ngIf="!loading && error" class="alert alert-danger mb-0">{{ error }}</div>
+      </div>
+    </div>
+  </app-section-card>
+</div>

@@ -1,0 +1,51 @@
+<div class="section-block">
+  <div class="row g-4">
+
+    <!-- Controls -->
+    <div class="col-12 col-lg-4">
+      <app-section-card title="Pixelate Immagine" subtitle="Trasforma un'immagine in stile pixel-art con blocchi personalizzabili">
+
+        <div class="mb-3">
+          <app-file-dropzone label="Seleziona immagine" accept="image/*" (fileChange)="onFile($event)"></app-file-dropzone>
+          <div *ngIf="error" class="text-danger small mt-1">{{ error }}</div>
+        </div>
+
+        <div class="mb-3" *ngIf="inputPreview">
+          <label class="form-label fw-semibold">Dimensione blocco: <strong>{{ blockSize }}px</strong></label>
+          <input type="range" class="form-range" min="2" max="64" step="1"
+            [(ngModel)]="blockSize" (input)="onBlockSizeChange()">
+          <div class="d-flex justify-content-between text-muted small">
+            <span>2px</span>
+            <span>64px</span>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2" *ngIf="hasOutput">
+          <button class="btn btn-success flex-grow-1" (click)="download()">
+            <span class="material-symbols-outlined icon-inline me-1">download</span>
+            Download PNG
+          </button>
+          <button class="btn btn-outline-secondary" (click)="reset()">Reset</button>
+        </div>
+
+      </app-section-card>
+    </div>
+
+    <!-- Preview -->
+    <div class="col-12 col-lg-8" *ngIf="inputPreview">
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <app-section-card title="Originale">
+            <img [src]="inputPreview" class="img-fluid rounded border d-block" alt="Originale">
+          </app-section-card>
+        </div>
+        <div class="col-12 col-md-6">
+          <app-section-card title="Pixelata">
+            <img *ngIf="outputPreview" [src]="outputPreview" class="img-fluid rounded border d-block" alt="Pixelata">
+          </app-section-card>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

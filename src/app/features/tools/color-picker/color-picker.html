@@ -1,0 +1,111 @@
+<div class="section-block">
+	<div class="row g-4">
+
+		<!-- Visual picker -->
+		<div class="col-12">
+			<app-section-card
+				[title]="'TOOLS.COLOR_PICKER.TITLE' | translate"
+				[subtitle]="'TOOLS.COLOR_PICKER.SUBTITLE' | translate">
+				<label class="cp-swatch-label">
+					<div class="cp-swatch" [style.background]="hex"></div>
+					<input type="color" class="cp-native" [value]="hex"
+						(input)="setFromPicker($any($event.target).value)">
+				</label>
+			</app-section-card>
+		</div>
+
+		<!-- HEX -->
+		<div class="col-12 col-md-4">
+			<app-section-card title="HEX">
+				<div class="cp-card">
+					<input type="text" class="form-control form-control-lg font-mono text-center cp-hex-input"
+						[value]="hexUpper"
+						(change)="setFromHex($any($event.target).value)"
+						maxlength="7"
+						spellcheck="false">
+					<button class="btn btn-sm btn-outline-secondary w-100 mt-3"
+						(click)="copy(hexUpper, 'hex')">
+						{{ copiedKey === 'hex' ? ('TOOLS.COMMON.COPIED' | translate) : ('TOOLS.COMMON.COPY' | translate) }}
+					</button>
+				</div>
+			</app-section-card>
+		</div>
+
+		<!-- RGB -->
+		<div class="col-12 col-md-4">
+			<app-section-card title="RGB">
+				<div class="cp-card">
+					<div class="row g-2">
+						<div class="col-4">
+							<div class="cp-channel">
+								<span class="cp-channel__label">R</span>
+								<input type="number" class="form-control font-mono text-center"
+									min="0" max="255" [value]="r"
+									(change)="setR(+$any($event.target).value)">
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="cp-channel">
+								<span class="cp-channel__label">G</span>
+								<input type="number" class="form-control font-mono text-center"
+									min="0" max="255" [value]="g"
+									(change)="setG(+$any($event.target).value)">
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="cp-channel">
+								<span class="cp-channel__label">B</span>
+								<input type="number" class="form-control font-mono text-center"
+									min="0" max="255" [value]="b"
+									(change)="setB(+$any($event.target).value)">
+							</div>
+						</div>
+					</div>
+					<button class="btn btn-sm btn-outline-secondary w-100 mt-3"
+						(click)="copy(rgbStr, 'rgb')">
+						{{ copiedKey === 'rgb' ? ('TOOLS.COMMON.COPIED' | translate) : ('TOOLS.COMMON.COPY' | translate) }}
+					</button>
+				</div>
+			</app-section-card>
+		</div>
+
+		<!-- HSL -->
+		<div class="col-12 col-md-4">
+			<app-section-card title="HSL">
+				<div class="cp-card">
+					<div class="row g-2">
+						<div class="col-4">
+							<div class="cp-channel">
+								<span class="cp-channel__label">H°</span>
+								<input type="number" class="form-control font-mono text-center"
+									min="0" max="360" [value]="h"
+									(change)="setH(+$any($event.target).value)">
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="cp-channel">
+								<span class="cp-channel__label">S%</span>
+								<input type="number" class="form-control font-mono text-center"
+									min="0" max="100" [value]="s"
+									(change)="setS(+$any($event.target).value)">
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="cp-channel">
+								<span class="cp-channel__label">L%</span>
+								<input type="number" class="form-control font-mono text-center"
+									min="0" max="100" [value]="l"
+									(change)="setL(+$any($event.target).value)">
+							</div>
+						</div>
+					</div>
+					<button class="btn btn-sm btn-outline-secondary w-100 mt-3"
+						(click)="copy(hslStr, 'hsl')">
+						{{ copiedKey === 'hsl' ? ('TOOLS.COMMON.COPIED' | translate) : ('TOOLS.COMMON.COPY' | translate) }}
+					</button>
+				</div>
+			</app-section-card>
+		</div>
+
+	</div>
+</div>

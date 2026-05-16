@@ -1,0 +1,12 @@
+.uuid-list {
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.uuid-item {
+  border-bottom: 1px solid var(--bs-border-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

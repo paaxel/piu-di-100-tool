@@ -1,0 +1,102 @@
+<div class="section-block privacy-page">
+	<header class="page-head">
+		<h1>{{ 'PRIVACY.TITLE' | translate }}</h1>
+		<p class="lead">{{ 'PRIVACY.SUBTITLE' | translate }}</p>
+		<p class="last-updated">{{ 'PRIVACY.LAST_UPDATED' | translate }}</p>
+	</header>
+
+	<!-- 1. Titolare del trattamento -->
+	<app-section-card [title]="'PRIVACY.SECTION_OWNER' | translate" [subtitle]="'PRIVACY.SECTION_OWNER_SUB' | translate">
+		<p>{{ 'PRIVACY.OWNER_BODY' | translate }}</p>
+	</app-section-card>
+
+	<!-- 2. Dati raccolti -->
+	<app-section-card [title]="'PRIVACY.SECTION_DATA_COLLECTED' | translate" [subtitle]="'PRIVACY.SECTION_DATA_COLLECTED_SUB' | translate">
+		<p>{{ 'PRIVACY.DATA_COLLECTED_BODY' | translate }}</p>
+		<ul>
+			<li>{{ 'PRIVACY.DATA_COLLECTED_ITEM_1' | translate }}</li>
+			<li>{{ 'PRIVACY.DATA_COLLECTED_ITEM_2' | translate }}</li>
+			<li>{{ 'PRIVACY.DATA_COLLECTED_ITEM_3' | translate }}</li>
+		</ul>
+	</app-section-card>
+
+	<!-- 3. Elaborazione lato client -->
+	<app-section-card [title]="'PRIVACY.SECTION_CLIENT_SIDE' | translate" [subtitle]="'PRIVACY.SECTION_CLIENT_SIDE_SUB' | translate">
+		<p>{{ 'PRIVACY.CLIENT_BODY' | translate }}</p>
+		<ul>
+			<li>{{ 'PRIVACY.CLIENT_ITEM_1' | translate }}</li>
+			<li>{{ 'PRIVACY.CLIENT_ITEM_2' | translate }}</li>
+			<li>{{ 'PRIVACY.CLIENT_ITEM_3' | translate }}</li>
+		</ul>
+	</app-section-card>
+
+	<!-- 4. Base giuridica -->
+	<app-section-card [title]="'PRIVACY.SECTION_LEGAL_BASIS' | translate" [subtitle]="'PRIVACY.SECTION_LEGAL_BASIS_SUB' | translate">
+		<p>{{ 'PRIVACY.LEGAL_BASIS_BODY' | translate }}</p>
+		<ul>
+			<li>{{ 'PRIVACY.LEGAL_BASIS_ITEM_1' | translate }}</li>
+			<li>{{ 'PRIVACY.LEGAL_BASIS_ITEM_2' | translate }}</li>
+		</ul>
+	</app-section-card>
+
+	<!-- 5. Terze parti -->
+	<app-section-card [title]="'PRIVACY.SECTION_THIRD_PARTY' | translate" [subtitle]="'PRIVACY.SECTION_THIRD_PARTY_SUB' | translate">
+		<div class="alert alert-warning" role="alert">
+			<strong>{{ 'PRIVACY.THIRD_PARTY_TITLE' | translate }}:</strong> {{ 'PRIVACY.THIRD_PARTY_BODY' | translate }}
+		</div>
+		<p>{{ 'PRIVACY.THIRD_PARTY_DETAIL' | translate }}</p>
+		<p><a routerLink="/tools/my-ip">{{ 'PRIVACY.THIRD_PARTY_LINK' | translate }} →</a></p>
+	</app-section-card>
+
+	<!-- 6. Assenza di tracciamento -->
+	<app-section-card [title]="'PRIVACY.SECTION_NO_TRACKING' | translate" [subtitle]="'PRIVACY.SECTION_NO_TRACKING_SUB' | translate">
+		<p>{{ 'PRIVACY.NO_TRACKING_BODY' | translate }}</p>
+		<ul>
+			<li>{{ 'PRIVACY.NO_TRACKING_ITEM_1' | translate }}</li>
+			<li>{{ 'PRIVACY.NO_TRACKING_ITEM_2' | translate }}</li>
+			<li>{{ 'PRIVACY.NO_TRACKING_ITEM_3' | translate }}</li>
+			<li>{{ 'PRIVACY.NO_TRACKING_ITEM_4' | translate }}</li>
+		</ul>
+	</app-section-card>
+
+	<!-- 7. Cookie -->
+	<app-section-card [title]="'PRIVACY.SECTION_COOKIES' | translate" [subtitle]="'PRIVACY.SECTION_COOKIES_SUB' | translate">
+		<p>{{ 'PRIVACY.COOKIES_BODY' | translate }}</p>
+	</app-section-card>
+
+	<!-- 8. Conservazione dei dati -->
+	<app-section-card [title]="'PRIVACY.SECTION_RETENTION' | translate" [subtitle]="'PRIVACY.SECTION_RETENTION_SUB' | translate">
+		<p>{{ 'PRIVACY.RETENTION_BODY' | translate }}</p>
+	</app-section-card>
+
+	<!-- 9. Diritti dell'interessato -->
+	<app-section-card [title]="'PRIVACY.SECTION_RIGHTS' | translate" [subtitle]="'PRIVACY.SECTION_RIGHTS_SUB' | translate">
+		<p>{{ 'PRIVACY.RIGHTS_BODY' | translate }}</p>
+		<ul>
+			<li>{{ 'PRIVACY.RIGHTS_ITEM_1' | translate }}</li>
+			<li>{{ 'PRIVACY.RIGHTS_ITEM_2' | translate }}</li>
+			<li>{{ 'PRIVACY.RIGHTS_ITEM_3' | translate }}</li>
+			<li>{{ 'PRIVACY.RIGHTS_ITEM_4' | translate }}</li>
+			<li>{{ 'PRIVACY.RIGHTS_ITEM_5' | translate }}</li>
+			<li>{{ 'PRIVACY.RIGHTS_ITEM_6' | translate }}</li>
+			<li>{{ 'PRIVACY.RIGHTS_ITEM_7' | translate }}</li>
+		</ul>
+		<p class="rights-footer">{{ 'PRIVACY.RIGHTS_FOOTER' | translate }}</p>
+	</app-section-card>
+
+	<!-- 10. Aggiornamenti -->
+	<app-section-card [title]="'PRIVACY.SECTION_CHANGES' | translate" [subtitle]="'PRIVACY.SECTION_CHANGES_SUB' | translate">
+		<p>{{ 'PRIVACY.CHANGES_BODY' | translate }}</p>
+	</app-section-card>
+
+	<!-- 11. Contatti -->
+	<app-section-card [title]="'PRIVACY.SECTION_CONTACT' | translate" [subtitle]="'PRIVACY.SECTION_CONTACT_SUB' | translate">
+		<p>{{ 'PRIVACY.CONTACT_BODY' | translate }}</p>
+		<p><a href="mailto:privacy@piu-di-100-tool.it">privacy&#64;piu-di-100-tool.it</a></p>
+		<p>
+			<a href="https://github.com/paaxel/piu-di-100-tool/issues" target="_blank" rel="noopener noreferrer">
+				{{ 'PRIVACY.CONTACT_GITHUB_LINK' | translate }} →
+			</a>
+		</p>
+	</app-section-card>
+</div>

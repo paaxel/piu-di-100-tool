@@ -1,0 +1,42 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card
+				[title]="'TOOLS.CASE.TITLE' | translate"
+				[subtitle]="'TOOLS.CASE.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.CASE.INPUT' | translate }}</label>
+						<textarea class="form-control font-mono" rows="4" formControlName="value"
+							[placeholder]="'TOOLS.CASE.PLACEHOLDER' | translate"></textarea>					<small class="text-muted mt-1 d-block">Es.: «Hello World» → {{ converterExample }}</small>					</div>
+					<div class="col-12 col-md-6">
+						<label class="form-label">{{ 'TOOLS.CASE.FORMAT' | translate }}</label>
+						<select class="form-select" formControlName="selectedCase">
+							<option value="all">{{ 'TOOLS.CASE.ALL_FORMATS' | translate }}</option>
+							<option *ngFor="let c of cases" [value]="c.id">{{ c.label }}</option>
+						</select>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12 col-xl-4" *ngIf="results.length > 0">
+			<app-section-card [title]="'TOOLS.CASE.RESULT_TITLE' | translate">
+				<ul class="case-list">
+					<li *ngFor="let r of filteredResults" class="case-list__item">
+						<span class="case-list__label text-muted small">{{ r.label }}</span>
+						<div class="case-list__row">
+							<span class="font-mono case-list__value">{{ r.value }}</span>
+							<button
+								class="btn btn-sm btn-outline-secondary"
+								type="button"
+								(click)="copy(r.value)">
+								{{ copied === r.value ? ('TOOLS.CASE.COPIED' | translate) : ('TOOLS.CASE.COPY' | translate) }}
+							</button>
+						</div>
+					</li>
+				</ul>
+			</app-section-card>
+		</div>
+	</div>
+</div>

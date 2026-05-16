@@ -1,0 +1,40 @@
+<div class="section-block">
+	<div class="row g-4 justify-content-center">
+		<div class="col-12 col-xl-6">
+			<app-section-card
+				[title]="'TOOLS.PIVA.TITLE' | translate"
+				[subtitle]="'TOOLS.PIVA.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.PIVA.LABEL' | translate }}</label>
+						<input type="text" class="form-control font-mono form-control-lg text-center"
+							formControlName="piva" maxlength="11"
+							[placeholder]="'TOOLS.PIVA.PLACEHOLDER' | translate" />
+						<div class="form-text">{{ 'TOOLS.PIVA.HINT' | translate }}</div>
+					</div>
+				</form>
+
+				<div class="piva-result mt-4" *ngIf="result">
+					<div class="alert mb-0 d-flex align-items-center gap-2"
+						[class.alert-success]="result.valid"
+						[class.alert-danger]="!result.valid">
+						<span class="material-symbols-outlined">{{ result.valid ? 'check_circle' : 'cancel' }}</span>
+						<div>
+							<strong>{{ (result.valid ? 'TOOLS.PIVA.VALID' : 'TOOLS.PIVA.INVALID') | translate }}</strong>
+							<div class="small" *ngIf="!result.valid">
+								{{ ('TOOLS.PIVA.REASON_' + result.reason) | translate }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</app-section-card>
+
+			<div class="card mt-3">
+				<div class="card-body small text-secondary">
+					<strong>{{ 'TOOLS.PIVA.INFO_TITLE' | translate }}</strong><br />
+					{{ 'TOOLS.PIVA.INFO_BODY' | translate }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

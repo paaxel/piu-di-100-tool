@@ -1,0 +1,21 @@
+.terms-page {
+	max-width: 960px;
+	margin: 0 auto;
+
+	.page-head {
+		margin-bottom: var(--space-xl);
+
+		h1 {
+			font-size: 36px;
+			font-weight: 700;
+			margin-bottom: var(--space-sm);
+		}
+
+		.lead {
+			color: var(--on-surface-variant);
+			font-size: 16px;
+		}
+	}
+
+	app-section-card { display: block; margin-bottom: var(--space-lg); }
+}

@@ -1,0 +1,122 @@
+<div class="section-block">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Timer card -->
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+      <app-section-card [title]="phaseLabel">
+
+        <!-- Phase switcher -->
+        <div class="btn-group w-100 mb-4" role="group">
+          <button class="btn btn-sm"
+                  [class.btn-danger]="phase === 'work'"
+                  [class.btn-outline-secondary]="phase !== 'work'"
+                  [disabled]="isRunning"
+                  (click)="setPhase('work')">
+            <span class="material-symbols-outlined icon-inline me-1">timer</span>Lavoro
+          </button>
+          <button class="btn btn-sm"
+                  [class.btn-success]="phase === 'break'"
+                  [class.btn-outline-secondary]="phase !== 'break'"
+                  [disabled]="isRunning"
+                  (click)="setPhase('break')">
+            <span class="material-symbols-outlined icon-inline me-1">coffee</span>Pausa breve
+          </button>
+          <button class="btn btn-sm"
+                  [class.btn-info]="phase === 'long-break'"
+                  [class.btn-outline-secondary]="phase !== 'long-break'"
+                  [disabled]="isRunning"
+                  (click)="setPhase('long-break')">
+            <span class="material-symbols-outlined icon-inline me-1">self_improvement</span>Pausa lunga
+          </button>
+        </div>
+
+        <!-- Circular progress -->
+        <div class="d-flex justify-content-center mb-3">
+          <div class="position-relative d-inline-flex align-items-center justify-content-center">
+            <svg width="180" height="180" viewBox="0 0 120 120">
+              <!-- Background track -->
+              <circle cx="60" cy="60" r="54"
+                      fill="none"
+                      stroke="#e9ecef"
+                      stroke-width="8"/>
+              <!-- Progress arc -->
+              <circle cx="60" cy="60" r="54"
+                      fill="none"
+                      [attr.stroke]="phaseColor"
+                      stroke-width="8"
+                      stroke-linecap="round"
+                      [attr.stroke-dasharray]="circumference"
+                      [attr.stroke-dashoffset]="dashOffset"
+                      transform="rotate(-90 60 60)"
+                      style="transition: stroke-dashoffset 0.9s linear;"/>
+            </svg>
+            <!-- Time overlay -->
+            <div class="position-absolute text-center">
+              <div class="display-5 fw-bold lh-1 font-mono">{{ timeDisplay }}</div>
+              <div class="small text-muted mt-1">
+                <span class="material-symbols-outlined icon-inline" style="font-size:1rem">{{ phaseIcon }}</span>
+                {{ phaseLabel }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="d-flex gap-2 justify-content-center mb-3">
+          <button class="btn px-4"
+                  [class.btn-danger]="phase === 'work'"
+                  [class.btn-success]="phase === 'break'"
+                  [class.btn-info]="phase === 'long-break'"
+                  (click)="startPause()">
+            <span class="material-symbols-outlined icon-inline me-1">{{ isRunning ? 'pause' : 'play_arrow' }}</span>
+            {{ isRunning ? 'Pausa' : 'Avvia' }}
+          </button>
+          <button class="btn btn-outline-secondary" (click)="reset()">
+            <span class="material-symbols-outlined icon-inline">replay</span>
+          </button>
+          <button class="btn btn-outline-secondary" (click)="fullReset()" title="Ricomincia da capo">
+            <span class="material-symbols-outlined icon-inline">restart_alt</span>
+          </button>
+        </div>
+
+        <!-- Pomodoro counter -->
+        <div class="text-center mb-3">
+          <span *ngFor="let i of [].constructor(completedPomodoros < 8 ? completedPomodoros : 8)" class="text-danger fs-5">🍅</span>
+          <span class="text-muted small ms-2">{{ completedPomodoros }} pomodori completati</span>
+        </div>
+
+      </app-section-card>
+    </div>
+
+    <!-- Settings -->
+    <div class="col-12 col-md-8 col-lg-4 col-xl-3">
+      <app-section-card title="Impostazioni">
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold small">Durata lavoro: <strong>{{ workMins }}min</strong></label>
+          <input type="range" class="form-range" min="1" max="60" [(ngModel)]="workMins"
+                 (ngModelChange)="onDurationChange()">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold small">Pausa breve: <strong>{{ breakMins }}min</strong></label>
+          <input type="range" class="form-range" min="1" max="30" [(ngModel)]="breakMins"
+                 (ngModelChange)="onDurationChange()">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold small">Pausa lunga: <strong>{{ longBreakMins }}min</strong></label>
+          <input type="range" class="form-range" min="5" max="60" [(ngModel)]="longBreakMins"
+                 (ngModelChange)="onDurationChange()">
+        </div>
+
+        <div class="alert alert-light small py-2 mb-0">
+          <span class="material-symbols-outlined icon-inline me-1" style="font-size:1rem">info</span>
+          Ogni 4 pomodori viene avviata una pausa lunga.
+        </div>
+
+      </app-section-card>
+    </div>
+
+  </div>
+</div>

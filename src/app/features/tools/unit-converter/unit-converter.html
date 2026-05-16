@@ -1,0 +1,36 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card [title]="'TOOLS.UNITS.TITLE' | translate" [subtitle]="'TOOLS.UNITS.SUBTITLE' | translate">
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12 col-md-4">
+						<label class="form-label">{{ 'TOOLS.UNITS.CATEGORY' | translate }}</label>
+						<select class="form-select" formControlName="category" (change)="onCategoryChange($any($event.target).value)">
+							<option *ngFor="let c of categories" [value]="c">{{ ('TOOLS.UNITS.CAT_' + c.toUpperCase()) | translate }}</option>
+						</select>
+					</div>
+					<div class="col-12 col-md-4">
+						<label class="form-label">{{ 'TOOLS.UNITS.FROM' | translate }}</label>
+						<select class="form-select" formControlName="from">
+					<option *ngFor="let u of unitsFor(form.value.category)" [value]="u.id">{{ u.label | translate }}</option>
+				</select>
+				</div>
+					<div class="col-12 col-md-4">
+						<label class="form-label">{{ 'TOOLS.UNITS.TO' | translate }}</label>
+						<select class="form-select" formControlName="to">
+							<option *ngFor="let u of unitsFor(form.value.category)" [value]="u.id">{{ u.label | translate }}</option>
+						</select>
+					</div>
+					<div class="col-12">
+						<label class="form-label">{{ 'TOOLS.UNITS.VALUE' | translate }}</label>
+						<input type="number" step="any" class="form-control font-mono" formControlName="value" />
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+		<div class="col-12 col-xl-4">
+			<app-result-panel [label]="'TOOLS.UNITS.RESULT' | translate" [value]="result"
+				[placeholder]="'TOOLS.UNITS.PLACEHOLDER' | translate" (cleared)="clearResult()"></app-result-panel>
+		</div>
+	</div>
+</div>

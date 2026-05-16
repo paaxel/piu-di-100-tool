@@ -1,0 +1,26 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12 col-xl-8">
+			<app-section-card [title]="'TOOLS.IBAN.TITLE' | translate" [subtitle]="'TOOLS.IBAN.SUBTITLE' | translate">
+				<p class="text-muted">{{ 'TOOLS.IBAN.NOTE' | translate }}</p>
+				<form [formGroup]="form" class="row g-3" (ngSubmit)="check()">
+					<div class="col-12">
+						<label class="form-label">IBAN</label>
+						<input type="text" class="form-control font-mono" formControlName="value" placeholder="IT60X0542811101000000123456" />
+					</div>
+					<div class="col-12 d-flex justify-content-end">
+						<button class="btn btn-primary" type="submit">{{ 'TOOLS.COMMON.CHECK' | translate }}</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+		<div class="col-12 col-xl-4">
+			<app-result-panel
+				[label]="'TOOLS.COMMON.RESULT' | translate"
+				[value]="result ? (result.valid ? ('TOOLS.IBAN.VALID' | translate) + ' — ' + result.normalized : ('TOOLS.IBAN.INVALID' | translate) + ' (' + (result.reason ? ('TOOLS.IBAN.REASONS.' + result.reason | translate) : '') + ')') : ''"
+				[placeholder]="'TOOLS.IBAN.PLACEHOLDER' | translate"
+				(cleared)="clearResult()"
+			></app-result-panel>
+		</div>
+	</div>
+</div>

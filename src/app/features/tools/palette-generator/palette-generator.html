@@ -1,0 +1,22 @@
+<div class="section-block">
+  <app-section-card title="Palette Generator" subtitle="Genera palette da un colore base (HEX o color picker)">
+    <div class="mb-3" [formGroup]="form">
+      <label class="form-label">Colore base</label>
+      <div class="d-flex gap-2 align-items-center">
+        <input class="form-control" formControlName="baseHex" placeholder="#3B82F6" (input)="onHexInput()">
+        <input type="color" class="form-control form-control-color" formControlName="baseColor" (input)="onColorPick()" aria-label="Color picker">
+        <button class="btn btn-primary" (click)="generateFromBase()">Genera</button>
+      </div>
+    </div>
+
+    <div class="d-grid gap-2" *ngIf="palette.length">
+      <div class="d-flex align-items-center gap-2" *ngFor="let c of palette">
+        <div class="rounded border" [style.background]="c" style="width: 36px; height: 36px;"></div>
+        <code>{{ c }}</code>
+        <button class="btn btn-outline-secondary btn-sm ms-auto" (click)="copy(c)">Copia</button>
+      </div>
+    </div>
+  </app-section-card>
+
+  <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{ error }}</div>
+</div>

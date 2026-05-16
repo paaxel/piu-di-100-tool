@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="100 Plus One Tools favicon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect x="4" y="4" width="56" height="56" rx="11" fill="none" stroke="url(#ring)" stroke-width="2.5"/>
+
+  <text x="13" y="38" fill="#f8fafc" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="20" font-weight="700" letter-spacing="-1">100</text>
+  <text x="43" y="28" fill="#67e8f9" font-family="'JetBrains Mono', 'Segoe UI', sans-serif" font-size="14" font-weight="700">+</text>
+
+  <circle cx="49" cy="44" r="6" fill="#0ea5e9"/>
+  <rect x="47.8" y="47" width="2.4" height="8" rx="1.2" fill="#0ea5e9" transform="rotate(-42 49 51)"/>
+</svg>

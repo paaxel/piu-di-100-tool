@@ -1,0 +1,32 @@
+<div class="section-block">
+	<div class="row g-4">
+		<div class="col-12">
+			<app-section-card
+				[title]="'BASE64.TITLE' | translate"
+				[subtitle]="'BASE64.SUBTITLE' | translate"
+			>
+				<form [formGroup]="form" class="row g-3">
+					<div class="col-12">
+						<label class="form-label">{{ 'BASE64.INPUT_LABEL' | translate }}</label>
+						<textarea class="form-control font-mono" rows="8" formControlName="value"></textarea>
+					</div>
+
+					<div class="col-12 d-flex gap-2 justify-content-end">
+						<button class="btn btn-primary" type="button" (click)="encode()">{{ 'BASE64.ENCODE' | translate }}</button>
+						<button class="btn btn-outline-primary" type="button" (click)="decode()">{{ 'BASE64.DECODE' | translate }}</button>
+					</div>
+				</form>
+			</app-section-card>
+		</div>
+
+		<div class="col-12">
+			<app-result-panel
+				[label]="'BASE64.RESULT_LABEL' | translate"
+				[value]="result"
+				[placeholder]="'BASE64.RESULT_PLACEHOLDER' | translate"
+				(cleared)="clearResult()"
+			></app-result-panel>
+		</div>
+	</div>
+</div>
+

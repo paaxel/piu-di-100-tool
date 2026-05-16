@@ -1,0 +1,37 @@
+:host {
+  display: block;
+}
+
+.regex-match-list {
+  padding-left: 1.25rem;
+  margin: 0;
+
+  &__item {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--bs-border-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__groups {
+    margin-top: 0.25rem;
+  }
+}
+
+.match-text {
+  word-break: break-all;
+}
+
+.regex-highlight {
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.7;
+
+  mark {
+    background-color: rgba(var(--bs-warning-rgb), 0.4);
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+}
