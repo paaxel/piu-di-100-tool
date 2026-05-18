@@ -19,7 +19,8 @@
     "BASE64": "Base64"
   },
   "TOOL_PAGE": {
-    "DESCRIPTION_TITLE": "Cosa Fa Questo Tool"
+    "DESCRIPTION_TITLE": "Cosa Fa Questo Tool",
+    "RELATED_TITLE": "Tool correlati"
   },
   "HOME": {
     "TITLE": "Tutti i tool in un solo posto",

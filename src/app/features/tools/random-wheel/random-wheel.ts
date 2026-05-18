@@ -3,9 +3,12 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  Inject,
   OnDestroy,
+  PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { SeoService } from '../../../core/services/seo';
 
 const COLORS = [
@@ -30,12 +33,19 @@ export class RandomWheel implements AfterViewInit, OnDestroy {
   private velocity = 0;
   private rafId = 0;
 
-  constructor(private readonly cdr: ChangeDetectorRef, seo: SeoService) {
+  private readonly isBrowser: boolean;
+
+  constructor(
+    private readonly cdr: ChangeDetectorRef,
+    seo: SeoService,
+    @Inject(PLATFORM_ID) platformId: object
+  ) {
     seo.set('Ruota Fortunata', 'Crea una ruota casuale con i tuoi elementi e clicca per girare. Strumento online gratuito.');
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngAfterViewInit(): void {
-    this.drawWheel();
+    if (this.isBrowser) this.drawWheel();
   }
 
   ngOnDestroy(): void {

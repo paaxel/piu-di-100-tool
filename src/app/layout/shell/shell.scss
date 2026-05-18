@@ -6,3 +6,78 @@ main {
 	display: block;
 }
 
+.tool-related-tools {
+	padding: var(--space-xl) var(--space-lg) 0;
+}
+
+.tool-related-tools app-section-card {
+	display: block;
+	position: sticky;
+	top: calc(64px + var(--space-lg));
+}
+
+.tool-related-tools__list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+}
+
+.tool-related-tools__item {
+	display: grid;
+	grid-template-columns: 2.75rem minmax(0, 1fr);
+	gap: var(--space-md);
+	align-items: start;
+	text-decoration: none;
+	color: inherit;
+}
+
+.tool-related-tools__item + .tool-related-tools__item {
+	padding-top: var(--space-md);
+	border-top: 1px solid var(--outline-variant);
+}
+
+.tool-related-tools__item:hover .tool-related-tools__name,
+.tool-related-tools__item:focus-visible .tool-related-tools__name {
+	color: var(--primary);
+}
+
+.tool-related-tools__icon {
+	display: grid;
+	place-items: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	border-radius: 0.75rem;
+	background: var(--secondary-fixed);
+	color: var(--primary);
+	font-size: 1.25rem;
+	line-height: 1;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.tool-related-tools__item:hover .tool-related-tools__icon,
+.tool-related-tools__item:focus-visible .tool-related-tools__icon {
+	background: var(--primary-fixed);
+	color: var(--on-primary-fixed-variant);
+}
+
+.tool-related-tools__copy {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	min-width: 0;
+}
+
+.tool-related-tools__name {
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.35;
+	color: var(--on-surface);
+	transition: color 0.15s ease;
+}
+
+.tool-related-tools__description {
+	font-size: 0.925rem;
+	line-height: 1.5;
+	color: var(--on-surface-variant);
+}
+

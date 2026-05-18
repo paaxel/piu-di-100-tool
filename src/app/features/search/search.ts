@@ -118,7 +118,13 @@ export class Search implements OnInit, OnDestroy {
 
   private runSearch(): void {
     const all = this.toolCatalog.getAll();
-    this.results = fuzzySearch(all, this.query, ['name', 'description', 'category', 'tags'], all.length);
+    const searchItems = all.map(tool => ({
+      ...tool,
+      name: this.getToolName(tool),
+      description: this.getToolDescription(tool),
+      category: this.getToolCategory(tool),
+    }));
+    this.results = fuzzySearch(searchItems, this.query, ['name', 'description', 'category', 'tags'], all.length);
     this.page = 1;
   }
 

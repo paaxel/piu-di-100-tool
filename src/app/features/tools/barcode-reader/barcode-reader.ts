@@ -1,4 +1,5 @@
-import { Component, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { Component, ChangeDetectorRef, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { BrowserMultiFormatReader } from '@zxing/browser';
 import { BarcodeFormat, DecodeHintType } from '@zxing/library';
@@ -35,11 +36,14 @@ export class BarcodeReader {
     private readonly images: ImageProcessorService,
     private readonly sanitizer: DomSanitizer,
     seo: SeoService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) platformId: object
   ) {
     seo.set('Lettore Barcode', 'Leggi barcode da immagini con riconoscimento locale nel browser.');
-    const ctor = (window as Window & { BarcodeDetector?: BarcodeDetectorCtor }).BarcodeDetector;
-    this.nativeSupported = !!ctor;
+    if (isPlatformBrowser(platformId)) {
+      const ctor = (window as Window & { BarcodeDetector?: BarcodeDetectorCtor }).BarcodeDetector;
+      this.nativeSupported = !!ctor;
+    }
   }
 
   onFile(file: File): void {

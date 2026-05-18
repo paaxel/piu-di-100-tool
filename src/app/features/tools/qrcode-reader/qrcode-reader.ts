@@ -1,4 +1,5 @@
-import { Component, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { Component, ChangeDetectorRef, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { BrowserMultiFormatReader } from '@zxing/browser';
 import { BarcodeFormat, DecodeHintType } from '@zxing/library';
@@ -34,11 +35,17 @@ export class QrcodeReader {
     private readonly images: ImageProcessorService,
     private readonly sanitizer: DomSanitizer,
     seo: SeoService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) platformId: object
   ) {
     seo.set('Lettore QR Code', 'Decodifica QR Code da immagine direttamente nel browser.');
-    const ctor = (window as Window & { BarcodeDetector?: BarcodeDetectorCtor }).BarcodeDetector;
-    this.nativeSupported = !!ctor;
+    if (isPlatformBrowser(platformId)) {
+      const ctor = (window as Window & { BarcodeDetector?: BarcodeDetectorCtor }).BarcodeDetector;
+      this.nativeSupported = !!ctor;
+      if (!ctor) {
+        console.warn('BarcodeDetector API not available on this platform — falling back to ZXing.');
+      }
+    }
   }
 
   onFile(file: File): void {

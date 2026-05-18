@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import JsBarcode from 'jsbarcode';
 import { SeoService } from '../../../core/services/seo';
@@ -34,7 +35,9 @@ export class BarcodeGenerator implements AfterViewInit {
     return (10 - (sum % 10)) % 10;
   }
 
-  constructor(fb: FormBuilder, seo: SeoService) {
+  private readonly isBrowser: boolean;
+
+  constructor(fb: FormBuilder, seo: SeoService, @Inject(PLATFORM_ID) platformId: object) {
     seo.set(
       'Generatore Barcode',
       'Generatore barcode 1D online: crea codici CODE128, EAN13, EAN8, UPC, ITF14, MSI e Pharmacode direttamente nel browser con anteprima e download PNG.',
@@ -46,10 +49,11 @@ export class BarcodeGenerator implements AfterViewInit {
       height: [90],
       displayValue: [true],
     });
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngAfterViewInit(): void {
-    this.generate();
+    if (this.isBrowser) this.generate();
   }
 
   get currentFormat(): string {

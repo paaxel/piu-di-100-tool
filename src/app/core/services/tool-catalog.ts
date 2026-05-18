@@ -9,6 +9,7 @@ export interface ToolCatalogItem {
   tags: string[];
   icon?: string;
   featured?: boolean;
+  relatedToolIds?: string[];
 }
 
 @Injectable({
@@ -25,6 +26,7 @@ export class ToolCatalog {
       tags: ['italy', 'tax', 'fiscal', 'code'],
       icon: 'badge',
       featured: true,
+      relatedToolIds: ['codice-fiscale-inverso', 'partita-iva', 'iva-calculator'],
     },
     {
       id: 'codice-fiscale-inverso',
@@ -34,6 +36,7 @@ export class ToolCatalog {
       route: '/codice-fiscale-inverso',
       tags: ['italy', 'tax', 'fiscal', 'decode', 'reverse'],
       icon: 'manage_search',
+      relatedToolIds: ['codice-fiscale', 'cf-checker', 'partita-iva'],
     },
     {
       id: 'base64',
@@ -62,6 +65,7 @@ export class ToolCatalog {
       route: '/tools/verifica-validita-codice-fiscale',
       tags: ['italy', 'tax', 'fiscal', 'validation', 'check'],
       icon: 'verified',
+      relatedToolIds: ['codice-fiscale', 'codice-fiscale-inverso', 'partita-iva'],
     },
     {
       id: 'jwt',
@@ -951,11 +955,47 @@ export class ToolCatalog {
     },
   ];
 
+  private readonly toolsById = new Map(this.tools.map((tool) => [tool.id, tool]));
+
   getAll(): ToolCatalogItem[] {
     return [...this.tools];
   }
 
   getFeatured(): ToolCatalogItem[] {
     return this.tools.filter((t) => t.featured);
+  }
+
+  getRelated(toolId: string, limit = 3): ToolCatalogItem[] {
+    const currentTool = this.toolsById.get(toolId);
+
+    if (!currentTool) {
+      return [];
+    }
+
+    const curatedTools = (currentTool.relatedToolIds ?? [])
+      .map((relatedToolId) => this.toolsById.get(relatedToolId))
+      .filter((tool): tool is ToolCatalogItem => !!tool && tool.id !== toolId);
+
+    const curatedToolIds = new Set(curatedTools.map((tool) => tool.id));
+    const currentTags = new Set(currentTool.tags.map((tag) => tag.toLowerCase()));
+
+    const fallbackTools = this.tools
+      .filter((tool) => tool.id !== toolId && !curatedToolIds.has(tool.id))
+      .map((tool) => ({
+        tool,
+        sharedTags: tool.tags.filter((tag) => currentTags.has(tag.toLowerCase())).length,
+        sameCategory: tool.category === currentTool.category,
+      }))
+      .filter(({ sameCategory, sharedTags }) => sameCategory || sharedTags > 0)
+      .sort(
+        (left, right) =>
+          Number(right.sameCategory) - Number(left.sameCategory) ||
+          right.sharedTags - left.sharedTags ||
+          Number(right.tool.featured ?? false) - Number(left.tool.featured ?? false) ||
+          left.tool.name.localeCompare(right.tool.name),
+      )
+      .map(({ tool }) => tool);
+
+    return [...curatedTools, ...fallbackTools].slice(0, limit);
   }
 }

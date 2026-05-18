@@ -33,14 +33,46 @@
 	</header>
 
 	<main class="flex-grow-1">
-		<router-outlet></router-outlet>
+		<div class="container-fluid px-0">
+			<div class="row g-0">
+				<div class="d-none d-xl-block col-xl-2" *ngIf="relatedTools.length > 0"></div>
+
+				<div class="col-12" [class.col-xl-8]="relatedTools.length > 0">
+					<router-outlet></router-outlet>
+				</div>
+
+				<aside class="d-none d-xl-block col-xl-2" *ngIf="relatedTools.length > 0" [attr.aria-label]="'TOOL_PAGE.RELATED_TITLE' | translate">
+					<div class="tool-related-tools">
+						<app-section-card [title]="'TOOL_PAGE.RELATED_TITLE' | translate">
+							<nav class="tool-related-tools__list" [attr.aria-label]="'TOOL_PAGE.RELATED_TITLE' | translate">
+								<a class="tool-related-tools__item" *ngFor="let tool of relatedTools" [routerLink]="tool.route">
+									<span class="tool-related-tools__icon material-symbols-outlined" aria-hidden="true">{{ tool.icon }}</span>
+									<span class="tool-related-tools__copy">
+										<span class="tool-related-tools__name">{{ tool.name }}</span>
+										<span class="tool-related-tools__description">{{ tool.description }}</span>
+									</span>
+								</a>
+							</nav>
+						</app-section-card>
+					</div>
+				</aside>
+			</div>
+		</div>
 	</main>
 
 	<section class="tool-bottom-description" *ngIf="showToolBottomDescription" aria-labelledby="tool-bottom-description-title">
-		<div class="section-block tool-bottom-description__inner">
-			<div class="tool-bottom-description__box">
-				<h2 id="tool-bottom-description-title" class="tool-bottom-description__title">{{ 'TOOL_PAGE.DESCRIPTION_TITLE' | translate }}</h2>
-				<p class="tool-bottom-description__text mb-0">{{ toolBottomDescription }}</p>
+		<div class="container-fluid px-0">
+			<div class="row g-0">
+				<div class="d-none d-xl-block col-xl-2"></div>
+				<div class="col-12 col-xl-8">
+					<div class="section-block tool-bottom-description__inner">
+						<div class="tool-bottom-description__box">
+							<h2 id="tool-bottom-description-title" class="tool-bottom-description__title">{{ 'TOOL_PAGE.DESCRIPTION_TITLE' | translate }}</h2>
+							<p class="tool-bottom-description__text mb-0">{{ toolBottomDescription }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="d-none d-xl-block col-xl-2"></div>
 			</div>
 		</div>
 	</section>
