@@ -43,6 +43,9 @@ export class BarcodeReader {
     if (isPlatformBrowser(platformId)) {
       const ctor = (window as Window & { BarcodeDetector?: BarcodeDetectorCtor }).BarcodeDetector;
       this.nativeSupported = !!ctor;
+      if (!ctor) {
+        console.warn('BarcodeDetector API not available on this platform — falling back to ZXing.');
+      }
     }
   }
 

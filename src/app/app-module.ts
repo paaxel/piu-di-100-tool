@@ -32,7 +32,7 @@ export function httpLoaderFactory(http: HttpClient): TranslateLoader {
     ReactiveFormsModule,
     SharedModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'it',
+      fallbackLang: 'it',
       loader: {
         provide: TranslateLoader,
         useFactory: httpLoaderFactory,

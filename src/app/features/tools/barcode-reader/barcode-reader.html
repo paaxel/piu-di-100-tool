@@ -7,10 +7,6 @@
       <span *ngIf="loading" class="ms-2 spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     </div>
 
-    <div *ngIf="!nativeSupported" class="alert alert-info mt-3 mb-0">
-      BarcodeDetector non disponibile: uso fallback ZXing (potrebbe essere piu lento).
-    </div>
-
     <div *ngIf="usingFallback && nativeSupported" class="alert alert-info mt-3 mb-0">
       BarcodeDetector non ha rilevato codici: uso fallback ZXing.
     </div>
