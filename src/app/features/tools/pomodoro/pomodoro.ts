@@ -19,6 +19,8 @@ export class PomodoroTimer implements OnDestroy {
   completedPomodoros = 0;
 
   private intervalId: ReturnType<typeof setInterval> | null = null;
+  private startedAt = 0;
+  private initialSecondsLeft = 0;
 
   constructor(private readonly cdr: ChangeDetectorRef, seo: SeoService) {
     seo.set('Pomodoro Timer', 'Timer Pomodoro online: sessioni di 25 minuti alternate a pause. Aumenta la concentrazione e la produttività.');
@@ -82,7 +84,9 @@ export class PomodoroTimer implements OnDestroy {
       this.isRunning = false;
     } else {
       this.isRunning = true;
-      this.intervalId = setInterval(() => this.tick(), 1000);
+      this.startedAt = Date.now();
+      this.initialSecondsLeft = this.secondsLeft;
+      this.intervalId = setInterval(() => this.tick(), 500);
     }
   }
 
@@ -113,7 +117,8 @@ export class PomodoroTimer implements OnDestroy {
   // ── Internal ───────────────────────────────────────────────────────────────
 
   private tick(): void {
-    this.secondsLeft--;
+    const elapsed = Math.floor((Date.now() - this.startedAt) / 1000);
+    this.secondsLeft = Math.max(0, this.initialSecondsLeft - elapsed);
     if (this.secondsLeft <= 0) {
       this.beep();
       this.advance();

@@ -17,6 +17,8 @@ export class CountdownTimer implements OnDestroy {
   finished = false;
 
   private intervalId: ReturnType<typeof setInterval> | null = null;
+  private startedAt = 0;
+  private initialSecondsLeft = 0;
 
   constructor(private readonly cdr: ChangeDetectorRef, seo: SeoService) {
     seo.set('Conto alla Rovescia', 'Timer conto alla rovescia online. Imposta ore, minuti e secondi e avvia il countdown.');
@@ -48,9 +50,12 @@ export class CountdownTimer implements OnDestroy {
     }
     this.finished = false;
     this.isRunning = true;
+    this.startedAt = Date.now();
+    this.initialSecondsLeft = this.secondsLeft;
     this.cdr.detectChanges();
     this.intervalId = setInterval(() => {
-      this.secondsLeft--;
+      const elapsed = Math.floor((Date.now() - this.startedAt) / 1000);
+      this.secondsLeft = Math.max(0, this.initialSecondsLeft - elapsed);
       if (this.secondsLeft <= 0) {
         this.secondsLeft = 0;
         this.isRunning = false;
@@ -58,7 +63,7 @@ export class CountdownTimer implements OnDestroy {
         this.clearTimer();
       }
       this.cdr.detectChanges();
-    }, 1000);
+    }, 500);
   }
 
   pause(): void {
